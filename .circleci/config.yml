@@ -4,7 +4,7 @@ defaults: &defaults
     - image: circleci/node:8.9.1
 
 jobs:
-  test:
+  install:
     <<: *defaults
     steps:
       - checkout
@@ -16,7 +16,6 @@ jobs:
             - v1-dependencies-
 
       - run: npm install
-      - run: npm run build
 
       - save_cache:
           paths:
@@ -26,11 +25,13 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
+
   deploy:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/repo
+      - run: npm run build
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
@@ -40,17 +41,13 @@ jobs:
 
 workflows:
   version: 2
-  test-deploy:
+  install-deploy:
     jobs:
-      - test:
-          filters:
-            tags:
-              only: /^v.*/
+      - install
       - deploy:
           requires:
-            - test
+            - install
           filters:
-            tags:
-              only: /^v.*/
             branches:
-              ignore: /.*/
+              only:
+                - master
