@@ -1,11 +1,13 @@
 import { default as erc20 } from "./modules/erc20";
 import { default as compound } from "./modules/compound";
 import { default as maker } from "./modules/maker";
+import { default as uniswap } from "./modules/uniswap";
 
 export const rawLegos = {
   erc20,
   compound,
   maker,
+  uniswap
 };
 
 export const getLegosFor = (networkId: number) => {
