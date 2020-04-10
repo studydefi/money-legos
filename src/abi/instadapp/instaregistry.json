@@ -1,0 +1,178 @@
+[
+  {
+    "constant": true,
+    "inputs": [{ "name": "_logicAddress", "type": "address" }],
+    "name": "logic",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_logicAddress", "type": "address" }],
+    "name": "enableStaticLogic",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "", "type": "address" }],
+    "name": "logicProxies",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "", "type": "address" }],
+    "name": "logicProxiesStatic",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "_currentOwner", "type": "address" },
+      { "name": "_nextOwner", "type": "address" }
+    ],
+    "name": "record",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_logicAddress", "type": "address" }],
+    "name": "enableLogic",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "build",
+    "outputs": [{ "name": "proxy", "type": "address" }],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "_name", "type": "string" },
+      { "name": "_userAddress", "type": "address" }
+    ],
+    "name": "setAddress",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "_logicAddress", "type": "address" }],
+    "name": "logicStatic",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "_name", "type": "string" }],
+    "name": "getAddress",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "", "type": "address" }],
+    "name": "proxies",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_logicAddress", "type": "address" }],
+    "name": "disableLogic",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_owner", "type": "address" }],
+    "name": "build",
+    "outputs": [{ "name": "proxy", "type": "address" }],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "sender", "type": "address" },
+      { "indexed": true, "name": "owner", "type": "address" },
+      { "indexed": false, "name": "proxy", "type": "address" }
+    ],
+    "name": "Created",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "currentOwner", "type": "address" },
+      { "indexed": true, "name": "nextOwner", "type": "address" },
+      { "indexed": false, "name": "proxy", "type": "address" }
+    ],
+    "name": "LogRecord",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": false, "name": "logicAddress", "type": "address" }],
+    "name": "LogEnableStaticLogic",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": false, "name": "logicAddress", "type": "address" }],
+    "name": "LogEnableLogic",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": false, "name": "logicAddress", "type": "address" }],
+    "name": "LogDisableLogic",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "name", "type": "string" },
+      { "indexed": false, "name": "addr", "type": "address" }
+    ],
+    "name": "LogSetAddress",
+    "type": "event"
+  }
+]

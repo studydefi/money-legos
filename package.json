@@ -1,8 +1,15 @@
 {
   "name": "@studydefi/money-legos",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "git@github.com:studydefi/money-legos.git",
   "author": "Adrian Li <li.adrianmc@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --declaration"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
 }
