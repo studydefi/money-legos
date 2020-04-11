@@ -36,7 +36,7 @@ jobs:
           
       - run:
           name: Check Package Version Valid on NPM
-          command: ./circleci/check_npm_version.sh
+          command: ./.circleci/check_npm_version.sh
 
   deploy:
     <<: *defaults
