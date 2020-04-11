@@ -20,8 +20,8 @@ const Web3 = require('web3')
 const web3 = new Web3("http://127.0.0.1:8545");
 const accounts = await web3.eth.getAccounts();
 
-const { getLegos, networkIds } = 'money-legos'
-const legos = getLegos(networkIds.mainnet)
+const { getLegosFor, networks } = 'money-legos'
+const legos = getLegosFor(networks.mainnet)
 
 const daiContract = new web3.eth.Contract(
     legos.erc20.dai.address,
@@ -42,8 +42,8 @@ main()
 const { ethers } = require('ethers')
 const provider = new ethers.providers.JsonRpcProvider()
 
-const { getLegos, networkIds } = 'money-legos'
-const legos = getLegos(networkIds.mainnet)
+const { getLegosFor, networks } = 'money-legos'
+const legos = getLegosFor(networks.mainnet)
 
 const daiContract = new ethers.Contract(
     legos.erc20.abi,

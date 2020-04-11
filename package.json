@@ -1,6 +1,6 @@
 {
   "name": "@studydefi/money-legos",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "git@github.com:studydefi/money-legos.git",
@@ -11,5 +11,15 @@
   },
   "devDependencies": {
     "typescript": "^3.8.3"
-  }
+  },
+  "keywords": [
+    "ethereum",
+    "abi",
+    "defi",
+    "defi addresses",
+    "defi abi",
+    "ethereum abi",
+    "ethereum address",
+    "money-legos"
+  ]
 }
