@@ -4,4 +4,5 @@
   - [Quick start](quickstart.md)
 
 - Integrations
-  - [Uniswap](uniswap.md)
+  - [Uniswap V1](uniswap.md)
+  - [OneInch](oneinch.md)

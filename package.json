@@ -30,5 +30,8 @@
     "ethereum abi",
     "ethereum address",
     "money-legos"
-  ]
+  ],
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.5.0"
+  }
 }
