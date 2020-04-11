@@ -48,7 +48,11 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
       - run:
           name: Publish package
-          command: npm publish --access public
+          command: |
+            # Sometimes we just wanna update the readme file
+            if ./.circleci/check_npm_version.sh; then
+              npm publish --access public
+            fi            
 
 workflows:
   version: 2
