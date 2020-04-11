@@ -28,6 +28,16 @@ jobs:
           root: ~/repo
           paths: .
 
+  deployDryRun:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+          
+      - run:
+          name: Check Package Version Valid on NPM
+          command: ./circleci/check_npm_version.sh
+
   deploy:
     <<: *defaults
     steps:
@@ -45,6 +55,13 @@ workflows:
   install-deploy:
     jobs:
       - build
+      - deployDryRun:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - master
       - deploy:
           requires:
             - build
