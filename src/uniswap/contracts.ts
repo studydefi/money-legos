@@ -1,7 +1,7 @@
 import exchangeAbi from "./abi/Exchange.json";
 import factoryAbi from "./abi/Factory.json";
 
-import networks from "../../networks";
+import networks from "../networks";
 
 const contracts = {
   factory: {

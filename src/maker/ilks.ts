@@ -1,5 +1,5 @@
 import erc20 from "../erc20";
-import networks from "../../networks";
+import networks from "../networks";
 
 const ilks = {
   batA: {

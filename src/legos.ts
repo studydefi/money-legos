@@ -1,8 +1,7 @@
-import { default as erc20 } from "./modules/erc20";
-import { default as compound } from "./modules/compound";
-import { default as maker } from "./modules/maker";
-import { default as uniswap } from "./modules/uniswap";
-import { default as networks } from "./networks"
+import { default as erc20 } from "./erc20";
+import { default as compound } from "./compound";
+import { default as maker } from "./maker";
+import { default as uniswap } from "./uniswap";
 
 export const rawLegos = {
   erc20,
@@ -29,12 +28,12 @@ type Primitive =
 
 type MappingToChangeFrom = {
   address: {
-    [x: number]: string
+    [x: number]: string;
   };
 };
 
 type MappingToChangeTo = {
-  address: string
+  address: string;
 };
 
 type DeepOmitHelper<T> = {
@@ -49,9 +48,7 @@ type DeepOmitHelper<T> = {
     : never;
 };
 
-type DeepOmit<T> = T extends Primitive
-  ? T
-  : DeepOmitHelper<T>;
+type DeepOmit<T> = T extends Primitive ? T : DeepOmitHelper<T>;
 
 type DeepOmitArray<T extends any[]> = {
   [P in keyof T]: DeepOmit<T[P]>;
@@ -66,35 +63,29 @@ const isValidObject = (obj: unknown) => typeof obj === "object" && obj !== null;
 // i.e. compound.cDai.address[mainnet] = 0x...
 //      becomes:
 //      compound.cDai.address = 0x....
-const changeAddressValue = (
+export const changeAddressValue = (
   networkId: number,
-  immutableObj: RawLegos
+  immutableObj: RawLegos,
 ): RawLegosWithoutNetworkId => {
   let obj = immutableObj as any;
 
-  // recursive base case
-  if (isValidObject(immutableObj)) {
-    // desctructure the object to create new reference
-    obj = { ...immutableObj };
-    // iterating over the object using for..in
-    for (const keys in obj) {
-      //checking if the current value is an object itself
-      if (isValidObject(obj[keys])) {
-        if (
-          `${keys}` === "address" &&
-          obj[keys][`${networkId}`] !== undefined
-        ) {
-          // else getting the value and replacing with specified network id
-          const keyValue = obj[keys][`${networkId}`];
-          obj[keys] = keyValue || null;
-        } else if (!Array.isArray(obj[keys])) {
-          // Don't wanna modify arrays
-          obj[keys] = changeAddressValue(networkId, obj[keys]);
-        }
-      }
-      return obj;
-    }
+  // recursive base case, stop here
+  if (!isValidObject(immutableObj)) {
+    return obj;
   }
 
+  // desctructure the object to create new reference
+  obj = { ...immutableObj };
+  // iterating over the object using for..in
+  for (const key in obj) {
+    if (Array.isArray(obj[key])) continue; // ignore arrays (e.g. ABIs)
+    if (!isValidObject(obj[key])) continue; // ignore non-valid objects
+
+    if (key === "address") {
+      obj[key] = obj.address[networkId] || null;
+    } else {
+      obj[key] = changeAddressValue(networkId, obj[key]);
+    }
+  }
   return obj;
 };
