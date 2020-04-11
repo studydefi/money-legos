@@ -47,4 +47,17 @@ describe("recursive changeAddressValue function", () => {
       bar: { address: "mainnet_bar_address" },
     });
   });
+
+  test("use null if address for network does not exist", () => {
+    const input = {
+      foo: { address: { [networks.mainnet]: "mainnet_foo_address" } },
+      bar: { address: { [networks.mainnet]: "mainnet_bar_address" } },
+      baz: { address: { [networks.mainnet]: "mainnet_baz_address" } },
+    };
+    expect(changeAddressValue(networks.ropsten, input as any)).toStrictEqual({
+      foo: { address: null },
+      bar: { address: null },
+      baz: { address: null },
+    });
+  });
 });
