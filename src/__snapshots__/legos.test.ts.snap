@@ -20446,24 +20446,43 @@ Object {
       ],
       "bat": Object {
         "address": "0x0d8775f648430679a709e98d2b0cb6250d2887ef",
+        "decimals": 18,
+        "symbol": "BAT",
       },
       "dai": Object {
         "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "decimals": 18,
+        "symbol": "DAI",
+      },
+      "eth": Object {
+        "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+        "decimals": 18,
+        "symbol": "ETH",
       },
       "rep": Object {
         "address": "0x1985365e9f78359a9B6AD760e32412f4a445E862",
+        "decimals": 18,
+        "symbol": "REP",
       },
       "sai": Object {
         "address": "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359",
+        "decimals": 18,
+        "symbol": "SAI",
       },
       "usdc": Object {
         "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+        "decimals": 6,
+        "symbol": "USDC",
       },
       "wbtc": Object {
         "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "decimals": 8,
+        "symbol": "WBTC",
       },
       "zrx": Object {
         "address": "0xE41d2489571d322189246DaFA5ebDe1F4699F498",
+        "decimals": 18,
+        "symbol": "ZRX",
       },
     },
   },
@@ -22427,6 +22446,657 @@ Object {
           "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
         },
       },
+    },
+  },
+  "onesplit": Object {
+    "contracts": Object {
+      "abi": Array [
+        Object {
+          "inputs": Array [
+            Object {
+              "internalType": "contract IOneSplit",
+              "name": "impl",
+              "type": "address",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "constructor",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newImpl",
+              "type": "address",
+            },
+          ],
+          "name": "ImplementationUpdated",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address",
+            },
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address",
+            },
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+        },
+        Object {
+          "payable": true,
+          "stateMutability": "payable",
+          "type": "fallback",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_AAVE",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_BANCOR",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_BDAI",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_CHAI",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_COMPOUND",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_CURVE_BINANCE",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_CURVE_COMPOUND",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_CURVE_SYNTHETIX",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_CURVE_USDT",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_CURVE_Y",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_FULCRUM",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_IDLE",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_IEARN",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_KYBER",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_OASIS",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_SMART_TOKEN",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_UNISWAP",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_DISABLE_WETH",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_ENABLE_KYBER_BANCOR_RESERVE",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_ENABLE_KYBER_OASIS_RESERVE",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_ENABLE_KYBER_UNISWAP_RESERVE",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_ENABLE_MULTI_PATH_DAI",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_ENABLE_MULTI_PATH_ETH",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_ENABLE_MULTI_PATH_USDC",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_ENABLE_UNISWAP_AAVE",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_ENABLE_UNISWAP_CHAI",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "FLAG_ENABLE_UNISWAP_COMPOUND",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "contract IERC20",
+              "name": "asset",
+              "type": "address",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+            },
+          ],
+          "name": "claimAsset",
+          "outputs": Array [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [
+            Object {
+              "internalType": "contract IERC20",
+              "name": "fromToken",
+              "type": "address",
+            },
+            Object {
+              "internalType": "contract IERC20",
+              "name": "toToken",
+              "type": "address",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "parts",
+              "type": "uint256",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "featureFlags",
+              "type": "uint256",
+            },
+          ],
+          "name": "getExpectedReturn",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "returnAmount",
+              "type": "uint256",
+            },
+            Object {
+              "internalType": "uint256[]",
+              "name": "distribution",
+              "type": "uint256[]",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "isOwner",
+          "outputs": Array [
+            Object {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "oneSplitImpl",
+          "outputs": Array [
+            Object {
+              "internalType": "contract IOneSplit",
+              "name": "",
+              "type": "address",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "owner",
+          "outputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "",
+              "type": "address",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [],
+          "name": "renounceOwnership",
+          "outputs": Array [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "contract IOneSplit",
+              "name": "impl",
+              "type": "address",
+            },
+          ],
+          "name": "setNewImpl",
+          "outputs": Array [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "contract IERC20",
+              "name": "fromToken",
+              "type": "address",
+            },
+            Object {
+              "internalType": "contract IERC20",
+              "name": "toToken",
+              "type": "address",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "minReturn",
+              "type": "uint256",
+            },
+            Object {
+              "internalType": "uint256[]",
+              "name": "distribution",
+              "type": "uint256[]",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "featureFlags",
+              "type": "uint256",
+            },
+          ],
+          "name": "swap",
+          "outputs": Array [],
+          "payable": true,
+          "stateMutability": "payable",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address",
+            },
+          ],
+          "name": "transferOwnership",
+          "outputs": Array [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+      ],
+      "address": "0xC586BeF4a0992C495Cf22e1aeEE4E446CECDee0E",
     },
   },
   "uniswap": Object {

@@ -1,4 +1,5 @@
 # Money-legos
+[![CircleCI](https://circleci.com/gh/studydefi/money-legos.svg?style=svg)](https://circleci.com/gh/studydefi/money-legos)
 
 Quickstart your journey into building DeFi DApps!
 
@@ -9,17 +10,32 @@ Currently the package includes ABI and mainnet addresses from:
 - MakerDAO
 - Uniswap
 - Compound
+- OneSplit
 
 ... and more coming soon!
 
 # Quickstart
+
+## Install
 ```bash
 npm install @studydefi/money-legos
 ```
 
+## Usage
 ```javascript
 const { getLegosFor, networks } = require('@studydefi/money-legos')
 const legos = getLegosFor(networks.mainnet)
+
+// Access ABIs and addresses
+
+// legos.erc20.contracts.dai.address
+// legos.erc20.contracts.dai.abi
+
+// legos.uniswap.contracts.factory.abi
+// legos.uniswap.contracts.factory.address
+
+// Alternatively
+// rawLegos.erc20.contracts.dai.address[networks.mainnet]
 ```
 
 # Documentation

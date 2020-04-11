@@ -6,6 +6,17 @@ npm install @studydefi/money-legos
 ```javascript
 const { getLegosFor, networks } = require('@studydefi/money-legos')
 const legos = getLegosFor(networks.mainnet)
+
+// Access ABIs and addresses
+
+// legos.erc20.contracts.dai.address
+// legos.erc20.contracts.dai.abi
+
+// legos.uniswap.contracts.factory.abi
+// legos.uniswap.contracts.factory.address
+
+// Alternatively
+// rawLegos.erc20.contracts.dai.address[networks.mainnet]
 ```
 
 ## Web3.js

@@ -1,6 +1,6 @@
 {
   "name": "@studydefi/money-legos",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "git@github.com:studydefi/money-legos.git",
@@ -30,5 +30,8 @@
     "ethereum abi",
     "ethereum address",
     "money-legos"
-  ]
+  ],
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.5.0"
+  }
 }
