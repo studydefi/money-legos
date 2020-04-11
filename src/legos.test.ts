@@ -11,13 +11,13 @@ describe("recursive changeAddressValue function", () => {
     const input = {
       foo: {
         address: {
-          [networks.mainnet]: "mainnet foo address",
-          [networks.ropsten]: "ropsten foo address",
+          [networks.mainnet]: "mainnet_foo_address",
+          [networks.ropsten]: "ropsten_foo_address",
         },
       },
     };
     expect(changeAddressValue(networks.mainnet, input as any)).toStrictEqual({
-      foo: { address: "mainnet foo address" },
+      foo: { address: "mainnet_foo_address" },
     });
   });
 
@@ -26,14 +26,25 @@ describe("recursive changeAddressValue function", () => {
       foo: {
         bar: {
           address: {
-            [networks.mainnet]: "mainnet foo.bar address",
-            [networks.ropsten]: "ropsten foo.bar address",
+            [networks.mainnet]: "mainnet_foo.bar_address",
+            [networks.ropsten]: "ropsten_foo.bar_address",
           },
         },
       },
     };
     expect(changeAddressValue(networks.ropsten, input as any)).toStrictEqual({
-      foo: { bar: { address: "ropsten foo.bar address" } },
+      foo: { bar: { address: "ropsten_foo.bar_address" } },
+    });
+  });
+
+  test.only("can replace address value multiple times", () => {
+    const input = {
+      foo: { address: { [networks.mainnet]: "mainnet_foo_address" } },
+      bar: { address: { [networks.mainnet]: "mainnet_bar_address" } },
+    };
+    expect(changeAddressValue(networks.mainnet, input as any)).toStrictEqual({
+      foo: { address: "mainnet_foo_address" },
+      bar: { address: "mainnet_bar_address" },
     });
   });
 });
