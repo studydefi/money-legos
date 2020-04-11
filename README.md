@@ -12,9 +12,7 @@ Currently the package includes ABI and mainnet addresses from:
 
 ... and more coming soon!
 
-# Getting Started
-
-## Quickstart
+# Quickstart
 ```bash
 npm install @studydefi/money-legos
 ```
@@ -25,4 +23,4 @@ const legos = getLegosFor(networks.mainnet)
 ```
 
 # Documentation
-Documentation is hosted at https://money-legos.studydefi.github.io/
+Documentation is hosted at https://money-legos.studydefi.com/
