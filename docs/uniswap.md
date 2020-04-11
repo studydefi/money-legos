@@ -4,7 +4,7 @@
 
 ```javascript
 const { ethers } = require("ethers");
-const { getLegosFor, networks } = require("../money-legos/dist");
+const { getLegosFor, networks } = require("@studydefi/money-legos");
 
 const legos = getLegosFor(networks.mainnet);
 

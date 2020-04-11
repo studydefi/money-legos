@@ -5,4 +5,4 @@
 
 - Integrations
   - [Uniswap V1](uniswap.md)
-  - [OneInch](oneinch.md)
+  - [OneSplit](onesplit.md)
