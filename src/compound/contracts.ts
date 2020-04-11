@@ -3,7 +3,7 @@ import CompoundPriceOracleAbi from "./abi/CompoundPriceOracle.json";
 import CTokenAbi from "./abi/CToken.json";
 import CEtherAbi from "./abi/CEther.json";
 
-import networks from "../../networks";
+import networks from "../networks";
 
 const contracts = {
   cTokenAbi: CTokenAbi,

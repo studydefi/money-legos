@@ -1,6 +1,6 @@
 import ERC20Abi from "./abi/ERC20.json";
 
-import networkIds from "../../networks";
+import networkIds from "../networks";
 
 const contracts = {
   abi: ERC20Abi,

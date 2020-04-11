@@ -2,7 +2,7 @@ import makerProxyRegistryAbi from "./abi/ProxyRegistry.json";
 import dssCdpManagerAbi from "./abi/DssCdpManager.json";
 import dssProxyActionsAbi from "./abi/DssProxyActions.json";
 
-import networks from "../../networks";
+import networks from "../networks";
 
 const contracts = {
   proxyRegistry: {

@@ -1,7 +1,7 @@
-import { default as erc20 } from "./modules/erc20";
-import { default as compound } from "./modules/compound";
-import { default as maker } from "./modules/maker";
-import { default as uniswap } from "./modules/uniswap";
+import { default as erc20 } from "./erc20";
+import { default as compound } from "./compound";
+import { default as maker } from "./maker";
+import { default as uniswap } from "./uniswap";
 import { default as networks } from "./networks"
 
 export const rawLegos = {
