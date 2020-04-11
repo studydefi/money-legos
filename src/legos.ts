@@ -66,7 +66,7 @@ const isValidObject = (obj: unknown) => typeof obj === "object" && obj !== null;
 // i.e. compound.cDai.address[mainnet] = 0x...
 //      becomes:
 //      compound.cDai.address = 0x....
-const changeAddressValue = (
+export const changeAddressValue = (
   networkId: number,
   immutableObj: RawLegos
 ): RawLegosWithoutNetworkId => {
