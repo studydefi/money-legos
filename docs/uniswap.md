@@ -1,4 +1,6 @@
-# Uniswap
+# Uniswap (V1)
+
+## Getting a Token's Exchange
 
 ```javascript
 const { ethers } = require("ethers");

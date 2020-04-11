@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc --declaration",
-    "build:docs": "",
+    "serve:docs": "docsify serve ./docs",
     "test": "jest"
   },
   "devDependencies": {
