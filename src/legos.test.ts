@@ -37,7 +37,7 @@ describe("recursive changeAddressValue function", () => {
     });
   });
 
-  test.only("can replace address value multiple times", () => {
+  test("can replace address value multiple times", () => {
     const input = {
       foo: { address: { [networks.mainnet]: "mainnet_foo_address" } },
       bar: { address: { [networks.mainnet]: "mainnet_bar_address" } },
