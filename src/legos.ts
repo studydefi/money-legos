@@ -2,7 +2,6 @@ import { default as erc20 } from "./erc20";
 import { default as compound } from "./compound";
 import { default as maker } from "./maker";
 import { default as uniswap } from "./uniswap";
-import { default as networks } from "./networks"
 
 export const rawLegos = {
   erc20,
@@ -29,12 +28,12 @@ type Primitive =
 
 type MappingToChangeFrom = {
   address: {
-    [x: number]: string
+    [x: number]: string;
   };
 };
 
 type MappingToChangeTo = {
-  address: string
+  address: string;
 };
 
 type DeepOmitHelper<T> = {
@@ -49,9 +48,7 @@ type DeepOmitHelper<T> = {
     : never;
 };
 
-type DeepOmit<T> = T extends Primitive
-  ? T
-  : DeepOmitHelper<T>;
+type DeepOmit<T> = T extends Primitive ? T : DeepOmitHelper<T>;
 
 type DeepOmitArray<T extends any[]> = {
   [P in keyof T]: DeepOmit<T[P]>;
@@ -68,7 +65,7 @@ const isValidObject = (obj: unknown) => typeof obj === "object" && obj !== null;
 //      compound.cDai.address = 0x....
 export const changeAddressValue = (
   networkId: number,
-  immutableObj: RawLegos
+  immutableObj: RawLegos,
 ): RawLegosWithoutNetworkId => {
   let obj = immutableObj as any;
 
@@ -93,8 +90,8 @@ export const changeAddressValue = (
         }
       }
     }
-      return obj;
-    }
+    return obj;
+  }
 
   return obj;
 };
