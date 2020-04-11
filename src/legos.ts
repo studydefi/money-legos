@@ -92,9 +92,9 @@ export const changeAddressValue = (
           obj[keys] = changeAddressValue(networkId, obj[keys]);
         }
       }
+    }
       return obj;
     }
-  }
 
   return obj;
 };
