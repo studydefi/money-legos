@@ -10,6 +10,7 @@ Currently the package includes ABI and mainnet addresses from:
 - MakerDAO
 - Uniswap
 - Compound
+- OneSplit
 
 ... and more coming soon!
 
@@ -32,6 +33,9 @@ const legos = getLegosFor(networks.mainnet)
 
 // legos.uniswap.contracts.factory.abi
 // legos.uniswap.contracts.factory.address
+
+// Alternatively
+// rawLegos.erc20.contracts.dai.address[networks.mainnet]
 ```
 
 # Documentation

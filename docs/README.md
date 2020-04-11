@@ -12,5 +12,6 @@
 - [Uniswap](http://docs.uniswap.io)
 - [MakerDAO](https://changelog.makerdao.com/)
 - [Compound](https://compound.finance/developers)
+- [OneSplit](https://github.com/CryptoManiacsZone/1split/)
 
 ... and more!
