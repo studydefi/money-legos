@@ -69,29 +69,23 @@ export const changeAddressValue = (
 ): RawLegosWithoutNetworkId => {
   let obj = immutableObj as any;
 
-  // recursive base case
-  if (isValidObject(immutableObj)) {
-    // desctructure the object to create new reference
-    obj = { ...immutableObj };
-    // iterating over the object using for..in
-    for (const keys in obj) {
-      //checking if the current value is an object itself
-      if (isValidObject(obj[keys])) {
-        if (
-          `${keys}` === "address" &&
-          obj[keys][`${networkId}`] !== undefined
-        ) {
-          // else getting the value and replacing with specified network id
-          const keyValue = obj[keys][`${networkId}`];
-          obj[keys] = keyValue || null;
-        } else if (!Array.isArray(obj[keys])) {
-          // Don't wanna modify arrays
-          obj[keys] = changeAddressValue(networkId, obj[keys]);
-        }
-      }
-    }
+  // recursive base case, stop here
+  if (!isValidObject(immutableObj)) {
     return obj;
   }
 
+  // desctructure the object to create new reference
+  obj = { ...immutableObj };
+  // iterating over the object using for..in
+  for (const key in obj) {
+    if (Array.isArray(obj[key])) continue; // ignore arrays (e.g. ABIs)
+    if (!isValidObject(obj[key])) continue; // ignore non-valid objects
+
+    if (key === "address") {
+      obj[key] = obj.address[networkId] || null;
+    } else {
+      obj[key] = changeAddressValue(networkId, obj[key]);
+    }
+  }
   return obj;
 };
