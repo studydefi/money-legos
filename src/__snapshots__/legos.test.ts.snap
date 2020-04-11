@@ -3069,9 +3069,7 @@ Object {
             "type": "function",
           },
         ],
-        "address": Object {
-          "1": "0x6c8c6b02e7b2be14d4fa6022dfd6d75921d90e4e",
-        },
+        "address": "0x6c8c6b02e7b2be14d4fa6022dfd6d75921d90e4e",
       },
       "cDAI": Object {
         "abi": Array [
@@ -4606,9 +4604,7 @@ Object {
             "type": "function",
           },
         ],
-        "address": Object {
-          "1": "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643",
-        },
+        "address": "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643",
       },
       "cEther": Object {
         "abi": Array [
@@ -5794,9 +5790,7 @@ Object {
             "type": "event",
           },
         ],
-        "address": Object {
-          "1": "0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5",
-        },
+        "address": "0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5",
       },
       "cREP": Object {
         "abi": Array [
@@ -7331,9 +7325,7 @@ Object {
             "type": "function",
           },
         ],
-        "address": Object {
-          "1": "0x158079ee67fce2f58472a96584a73c7ab9ac95c1",
-        },
+        "address": "0x158079ee67fce2f58472a96584a73c7ab9ac95c1",
       },
       "cSAI": Object {
         "abi": Array [
@@ -8868,9 +8860,7 @@ Object {
             "type": "function",
           },
         ],
-        "address": Object {
-          "1": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
-        },
+        "address": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
       },
       "cTokenAbi": Array [
         Object {
@@ -11937,9 +11927,7 @@ Object {
             "type": "function",
           },
         ],
-        "address": Object {
-          "1": "0x39aa39c021dfbae8fac545936693ac917d5e7563",
-        },
+        "address": "0x39aa39c021dfbae8fac545936693ac917d5e7563",
       },
       "cWBTC": Object {
         "abi": Array [
@@ -13474,9 +13462,7 @@ Object {
             "type": "function",
           },
         ],
-        "address": Object {
-          "1": "0xc11b1268c1a384e55c48c2391d8d480264a3a7f4",
-        },
+        "address": "0xc11b1268c1a384e55c48c2391d8d480264a3a7f4",
       },
       "cZRX": Object {
         "abi": Array [
@@ -15011,9 +14997,7 @@ Object {
             "type": "function",
           },
         ],
-        "address": Object {
-          "1": "0xb3319f5d18bc0d84dd1b4825dcde5d5f7266d407",
-        },
+        "address": "0xb3319f5d18bc0d84dd1b4825dcde5d5f7266d407",
       },
       "comptroller": Object {
         "abi": Array [
@@ -19336,9 +19320,7 @@ Object {
             "type": "function",
           },
         ],
-        "address": Object {
-          "1": "0x3d9819210a31b4961b30ef54be2aed79b9c9cd3b",
-        },
+        "address": "0x3d9819210a31b4961b30ef54be2aed79b9c9cd3b",
       },
       "priceOracle": Object {
         "abi": Array [
@@ -19893,9 +19875,7 @@ Object {
             "type": "function",
           },
         ],
-        "address": Object {
-          "1": "0x1d8aedc9e924730dd3f9641cdb4d1b92b848b4bd",
-        },
+        "address": "0x1d8aedc9e924730dd3f9641cdb4d1b92b848b4bd",
       },
     },
   },
@@ -20465,48 +20445,32 @@ Object {
         },
       ],
       "bat": Object {
-        "address": Object {
-          "1": "0x0d8775f648430679a709e98d2b0cb6250d2887ef",
-        },
+        "address": "0x0d8775f648430679a709e98d2b0cb6250d2887ef",
       },
       "dai": Object {
-        "address": Object {
-          "1": "0x6b175474e89094c44da98b954eedeac495271d0f",
-        },
+        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
       },
       "rep": Object {
-        "address": Object {
-          "1": "0x1985365e9f78359a9B6AD760e32412f4a445E862",
-        },
+        "address": "0x1985365e9f78359a9B6AD760e32412f4a445E862",
       },
       "sai": Object {
-        "address": Object {
-          "1": "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359",
-        },
+        "address": "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359",
       },
       "usdc": Object {
-        "address": Object {
-          "1": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-        },
+        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
       },
       "wbtc": Object {
-        "address": Object {
-          "1": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
-        },
+        "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
       },
       "zrx": Object {
-        "address": Object {
-          "1": "0xE41d2489571d322189246DaFA5ebDe1F4699F498",
-        },
+        "address": "0xE41d2489571d322189246DaFA5ebDe1F4699F498",
       },
     },
   },
   "maker": Object {
     "contracts": Object {
       "daiJoin": Object {
-        "address": Object {
-          "1": "0x9759A6Ac90977b93B58547b4A71c78317f391A28",
-        },
+        "address": "0x9759A6Ac90977b93B58547b4A71c78317f391A28",
       },
       "dssCdpManager": Object {
         "abi": Array [
@@ -21080,9 +21044,7 @@ Object {
             "type": "function",
           },
         ],
-        "address": Object {
-          "1": "0x5ef30b9986345249bc32d8928B7ee64DE9435E39",
-        },
+        "address": "0x5ef30b9986345249bc32d8928B7ee64DE9435E39",
       },
       "dssProxyActions": Object {
         "abi": Array [
@@ -22357,14 +22319,10 @@ Object {
             "type": "function",
           },
         ],
-        "address": Object {
-          "1": "0x82ecd135dce65fbc6dbdd0e4237e0af93ffd5038",
-        },
+        "address": "0x82ecd135dce65fbc6dbdd0e4237e0af93ffd5038",
       },
       "jug": Object {
-        "address": Object {
-          "1": "0x19c0976f590D67707E62397C87829d896Dc0f1F1",
-        },
+        "address": "0x19c0976f590D67707E62397C87829d896Dc0f1F1",
       },
       "proxyRegistry": Object {
         "abi": Array [
@@ -22438,49 +22396,35 @@ Object {
             "type": "function",
           },
         ],
-        "address": Object {
-          "1": "0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4",
-        },
+        "address": "0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4",
       },
     },
     "ilks": Object {
       "batA": Object {
         "join": Object {
-          "address": Object {
-            "1": "0x3D0B1912B66114d4096F48A8CEe3A56C231772cA",
-          },
+          "address": "0x3D0B1912B66114d4096F48A8CEe3A56C231772cA",
         },
         "symbol": "BAT-A",
         "token": Object {
-          "address": Object {
-            "1": "0x0d8775f648430679a709e98d2b0cb6250d2887ef",
-          },
+          "address": "0x0d8775f648430679a709e98d2b0cb6250d2887ef",
         },
       },
       "ethA": Object {
         "join": Object {
-          "address": Object {
-            "1": "0x2F0b23f53734252Bda2277357e97e1517d6B042A",
-          },
+          "address": "0x2F0b23f53734252Bda2277357e97e1517d6B042A",
         },
         "symbol": "ETH-A",
         "token": Object {
-          "address": Object {
-            "1": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-          },
+          "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
         },
       },
       "usdcA": Object {
         "join": Object {
-          "address": Object {
-            "1": "0xA191e578a6736167326d05c119CE0c90849E84B7",
-          },
+          "address": "0xA191e578a6736167326d05c119CE0c90849E84B7",
         },
         "symbol": "USDC-A",
         "token": Object {
-          "address": Object {
-            "1": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-          },
+          "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
         },
       },
     },
@@ -23632,9 +23576,7 @@ Object {
             "type": "function",
           },
         ],
-        "address": Object {
-          "1": "0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95",
-        },
+        "address": "0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95",
       },
     },
   },
