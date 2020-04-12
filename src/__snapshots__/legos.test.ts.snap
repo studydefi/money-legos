@@ -19879,6 +19879,366 @@ Object {
       },
     },
   },
+  "dappsys": Object {
+    "contracts": Object {
+      "dsProxy": Object {
+        "abi": Array [
+          Object {
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_cacheAddr",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+          Object {
+            "anonymous": true,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "bytes4",
+                "name": "sig",
+                "type": "bytes4",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "guy",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "foo",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "bar",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "wad",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "bytes",
+                "name": "fax",
+                "type": "bytes",
+              },
+            ],
+            "name": "LogNote",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "authority",
+                "type": "address",
+              },
+            ],
+            "name": "LogSetAuthority",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "owner",
+                "type": "address",
+              },
+            ],
+            "name": "LogSetOwner",
+            "type": "event",
+          },
+          Object {
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "fallback",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "authority",
+            "outputs": Array [
+              Object {
+                "internalType": "contract DSAuthority",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "cache",
+            "outputs": Array [
+              Object {
+                "internalType": "contract DSProxyCache",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_target",
+                "type": "address",
+              },
+              Object {
+                "internalType": "bytes",
+                "name": "_data",
+                "type": "bytes",
+              },
+            ],
+            "name": "execute",
+            "outputs": Array [
+              Object {
+                "internalType": "bytes",
+                "name": "response",
+                "type": "bytes",
+              },
+            ],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "bytes",
+                "name": "_code",
+                "type": "bytes",
+              },
+              Object {
+                "internalType": "bytes",
+                "name": "_data",
+                "type": "bytes",
+              },
+            ],
+            "name": "execute",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "target",
+                "type": "address",
+              },
+              Object {
+                "internalType": "bytes",
+                "name": "response",
+                "type": "bytes",
+              },
+            ],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "owner",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "contract DSAuthority",
+                "name": "authority_",
+                "type": "address",
+              },
+            ],
+            "name": "setAuthority",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_cacheAddr",
+                "type": "address",
+              },
+            ],
+            "name": "setCache",
+            "outputs": Array [
+              Object {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "owner_",
+                "type": "address",
+              },
+            ],
+            "name": "setOwner",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+        ],
+      },
+      "dsProxyFactory": Object {
+        "abi": Array [
+          Object {
+            "inputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "sender",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "owner",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "address",
+                "name": "proxy",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "address",
+                "name": "cache",
+                "type": "address",
+              },
+            ],
+            "name": "Created",
+            "type": "event",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "build",
+            "outputs": Array [
+              Object {
+                "internalType": "address payable",
+                "name": "proxy",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address",
+              },
+            ],
+            "name": "build",
+            "outputs": Array [
+              Object {
+                "internalType": "address payable",
+                "name": "proxy",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "cache",
+            "outputs": Array [
+              Object {
+                "internalType": "contract DSProxyCache",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "name": "isProxy",
+            "outputs": Array [
+              Object {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+        ],
+      },
+    },
+  },
   "erc20": Object {
     "contracts": Object {
       "abi": Array [
@@ -22430,11 +22790,13 @@ Object {
       },
       "ethA": Object {
         "join": Object {
-          "address": "0x2F0b23f53734252Bda2277357e97e1517d6B042A",
+          "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
         },
         "symbol": "ETH-A",
         "token": Object {
-          "address": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+          "address": Object {
+            "1": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+          },
         },
       },
       "usdcA": Object {
