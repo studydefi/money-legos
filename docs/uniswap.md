@@ -200,7 +200,7 @@ main();
 pragma solidity ^0.5.0;
 
 import "@studydefi/money-legos/src/uniswap/interface/IUniswapExchange.sol";
-import "@studydefi/money-legos/src/uniswap/interface/IUniswapExchange.sol";
+import "@studydefi/money-legos/src/uniswap/interface/IUniswapFactory.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
