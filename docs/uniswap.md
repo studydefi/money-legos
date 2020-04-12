@@ -1,5 +1,7 @@
 # Uniswap (V1)
 
+Check out the [docs](https://uniswap.org/docs/v1) for more info.
+
 ## Interface
 
 ### Factory

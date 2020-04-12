@@ -1,14 +1,17 @@
 pragma solidity ^0.5.0;
 
-contract ICurveFiZap {
-    function add_liquidity(uint256[2] memory uamounts, uint256 min_mint_amount)
-        external;
 
-    function remove_liquidity(uint256 _amount, uint256[2] memory min_uamounts)
+contract ICurveFiZap {
+    function add_liquidity(
+        uint256[2] calldata uamounts,
+        uint256 min_mint_amount
+    ) external;
+
+    function remove_liquidity(uint256 _amount, uint256[2] calldata min_uamounts)
         external;
 
     function remove_liquidity_imbalance(
-        uint256[2] uamounts,
+        uint256[2] calldata uamounts,
         uint256 max_burn_amount
     ) external;
 
