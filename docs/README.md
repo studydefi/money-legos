@@ -1,17 +1,9 @@
 # money-legos
 
-> An Ethereum DeFi toolkit packed with the latest ABIs and addresses
+> An Ethereum DeFi toolkit and resource guide
 
 ## What it is
 
-`money-legos` provides you with all the ABIs, and addresses for you to start writing composable Ethereum DeFi apps!
+`money-legos` provides you with all you need to start integrating with mainnet Ethereum DeFi protocols such as Uniswap, Maker, Compound, etc.
 
-## Protocols Included
-
-- Commonly used ERC20 tokens
-- [Uniswap](http://docs.uniswap.io)
-- [MakerDAO](https://changelog.makerdao.com/)
-- [Compound](https://compound.finance/developers)
-- [OneSplit](https://github.com/CryptoManiacsZone/1split/)
-
-... and more!
+No more scanning through etherscan, github, and multiple websites to find all the addresses and ABIs!
