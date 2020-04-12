@@ -1,70 +1,67 @@
 # Quickstart
+`money-legos` helps you quickly compose your next Defi Dapp.
+
+## Install
 ```bash
 npm install @studydefi/money-legos
 ```
 
+## Usage
+
+### JavaScript
 ```javascript
-const { getLegosFor, networks } = require('@studydefi/money-legos')
+const { getLegosFor, networks, rawLegos } = require('@studydefi/money-legos')
 const legos = getLegosFor(networks.mainnet)
 
 // Access ABIs and addresses
+legos.erc20.contracts.dai.address
+legos.erc20.contracts.dai.abi
 
-// legos.erc20.contracts.dai.address
-// legos.erc20.contracts.dai.abi
+legos.uniswap.contracts.factory.abi
+legos.uniswap.contracts.factory.address
 
-// legos.uniswap.contracts.factory.abi
-// legos.uniswap.contracts.factory.address
-
-// Alternatively
-// rawLegos.erc20.contracts.dai.address[networks.mainnet]
+// Alternatively, if you want a specific network
+rawLegos.erc20.contracts.dai.address[networks.mainnet]
 ```
 
-## Web3.js
+### Solidity
 ```javascript
-const Web3 = require("web3");
-const web3 = new Web3("http://127.0.0.1:8545");
-const accounts = await web3.eth.getAccounts();
+pragma solidity ^0.5.0;
 
-const { getLegosFor, networks } = require("@studydefi/money-legos");
-const legos = getLegosFor(networks.mainnet);
+import "@studydefi/money-legos/src/onesplit/interface/IOneSplit.sol";
 
-const daiContract = new web3.eth.Contract(
-  legos.erc20.contracts.dai.address,
-  legos.erc20.contracts.abi,
-  { from: accounts[0] }
-);
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-const main = async () => {
-  const balWei = await daiContract
-    .balanceOf("0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae")
-    .call();
-  console.log(`Balance of EF: ${balWei}`);
-};
 
-main();
+contract OneSplitSwapper {
+    // Uniswap Mainnet factory address
+    address constant OneSplitAddress = 0xC586BeF4a0992C495Cf22e1aeEE4E446CECDee0E;
+
+    function _swap(address from, address to, uint256 amountWei) internal {
+        IERC20 fromIERC20 = IERC20(from);
+        IERC20 toIERC20 = IERC20(to);
+
+        (uint256 returnAmount, uint256[] memory distribution) = IOneSplit(
+            OneSplitAddress
+        ).getExpectedReturn(
+            fromIERC20,
+            toIERC20,
+            amountWei,
+            10,
+            0
+        );
+
+        IOneSplit(OneSplitAddress).swap(
+            fromIERC20,
+            toIERC20,
+            amountWei,
+            returnAmount,
+            distribution,
+            0
+        );
+    }
+}
 ```
 
-## Ethers.js
-```javascript
-const { ethers } = require("ethers");
-const provider = new ethers.providers.JsonRpcProvider();
-
-const { getLegosFor, networks } = require("@studydefi/money-legos");
-const legos = getLegosFor(networks.mainnet);
-
-const daiContract = new ethers.Contract(
-  legos.erc20.contracts.abi,
-  legos.erc20.contracts.dai.address,
-  provider
-);
-
-const main = async () => {
-  const balWei = await daiContract.balanceOf(
-    "0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae"
-  );
-  const bal = ethers.utils.formatEther(balWei);
-  console.log(`Balance of EF: ${bal.toString()}`);
-};
-
-main();
-```
+# Documentation
+Documentation and integration examples at https://money-legos.studydefi.com/

@@ -14,13 +14,11 @@ const ilks = {
   ethA: {
     symbol: "ETH-A",
     token: {
-      address: {
-        [networks.mainnet]: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      },
+      address: { [networks.mainnet]: erc20.contracts.eth.address },
     },
     join: {
       address: {
-        [networks.mainnet]: "0x2F0b23f53734252Bda2277357e97e1517d6B042A",
+        [networks.mainnet]: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", // WETH
       },
     },
   },

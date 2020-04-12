@@ -67,9 +67,9 @@ contract IOneSplit is IOneSplitConsts {
 
 ## Examples
 
-### JavaScript
+__Note__: As 1split is dependent on a variety of on-chain DEX's, occasionally token transfers might fail, even with the right parameters. If you would like a more stable and consistent way of swapping tokens, consider using [Uniswap](/uniswap) or Curve.fi for stablecoins.
 
-__Note__: As 1split is dependent on a variaty of on-chain DEX's, occasionally token transfers might fail, even with the right parameters. If you would like a more stable and consistent way of swapping tokens, consider using [Uniswap](/uniswap) or Curve.fi for stablecoins.
+### JavaScript
 
 ```javascript
 const { ethers } = require("ethers");
@@ -180,4 +180,43 @@ const main = async () => {
 };
 
 main();
+```
+
+### Solidity
+```javascript
+pragma solidity ^0.5.0;
+
+import "@studydefi/money-legos/src/onesplit/interface/IOneSplit.sol";
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+
+
+contract OneSplitSwapper {
+    // Uniswap Mainnet factory address
+    address constant OneSplitAddress = 0xC586BeF4a0992C495Cf22e1aeEE4E446CECDee0E;
+
+    function _swap(address from, address to, uint256 amountWei) internal {
+        IERC20 fromIERC20 = IERC20(from);
+        IERC20 toIERC20 = IERC20(to);
+
+        (uint256 returnAmount, uint256[] memory distribution) = IOneSplit(
+            OneSplitAddress
+        ).getExpectedReturn(
+            fromIERC20,
+            toIERC20,
+            amountWei,
+            10,
+            0
+        );
+
+        IOneSplit(OneSplitAddress).swap(
+            fromIERC20,
+            toIERC20,
+            amountWei,
+            returnAmount,
+            distribution,
+            0
+        );
+    }
+}
 ```
