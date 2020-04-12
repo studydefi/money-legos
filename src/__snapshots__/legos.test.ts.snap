@@ -3070,6 +3070,7 @@ Object {
           },
         ],
         "address": "0x6c8c6b02e7b2be14d4fa6022dfd6d75921d90e4e",
+        "decimals": 8,
       },
       "cDAI": Object {
         "abi": Array [
@@ -4605,6 +4606,7 @@ Object {
           },
         ],
         "address": "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643",
+        "decimals": 8,
       },
       "cEther": Object {
         "abi": Array [
@@ -5791,6 +5793,7 @@ Object {
           },
         ],
         "address": "0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5",
+        "decimals": 8,
       },
       "cREP": Object {
         "abi": Array [
@@ -7326,6 +7329,7 @@ Object {
           },
         ],
         "address": "0x158079ee67fce2f58472a96584a73c7ab9ac95c1",
+        "decimals": 8,
       },
       "cSAI": Object {
         "abi": Array [
@@ -8861,6 +8865,7 @@ Object {
           },
         ],
         "address": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
+        "decimals": 8,
       },
       "cTokenAbi": Array [
         Object {
@@ -11928,6 +11933,7 @@ Object {
           },
         ],
         "address": "0x39aa39c021dfbae8fac545936693ac917d5e7563",
+        "decimals": 8,
       },
       "cWBTC": Object {
         "abi": Array [
@@ -13463,6 +13469,7 @@ Object {
           },
         ],
         "address": "0xc11b1268c1a384e55c48c2391d8d480264a3a7f4",
+        "decimals": 8,
       },
       "cZRX": Object {
         "abi": Array [
@@ -14998,6 +15005,7 @@ Object {
           },
         ],
         "address": "0xb3319f5d18bc0d84dd1b4825dcde5d5f7266d407",
+        "decimals": 8,
       },
       "comptroller": Object {
         "abi": Array [
@@ -19877,6 +19885,1320 @@ Object {
         ],
         "address": "0x1d8aedc9e924730dd3f9641cdb4d1b92b848b4bd",
       },
+    },
+  },
+  "curvefi": Object {
+    "contracts": Object {
+      "cDai_cUsdc": Object {
+        "curve": Object {
+          "address": "0xa2b47e3d5c44877cca798226b7b8118f9bfb7a56",
+        },
+        "indexes": Object {
+          "dai": 0,
+          "usdc": 1,
+        },
+        "nCoins": 2,
+        "poolToken": Object {
+          "address": "0x845838df265dcd2c412a1dc9e959c7d08537f8a2",
+        },
+        "zap": Object {
+          "address": "0xeB21209ae4C2c9FF2a86ACA31E123764A3B6Bc06",
+        },
+      },
+      "cDai_cUsdc_Usdt": Object {
+        "curve": Object {
+          "address": "0x52ea46506b9cc5ef470c5bf89f17dc28bb35d85c",
+        },
+        "indexes": Object {
+          "dai": 0,
+          "usdc": 1,
+          "usdt": 2,
+        },
+        "nCoins": 3,
+        "poolToken": Object {
+          "address": "0x9fc689ccada600b6df723d9e47d84d76664a1f23",
+        },
+        "zap": Object {
+          "address": "0xac795D2c97e60DF6a99ff1c814727302fD747a80",
+        },
+      },
+      "curveAbi": Array [
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "name": "buyer",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "name": "sold_id",
+              "type": "int128",
+            },
+            Object {
+              "indexed": false,
+              "name": "tokens_sold",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "name": "bought_id",
+              "type": "int128",
+            },
+            Object {
+              "indexed": false,
+              "name": "tokens_bought",
+              "type": "uint256",
+            },
+          ],
+          "name": "TokenExchange",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "name": "buyer",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "name": "sold_id",
+              "type": "int128",
+            },
+            Object {
+              "indexed": false,
+              "name": "tokens_sold",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "name": "bought_id",
+              "type": "int128",
+            },
+            Object {
+              "indexed": false,
+              "name": "tokens_bought",
+              "type": "uint256",
+            },
+          ],
+          "name": "TokenExchangeUnderlying",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "name": "provider",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "name": "token_amounts",
+              "type": "uint256[2]",
+            },
+            Object {
+              "indexed": false,
+              "name": "invariant",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "name": "token_supply",
+              "type": "uint256",
+            },
+          ],
+          "name": "AddLiquidity",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "name": "provider",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "name": "token_amounts",
+              "type": "uint256[2]",
+            },
+            Object {
+              "indexed": false,
+              "name": "fees",
+              "type": "uint256[2]",
+            },
+            Object {
+              "indexed": false,
+              "name": "invariant",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "name": "token_supply",
+              "type": "uint256",
+            },
+          ],
+          "name": "RemoveLiquidity",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "name": "deadline",
+              "type": "uint256",
+              "unit": "sec",
+            },
+            Object {
+              "indexed": true,
+              "name": "admin",
+              "type": "address",
+            },
+          ],
+          "name": "CommitNewAdmin",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "name": "admin",
+              "type": "address",
+            },
+          ],
+          "name": "NewAdmin",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "name": "deadline",
+              "type": "uint256",
+              "unit": "sec",
+            },
+            Object {
+              "indexed": false,
+              "name": "A",
+              "type": "int128",
+            },
+            Object {
+              "indexed": false,
+              "name": "fee",
+              "type": "int128",
+            },
+            Object {
+              "indexed": false,
+              "name": "admin_fee",
+              "type": "int128",
+            },
+          ],
+          "name": "CommitNewParameters",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": false,
+              "name": "A",
+              "type": "int128",
+            },
+            Object {
+              "indexed": false,
+              "name": "fee",
+              "type": "int128",
+            },
+            Object {
+              "indexed": false,
+              "name": "admin_fee",
+              "type": "int128",
+            },
+          ],
+          "name": "NewParameters",
+          "type": "event",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "name": "_coins",
+              "type": "address[2]",
+            },
+            Object {
+              "name": "_underlying_coins",
+              "type": "address[2]",
+            },
+            Object {
+              "name": "_pool_token",
+              "type": "address",
+            },
+            Object {
+              "name": "_A",
+              "type": "int128",
+            },
+            Object {
+              "name": "_fee",
+              "type": "int128",
+            },
+          ],
+          "outputs": Array [],
+          "payable": false,
+          "type": "constructor",
+        },
+        Object {
+          "constant": true,
+          "gas": 1083195,
+          "inputs": Array [],
+          "name": "get_virtual_price",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 2266965,
+          "inputs": Array [
+            Object {
+              "name": "amounts",
+              "type": "uint256[2]",
+            },
+            Object {
+              "name": "deadline",
+              "type": "uint256",
+              "unit": "sec",
+            },
+          ],
+          "name": "add_liquidity",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 2540055,
+          "inputs": Array [
+            Object {
+              "name": "i",
+              "type": "int128",
+            },
+            Object {
+              "name": "j",
+              "type": "int128",
+            },
+            Object {
+              "name": "dx",
+              "type": "uint256",
+            },
+          ],
+          "name": "get_dy",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 2540024,
+          "inputs": Array [
+            Object {
+              "name": "i",
+              "type": "int128",
+            },
+            Object {
+              "name": "j",
+              "type": "int128",
+            },
+            Object {
+              "name": "dx",
+              "type": "uint256",
+            },
+          ],
+          "name": "get_dy_underlying",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 5177344,
+          "inputs": Array [
+            Object {
+              "name": "i",
+              "type": "int128",
+            },
+            Object {
+              "name": "j",
+              "type": "int128",
+            },
+            Object {
+              "name": "dx",
+              "type": "uint256",
+            },
+            Object {
+              "name": "min_dy",
+              "type": "uint256",
+            },
+            Object {
+              "name": "deadline",
+              "type": "uint256",
+              "unit": "sec",
+            },
+          ],
+          "name": "exchange",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 5194004,
+          "inputs": Array [
+            Object {
+              "name": "i",
+              "type": "int128",
+            },
+            Object {
+              "name": "j",
+              "type": "int128",
+            },
+            Object {
+              "name": "dx",
+              "type": "uint256",
+            },
+            Object {
+              "name": "min_dy",
+              "type": "uint256",
+            },
+          ],
+          "name": "exchange_underlying",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 5194004,
+          "inputs": Array [
+            Object {
+              "name": "i",
+              "type": "int128",
+            },
+            Object {
+              "name": "j",
+              "type": "int128",
+            },
+            Object {
+              "name": "dx",
+              "type": "uint256",
+            },
+            Object {
+              "name": "min_dy",
+              "type": "uint256",
+            },
+            Object {
+              "name": "deadline",
+              "type": "uint256",
+              "unit": "sec",
+            },
+          ],
+          "name": "exchange_underlying",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 1220465,
+          "inputs": Array [
+            Object {
+              "name": "_amount",
+              "type": "uint256",
+            },
+            Object {
+              "name": "deadline",
+              "type": "uint256",
+              "unit": "sec",
+            },
+            Object {
+              "name": "min_amounts",
+              "type": "uint256[2]",
+            },
+          ],
+          "name": "remove_liquidity",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 2346381,
+          "inputs": Array [
+            Object {
+              "name": "amounts",
+              "type": "uint256[2]",
+            },
+            Object {
+              "name": "deadline",
+              "type": "uint256",
+              "unit": "sec",
+            },
+          ],
+          "name": "remove_liquidity_imbalance",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 146017,
+          "inputs": Array [
+            Object {
+              "name": "amplification",
+              "type": "int128",
+            },
+            Object {
+              "name": "new_fee",
+              "type": "int128",
+            },
+            Object {
+              "name": "new_admin_fee",
+              "type": "int128",
+            },
+          ],
+          "name": "commit_new_parameters",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 133362,
+          "inputs": Array [],
+          "name": "apply_new_parameters",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 21685,
+          "inputs": Array [],
+          "name": "revert_new_parameters",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 74362,
+          "inputs": Array [
+            Object {
+              "name": "_owner",
+              "type": "address",
+            },
+          ],
+          "name": "commit_transfer_ownership",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 60418,
+          "inputs": Array [],
+          "name": "apply_transfer_ownership",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 21775,
+          "inputs": Array [],
+          "name": "revert_transfer_ownership",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 12403,
+          "inputs": Array [],
+          "name": "withdraw_admin_fees",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 2040,
+          "inputs": Array [
+            Object {
+              "name": "arg0",
+              "type": "int128",
+            },
+          ],
+          "name": "coins",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "address",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 2070,
+          "inputs": Array [
+            Object {
+              "name": "arg0",
+              "type": "int128",
+            },
+          ],
+          "name": "underlying_coins",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "address",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 2100,
+          "inputs": Array [
+            Object {
+              "name": "arg0",
+              "type": "int128",
+            },
+          ],
+          "name": "balances",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 1931,
+          "inputs": Array [],
+          "name": "A",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "int128",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 1961,
+          "inputs": Array [],
+          "name": "fee",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "int128",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 1991,
+          "inputs": Array [],
+          "name": "admin_fee",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "int128",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 2021,
+          "inputs": Array [],
+          "name": "owner",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "address",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 2051,
+          "inputs": Array [],
+          "name": "admin_actions_deadline",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "uint256",
+              "unit": "sec",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 2081,
+          "inputs": Array [],
+          "name": "transfer_ownership_deadline",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "uint256",
+              "unit": "sec",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 2111,
+          "inputs": Array [],
+          "name": "future_A",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "int128",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 2141,
+          "inputs": Array [],
+          "name": "future_fee",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "int128",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 2171,
+          "inputs": Array [],
+          "name": "future_admin_fee",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "int128",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 2201,
+          "inputs": Array [],
+          "name": "future_owner",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "address",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+      ],
+      "poolTokenAbi": Array [
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "name": "_from",
+              "type": "address",
+            },
+            Object {
+              "indexed": true,
+              "name": "_to",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "name": "_value",
+              "type": "uint256",
+            },
+          ],
+          "name": "Transfer",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "name": "_owner",
+              "type": "address",
+            },
+            Object {
+              "indexed": true,
+              "name": "_spender",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "name": "_value",
+              "type": "uint256",
+            },
+          ],
+          "name": "Approval",
+          "type": "event",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "name": "_name",
+              "type": "string",
+            },
+            Object {
+              "name": "_symbol",
+              "type": "string",
+            },
+            Object {
+              "name": "_decimals",
+              "type": "uint256",
+            },
+            Object {
+              "name": "_supply",
+              "type": "uint256",
+            },
+          ],
+          "outputs": Array [],
+          "payable": false,
+          "type": "constructor",
+        },
+        Object {
+          "constant": false,
+          "gas": 36247,
+          "inputs": Array [
+            Object {
+              "name": "_minter",
+              "type": "address",
+            },
+          ],
+          "name": "set_minter",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 1181,
+          "inputs": Array [],
+          "name": "totalSupply",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 1519,
+          "inputs": Array [
+            Object {
+              "name": "_owner",
+              "type": "address",
+            },
+            Object {
+              "name": "_spender",
+              "type": "address",
+            },
+          ],
+          "name": "allowance",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 74802,
+          "inputs": Array [
+            Object {
+              "name": "_to",
+              "type": "address",
+            },
+            Object {
+              "name": "_value",
+              "type": "uint256",
+            },
+          ],
+          "name": "transfer",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "bool",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 111953,
+          "inputs": Array [
+            Object {
+              "name": "_from",
+              "type": "address",
+            },
+            Object {
+              "name": "_to",
+              "type": "address",
+            },
+            Object {
+              "name": "_value",
+              "type": "uint256",
+            },
+          ],
+          "name": "transferFrom",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "bool",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 39012,
+          "inputs": Array [
+            Object {
+              "name": "_spender",
+              "type": "address",
+            },
+            Object {
+              "name": "_value",
+              "type": "uint256",
+            },
+          ],
+          "name": "approve",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "bool",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 75733,
+          "inputs": Array [
+            Object {
+              "name": "_to",
+              "type": "address",
+            },
+            Object {
+              "name": "_value",
+              "type": "uint256",
+            },
+          ],
+          "name": "mint",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 75605,
+          "inputs": Array [
+            Object {
+              "name": "_value",
+              "type": "uint256",
+            },
+          ],
+          "name": "burn",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 112752,
+          "inputs": Array [
+            Object {
+              "name": "_to",
+              "type": "address",
+            },
+            Object {
+              "name": "_value",
+              "type": "uint256",
+            },
+          ],
+          "name": "burnFrom",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 7853,
+          "inputs": Array [],
+          "name": "name",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "string",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 6906,
+          "inputs": Array [],
+          "name": "symbol",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "string",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 1511,
+          "inputs": Array [],
+          "name": "decimals",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 1695,
+          "inputs": Array [
+            Object {
+              "name": "arg0",
+              "type": "address",
+            },
+          ],
+          "name": "balanceOf",
+          "outputs": Array [
+            Object {
+              "name": "out",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+      ],
+      "yDai_yUsdc_yUsdt_ytUsd": Object {
+        "curve": Object {
+          "address": "0x45f783cce6b7ff23b2ab2d70e416cdb7d6055f51",
+        },
+        "indexes": Object {
+          "dai": 0,
+          "tusd": 3,
+          "usdc": 1,
+          "usdt": 2,
+        },
+        "nCoins": 4,
+        "poolToken": Object {
+          "address": "0xdf5e0e81dff6faf3a7e52ba697820c5e32d806a8",
+        },
+        "zap": Object {
+          "address": "0xbBC81d23Ea2c3ec7e56D39296F0cbB648873a5d3",
+        },
+      },
+      "zapAbi": Array [
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "name": "_coins",
+              "type": "address[2]",
+            },
+            Object {
+              "name": "_underlying_coins",
+              "type": "address[2]",
+            },
+            Object {
+              "name": "_curve",
+              "type": "address",
+            },
+            Object {
+              "name": "_token",
+              "type": "address",
+            },
+          ],
+          "outputs": Array [],
+          "payable": false,
+          "type": "constructor",
+        },
+        Object {
+          "constant": false,
+          "gas": 117283,
+          "inputs": Array [
+            Object {
+              "name": "uamounts",
+              "type": "uint256[2]",
+            },
+            Object {
+              "name": "min_mint_amount",
+              "type": "uint256",
+            },
+          ],
+          "name": "add_liquidity",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 83606,
+          "inputs": Array [
+            Object {
+              "name": "_amount",
+              "type": "uint256",
+            },
+            Object {
+              "name": "min_uamounts",
+              "type": "uint256[2]",
+            },
+          ],
+          "name": "remove_liquidity",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 96829,
+          "inputs": Array [
+            Object {
+              "name": "uamounts",
+              "type": "uint256[2]",
+            },
+            Object {
+              "name": "max_burn_amount",
+              "type": "uint256",
+            },
+          ],
+          "name": "remove_liquidity_imbalance",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 2945630,
+          "inputs": Array [
+            Object {
+              "name": "_token_amount",
+              "type": "uint256",
+            },
+            Object {
+              "name": "i",
+              "type": "int128",
+            },
+          ],
+          "name": "calc_withdraw_one_coin",
+          "outputs": Array [
+            Object {
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "name": "_token_amount",
+              "type": "uint256",
+            },
+            Object {
+              "name": "i",
+              "type": "int128",
+            },
+            Object {
+              "name": "min_uamount",
+              "type": "uint256",
+            },
+          ],
+          "name": "remove_liquidity_one_coin",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "name": "_token_amount",
+              "type": "uint256",
+            },
+            Object {
+              "name": "i",
+              "type": "int128",
+            },
+            Object {
+              "name": "min_uamount",
+              "type": "uint256",
+            },
+            Object {
+              "name": "donate_dust",
+              "type": "bool",
+            },
+          ],
+          "name": "remove_liquidity_one_coin",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "gas": 63973,
+          "inputs": Array [],
+          "name": "withdraw_donated_dust",
+          "outputs": Array [],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 1680,
+          "inputs": Array [
+            Object {
+              "name": "arg0",
+              "type": "int128",
+            },
+          ],
+          "name": "coins",
+          "outputs": Array [
+            Object {
+              "name": "",
+              "type": "address",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 1710,
+          "inputs": Array [
+            Object {
+              "name": "arg0",
+              "type": "int128",
+            },
+          ],
+          "name": "underlying_coins",
+          "outputs": Array [
+            Object {
+              "name": "",
+              "type": "address",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 1541,
+          "inputs": Array [],
+          "name": "curve",
+          "outputs": Array [
+            Object {
+              "name": "",
+              "type": "address",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "gas": 1571,
+          "inputs": Array [],
+          "name": "token",
+          "outputs": Array [
+            Object {
+              "name": "",
+              "type": "address",
+            },
+          ],
+          "payable": false,
+          "type": "function",
+        },
+      ],
     },
   },
   "dappsys": Object {
