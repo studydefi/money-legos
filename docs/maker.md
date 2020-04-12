@@ -148,7 +148,7 @@ Fortunately, the primitives are well written in [DssProxyActions.sol](https://gi
 
 ### Opening A Vault
 
-```javascript
+```solidity
 pragma solidity ^0.5.0;
 
 import "@studydefi/money-legos/src/maker/interface/IDssProxyActions.sol";

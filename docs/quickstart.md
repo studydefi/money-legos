@@ -25,7 +25,7 @@ rawLegos.erc20.contracts.dai.address[networks.mainnet]
 ```
 
 ### Solidity
-```javascript
+```solidity
 pragma solidity ^0.5.0;
 
 import "@studydefi/money-legos/src/onesplit/interface/IOneSplit.sol";
