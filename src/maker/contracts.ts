@@ -4,6 +4,8 @@ import dssProxyActionsAbi from "./abi/DssProxyActions.json";
 
 import networks from "../networks";
 
+// https://changelog.makerdao.com/
+
 const contracts = {
   proxyRegistry: {
     address: {
