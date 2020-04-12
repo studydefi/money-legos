@@ -1,6 +1,6 @@
 {
   "name": "@studydefi/money-legos",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "git@github.com:studydefi/money-legos.git",
@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc --declaration",
+    "build:docs": "yarn build && node scripts/genAddrMainnetOverview.js > docs/overview_mainnet_address.md",
     "serve:docs": "docsify serve ./docs",
     "test": "jest"
   },
@@ -15,6 +16,7 @@
     "@types/jest": "^25.2.1",
     "docsify-cli": "^4.4.0",
     "jest": "^25.3.0",
+    "json2md": "^1.7.0",
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.3"
   },

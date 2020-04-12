@@ -22161,6 +22161,11 @@ Object {
         "decimals": 8,
         "symbol": "WBTC",
       },
+      "weth": Object {
+        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "decimals": 18,
+        "symbol": "WETH",
+      },
       "zrx": Object {
         "address": "0xE41d2489571d322189246DaFA5ebDe1F4699F498",
         "decimals": 18,
@@ -22170,6 +22175,9 @@ Object {
   },
   "maker": Object {
     "contracts": Object {
+      "batAJoin": Object {
+        "address": "0x3D0B1912B66114d4096F48A8CEe3A56C231772cA",
+      },
       "daiJoin": Object {
         "address": "0x9759A6Ac90977b93B58547b4A71c78317f391A28",
       },
@@ -24022,6 +24030,9 @@ Object {
         ],
         "address": "0x82ecd135dce65fbc6dbdd0e4237e0af93ffd5038",
       },
+      "ethAJoin": Object {
+        "address": "0x2F0b23f53734252Bda2277357e97e1517d6B042A",
+      },
       "jug": Object {
         "address": "0x19c0976f590D67707E62397C87829d896Dc0f1F1",
       },
@@ -24099,21 +24110,18 @@ Object {
         ],
         "address": "0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4",
       },
+      "usdcJoin": Object {
+        "address": "0xA191e578a6736167326d05c119CE0c90849E84B7",
+      },
     },
     "ilks": Object {
       "batA": Object {
-        "join": Object {
-          "address": "0x3D0B1912B66114d4096F48A8CEe3A56C231772cA",
-        },
         "symbol": "BAT-A",
         "token": Object {
           "address": "0x0d8775f648430679a709e98d2b0cb6250d2887ef",
         },
       },
       "ethA": Object {
-        "join": Object {
-          "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-        },
         "symbol": "ETH-A",
         "token": Object {
           "address": Object {
@@ -24122,9 +24130,6 @@ Object {
         },
       },
       "usdcA": Object {
-        "join": Object {
-          "address": "0xA191e578a6736167326d05c119CE0c90849E84B7",
-        },
         "symbol": "USDC-A",
         "token": Object {
           "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",

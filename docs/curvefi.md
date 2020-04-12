@@ -1,17 +1,16 @@
 # CurveFi
 
-[CurveFi](https://curve.finance) is an AMM optimized for stablecoins.
+[CurveFi](https://curve.finance) is an AMM optimized for stablecoins. For more information about the interface, check out [the integration guide](https://github.com/curvefi/curve-contract/blob/master/integrations.md).
 
 
 ## Interface
 
+### Curve
 ```solidity
-pragma solidity ^0.5.0;
-
-contract ICurveFiSwap {
+contract ICurveFiCurve {
     function get_virtual_price() external returns (uint256 out);
 
-    function add_liquidity(uint256[2] amounts, uint256 deadline) external;
+    function add_liquidity(uint256[2] calldata amounts, uint256 deadline) external;
 
     function get_dy(int128 i, int128 j, uint256 dx)
         external
@@ -25,8 +24,22 @@ contract ICurveFiSwap {
         int128 i,
         int128 j,
         uint256 dx,
+        uint256 min_dy
+    ) external;
+
+    function exchange(
+        int128 i,
+        int128 j,
+        uint256 dx,
         uint256 min_dy,
         uint256 deadline
+    ) external;
+
+    function exchange_underlying(
+        int128 i,
+        int128 j,
+        uint256 dx,
+        uint256 min_dy
     ) external;
 
     function exchange_underlying(
@@ -92,6 +105,51 @@ contract ICurveFiSwap {
 }
 ```
 
+### Zap
+```solidity
+contract ICurveFiZap {
+    function add_liquidity(
+        uint256[2] calldata uamounts,
+        uint256 min_mint_amount
+    ) external;
+
+    function remove_liquidity(uint256 _amount, uint256[2] calldata min_uamounts)
+        external;
+
+    function remove_liquidity_imbalance(
+        uint256[2] calldata uamounts,
+        uint256 max_burn_amount
+    ) external;
+
+    function calc_withdraw_one_coin(uint256 _token_amount, int128 i)
+        external
+        returns (uint256);
+
+    function remove_liquidity_one_coin(
+        uint256 _token_amount,
+        int128 i,
+        uint256 min_uamount
+    ) external;
+
+    function remove_liquidity_one_coin(
+        uint256 _token_amount,
+        int128 i,
+        uint256 min_uamount,
+        bool donate_dust
+    ) external;
+
+    function withdraw_donated_dust() external;
+
+    function coins(int128 arg0) external returns (address);
+
+    function underlying_coins(int128 arg0) external returns (address);
+
+    function curve() external returns (address);
+
+    function token() external returns (address);
+}
+```
+
 ## Examples (JavaScript)
 
 ### Get Swap Return Amount
@@ -124,7 +182,7 @@ const main = async () => {
 };
 ```
 
-### Swap Stable Coins
+### Stable Coin Swapping
 
 ```javascript
 const curveFi = legos.curvefi.contracts;
@@ -157,5 +215,135 @@ const main = async () => {
     1,
   );
   await tx.wait();
+}
+```
+
+### Providing Liquidity
+
+```javascript
+const newTokenContract = (address) =>
+  new ethers.Contract(address, legos.erc20.contracts.abi, wallet);
+
+// ERC20 Contracts
+const daiContract = newTokenContract(legos.erc20.contracts.dai.address);
+const usdcContract = newTokenContract(legos.erc20.contracts.usdc.address);
+
+// Quick reference
+const curveFi = legos.curvefi.contracts;
+
+// Curve finance cDai and cUSDC contract
+const curveFicDU = new ethers.Contract(
+  curveFi.cDai_cUsdc.curve.address,
+  curveFi.curveAbi,
+  wallet
+);
+
+const curveFicZap = new ethers.Contract(
+  curveFi.cDai_cUsdc.zap.address,
+  curveFi.curveAbi,
+  wallet
+)
+
+const main = async () => {
+  // Amount of DAI to provide
+  const daiAmount = 100;
+  const daiAmountWei = ethers.utils.parseUnits(
+    daiAmount.toString(),
+    legos.erc20.contracts.dai.decimals
+  );
+
+  // Amount of USDC to provide
+  const usdcAmount = 100;
+  const usdcAmountWei = ethers.utils.parseUnits(
+    usdcAmount.toString(),
+    legos.erc20.contracts.usdc.decimals
+  )
+
+  // Approve USDC Contract and USDC contract
+  await daiContract.approve(
+    curveFi.cDai_cUsdc.zap.address,
+    daiAmountWei
+  )
+  await usdcContract.approve(
+    curveFi.cDai_cUsdc.zap.address,
+    usdcAmountWei
+  )
+
+  // Provide liquidity
+  await curveFicZap.add_liquidity(
+    [daiAmountWei, usdcAmountWei],
+    1,
+    {
+      gasLimit: 1500000
+    }
+  )
+};
+```
+
+
+## Examples (Solidity)
+
+### Get Swap Return Amount
+
+```solidity
+pragma solidity ^0.5.0;
+
+import "@studydefi/money-legos/src/curvefi/interface/ICurveFiCurve.sol";
+
+contract CurveFiManager {
+    address constant curveFi_curve_cDai_cUsdc = 0xA2B47E3D5c44877cca798226B7B8118F9BFb7A56;
+
+    int128 constant daiIndex = 0;
+    int128 constant usdcIndex = 1;
+
+    function getSwapInfo(int128 from, int128 to, uint256 amount) external returns (uint) {
+        ICurveFiCurve curve = ICurveFiCurve(curveFi_curve_cDai_cUsdc);
+        curve.get_dy_underlying(from, to, amount);
+    }
+}
+```
+
+### Stable Coins Swapping
+
+```solidity
+pragma solidity ^0.5.0;
+
+import "@studydefi/money-legos/src/curvefi/interface/ICurveFiCurve.sol";
+
+contract CurveFiManager {
+    address constant curveFi_curve_cDai_cUsdc = 0xA2B47E3D5c44877cca798226B7B8118F9BFb7A56;
+
+    int128 constant daiIndex = 0;
+    int128 constant usdcIndex = 1;
+
+    function swap(int128 from, int128 to, uint256 amount) external {
+        ICurveFiCurve curve = ICurveFiCurve(curveFi_curve_cDai_cUsdc);
+        curve.exchange_underlying(from, to, amount, 1);
+    }
+}
+```
+
+### Providing Liquidity
+
+```solidity
+pragma solidity ^0.5.0;
+
+import "@studydefi/money-legos/src/curvefi/interface/ICurveFiZap.sol";
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+
+contract CurveFiManager {
+    address constant curveFi_zap_cDai_cUsdc = 0xeB21209ae4C2c9FF2a86ACA31E123764A3B6Bc06;
+
+    int128 constant daiIndex = 0;
+    int128 constant usdcIndex = 1;
+
+    function _addDaiUsdcLiquidity(uint256 daiAmount, uint256 usdcAmount) internal {
+        // Initialize our curve
+        ICurveFiZap zap = ICurveFiZap(curveFi_zap_cDai_cUsdc);
+
+        // Remember to allow "transferFrom"
+        zap.add_liquidity([daiAmount, usdcAmount], 1);
+    }
 }
 ```

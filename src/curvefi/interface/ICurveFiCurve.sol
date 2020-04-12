@@ -1,9 +1,9 @@
 pragma solidity ^0.5.0;
 
-contract ICurveFiSwap {
+contract ICurveFiCurve {
     function get_virtual_price() external returns (uint256 out);
 
-    function add_liquidity(uint256[2] amounts, uint256 deadline) external;
+    function add_liquidity(uint256[2] calldata amounts, uint256 deadline) external;
 
     function get_dy(int128 i, int128 j, uint256 dx)
         external
@@ -17,8 +17,22 @@ contract ICurveFiSwap {
         int128 i,
         int128 j,
         uint256 dx,
+        uint256 min_dy
+    ) external;
+
+    function exchange(
+        int128 i,
+        int128 j,
+        uint256 dx,
         uint256 min_dy,
         uint256 deadline
+    ) external;
+
+    function exchange_underlying(
+        int128 i,
+        int128 j,
+        uint256 dx,
+        uint256 min_dy
     ) external;
 
     function exchange_underlying(
