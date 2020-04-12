@@ -4,7 +4,7 @@ By default, Maker uses [proxy contracts (EIP 1822)](https://eips.ethereum.org/EI
 
 You'll need to [perform a deletecall](https://ethereum.stackexchange.com/a/3672) to Maker's "managers" (contracts where the underlying logic lives, e.g. [DssProxyActions](0x82ecd135dce65fbc6dbdd0e4237e0af93ffd5038)). As such, you'll need to create a proxy on Maker's [Proxy Registry](https://etherscan.io/address/0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4) before you can start automating your vaults.
 
-Unfortunately Maker has a tendency to name things unintuitively, so please go through the [Maker glossary](https://docs.makerdao.com/other-documentation/system-glossary#general) or [MuchClearerDAI](https://github.com/alexvansande/MuchClearerDAI) to make sense of terminology like `flip`, `flop`, `flap`, `gem`, etc.
+Unfortunately Maker has a tendency to name things unintuitively, go through the [Maker glossary](https://docs.makerdao.com/other-documentation/system-glossary#general) or [MuchClearerDAI](https://github.com/alexvansande/MuchClearerDAI) to make sense of terminologies like `flip`, `flop`, `flap`, `gem`, etc.
 
 ## Interface
 
@@ -136,8 +136,6 @@ const main = async () => {
     `DAI Balance: ${ethers.utils.formatEther(daiBalance.toString())}`
   );
 };
-
-main();
 ```
 
 ## Example (Solidity)

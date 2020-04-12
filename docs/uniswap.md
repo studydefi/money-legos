@@ -185,9 +185,9 @@ const swapAndLog = async (fromToken, toToken, amount) => {
 };
 
 const main = async () => {
-  await swapAndLog(legos.erc20.contracts.rep, legos.erc20.contracts.dai, 1);
-  await swapAndLog(legos.erc20.contracts.eth, legos.erc20.contracts.rep, 1);
-  await swapAndLog(legos.erc20.contracts.rep, legos.erc20.contracts.eth, 1);
+  await swapAndLog(legos.erc20.contracts.eth, legos.erc20.contracts.dai, 1);
+  await swapAndLog(legos.erc20.contracts.dai, legos.erc20.contracts.rep, 50);
+  await swapAndLog(legos.erc20.contracts.rep, legos.erc20.contracts.eth, 2);
 };
 
 main();

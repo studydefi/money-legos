@@ -1,5 +1,7 @@
 # OneSplit
 
+OneSplit is an on-chain DEX aggregator. As it is built on top of a ton of other DEX protocols, as of April 2020 it is [quite unstable](https://etherscan.io/address/1split.eth), so some code examples might revert.
+
 ## Interface
 ```javascript
 pragma solidity ^0.5.0;
