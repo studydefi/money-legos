@@ -112,7 +112,7 @@ const main = async () => {
   const _data = IDssProxyActions.functions.openLockETHAndDraw.encode([
     legos.maker.contracts.dssCdpManager.address,
     legos.maker.contracts.jug.address,
-    legos.maker.ilks.ethA.join.address,
+    legos.maker.contracts.ethA.join.address,
     legos.maker.contracts.daiJoin.address,
     ethers.utils.formatBytes32String(legos.maker.ilks.ethA.symbol),
     ethers.utils.parseUnits("20", legos.erc20.contracts.dai.decimals),
