@@ -80,7 +80,7 @@ contract ContractWithFlashLoan is FlashLoanReceiverBase {
 
 ### Flashloan Initiation (JavaScript)
 
-Before you can initiate flashloans, you'll first need to encode the data `_params` to give more information to your callback function `executeOperation` on what it should do. i.e. What vault should it liquidate? Which two tokens to arbitrage on, and which DEX should the arbitrage be performed on?
+Before you can initiate flashloans, you first need to deploy you flashloan smart contract (e.g. the one above). You'll also need to encode the data `_params` to give more information to your callback function `executeOperation` on what it should do. i.e. What vault should it liquidate? Which two tokens to arbitrage on, and which DEX should the arbitrage be performed on?
 
 According the smart contract example provided above, the data we would like to encode for `_params` is `MyCustomData`.
 
