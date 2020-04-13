@@ -2,6 +2,4289 @@
 
 exports[`can get legos for mainnet 1`] = `
 Object {
+  "aave": Object {
+    "contracts": Object {
+      "ATokenAbi": Array [
+        Object {
+          "inputs": Array [
+            Object {
+              "internalType": "contract LendingPoolAddressesProvider",
+              "name": "_addressesProvider",
+              "type": "address",
+            },
+            Object {
+              "internalType": "address",
+              "name": "_underlyingAsset",
+              "type": "address",
+            },
+            Object {
+              "internalType": "uint8",
+              "name": "_underlyingAssetDecimals",
+              "type": "uint8",
+            },
+            Object {
+              "internalType": "string",
+              "name": "_name",
+              "type": "string",
+            },
+            Object {
+              "internalType": "string",
+              "name": "_symbol",
+              "type": "string",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "constructor",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address",
+            },
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "spender",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256",
+            },
+          ],
+          "name": "Approval",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_from",
+              "type": "address",
+            },
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_to",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_value",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_fromBalanceIncrease",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_toBalanceIncrease",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_fromIndex",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_toIndex",
+              "type": "uint256",
+            },
+          ],
+          "name": "BalanceTransfer",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_from",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_value",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_fromBalanceIncrease",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_fromIndex",
+              "type": "uint256",
+            },
+          ],
+          "name": "BurnOnLiquidation",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_from",
+              "type": "address",
+            },
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_to",
+              "type": "address",
+            },
+          ],
+          "name": "InterestRedirectionAllowanceChanged",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_from",
+              "type": "address",
+            },
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_to",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_redirectedBalance",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_fromBalanceIncrease",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_fromIndex",
+              "type": "uint256",
+            },
+          ],
+          "name": "InterestStreamRedirected",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_from",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_value",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_fromBalanceIncrease",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_fromIndex",
+              "type": "uint256",
+            },
+          ],
+          "name": "MintOnDeposit",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_from",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_value",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_fromBalanceIncrease",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_fromIndex",
+              "type": "uint256",
+            },
+          ],
+          "name": "Redeem",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_targetAddress",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_targetBalanceIncrease",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_targetIndex",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_redirectedBalanceAdded",
+              "type": "uint256",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_redirectedBalanceRemoved",
+              "type": "uint256",
+            },
+          ],
+          "name": "RedirectedBalanceUpdated",
+          "type": "event",
+        },
+        Object {
+          "anonymous": false,
+          "inputs": Array [
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "from",
+              "type": "address",
+            },
+            Object {
+              "indexed": true,
+              "internalType": "address",
+              "name": "to",
+              "type": "address",
+            },
+            Object {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256",
+            },
+          ],
+          "name": "Transfer",
+          "type": "event",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "UINT_MAX_VALUE",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address",
+            },
+            Object {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address",
+            },
+          ],
+          "name": "allowance",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256",
+            },
+          ],
+          "name": "approve",
+          "outputs": Array [
+            Object {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "decimals",
+          "outputs": Array [
+            Object {
+              "internalType": "uint8",
+              "name": "",
+              "type": "uint8",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "subtractedValue",
+              "type": "uint256",
+            },
+          ],
+          "name": "decreaseAllowance",
+          "outputs": Array [
+            Object {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "addedValue",
+              "type": "uint256",
+            },
+          ],
+          "name": "increaseAllowance",
+          "outputs": Array [
+            Object {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "name",
+          "outputs": Array [
+            Object {
+              "internalType": "string",
+              "name": "",
+              "type": "string",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "symbol",
+          "outputs": Array [
+            Object {
+              "internalType": "string",
+              "name": "",
+              "type": "string",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+            },
+          ],
+          "name": "transfer",
+          "outputs": Array [
+            Object {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address",
+            },
+            Object {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+            },
+          ],
+          "name": "transferFrom",
+          "outputs": Array [
+            Object {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "underlyingAssetAddress",
+          "outputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "",
+              "type": "address",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "_to",
+              "type": "address",
+            },
+          ],
+          "name": "redirectInterestStream",
+          "outputs": Array [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "_from",
+              "type": "address",
+            },
+            Object {
+              "internalType": "address",
+              "name": "_to",
+              "type": "address",
+            },
+          ],
+          "name": "redirectInterestStreamOf",
+          "outputs": Array [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "_to",
+              "type": "address",
+            },
+          ],
+          "name": "allowInterestRedirectionTo",
+          "outputs": Array [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256",
+            },
+          ],
+          "name": "redeem",
+          "outputs": Array [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "_account",
+              "type": "address",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256",
+            },
+          ],
+          "name": "mintOnDeposit",
+          "outputs": Array [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "_account",
+              "type": "address",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "_value",
+              "type": "uint256",
+            },
+          ],
+          "name": "burnOnLiquidation",
+          "outputs": Array [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": false,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "_from",
+              "type": "address",
+            },
+            Object {
+              "internalType": "address",
+              "name": "_to",
+              "type": "address",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "_value",
+              "type": "uint256",
+            },
+          ],
+          "name": "transferOnLiquidation",
+          "outputs": Array [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "_user",
+              "type": "address",
+            },
+          ],
+          "name": "balanceOf",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "_user",
+              "type": "address",
+            },
+          ],
+          "name": "principalBalanceOf",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [],
+          "name": "totalSupply",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "_user",
+              "type": "address",
+            },
+            Object {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256",
+            },
+          ],
+          "name": "isTransferAllowed",
+          "outputs": Array [
+            Object {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "_user",
+              "type": "address",
+            },
+          ],
+          "name": "getUserIndex",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "_user",
+              "type": "address",
+            },
+          ],
+          "name": "getInterestRedirectionAddress",
+          "outputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "",
+              "type": "address",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+        Object {
+          "constant": true,
+          "inputs": Array [
+            Object {
+              "internalType": "address",
+              "name": "_user",
+              "type": "address",
+            },
+          ],
+          "name": "getRedirectedBalance",
+          "outputs": Array [
+            Object {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256",
+            },
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function",
+        },
+      ],
+      "LendingPool": Object {
+        "abi": Array [
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_borrowRateMode",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_borrowRate",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_originationFee",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_borrowBalanceIncrease",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "uint16",
+                "name": "_referral",
+                "type": "uint16",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_timestamp",
+                "type": "uint256",
+              },
+            ],
+            "name": "Borrow",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "uint16",
+                "name": "_referral",
+                "type": "uint16",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_timestamp",
+                "type": "uint256",
+              },
+            ],
+            "name": "Deposit",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_target",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_totalFee",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_protocolFee",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_timestamp",
+                "type": "uint256",
+              },
+            ],
+            "name": "FlashLoan",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_collateral",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_purchaseAmount",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_liquidatedCollateralAmount",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_accruedBorrowInterest",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "address",
+                "name": "_liquidator",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "_receiveAToken",
+                "type": "bool",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_timestamp",
+                "type": "uint256",
+              },
+            ],
+            "name": "LiquidationCall",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_collateral",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_feeLiquidated",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_liquidatedCollateralForFee",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_timestamp",
+                "type": "uint256",
+              },
+            ],
+            "name": "OriginationFeeLiquidated",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_newStableRate",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_borrowBalanceIncrease",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_timestamp",
+                "type": "uint256",
+              },
+            ],
+            "name": "RebalanceStableBorrowRate",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_timestamp",
+                "type": "uint256",
+              },
+            ],
+            "name": "RedeemUnderlying",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_repayer",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_amountMinusFees",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_fees",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_borrowBalanceIncrease",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_timestamp",
+                "type": "uint256",
+              },
+            ],
+            "name": "Repay",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "ReserveUsedAsCollateralDisabled",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "ReserveUsedAsCollateralEnabled",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_newRateMode",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_newRate",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_borrowBalanceIncrease",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "_timestamp",
+                "type": "uint256",
+              },
+            ],
+            "name": "Swap",
+            "type": "event",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "LENDINGPOOL_REVISION",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "UINT_MAX_VALUE",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "addressesProvider",
+            "outputs": Array [
+              Object {
+                "internalType": "contract LendingPoolAddressesProvider",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "core",
+            "outputs": Array [
+              Object {
+                "internalType": "contract LendingPoolCore",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "dataProvider",
+            "outputs": Array [
+              Object {
+                "internalType": "contract LendingPoolDataProvider",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "parametersProvider",
+            "outputs": Array [
+              Object {
+                "internalType": "contract LendingPoolParametersProvider",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "contract LendingPoolAddressesProvider",
+                "name": "_addressesProvider",
+                "type": "address",
+              },
+            ],
+            "name": "initialize",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint16",
+                "name": "_referralCode",
+                "type": "uint16",
+              },
+            ],
+            "name": "deposit",
+            "outputs": Array [],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address payable",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_aTokenBalanceAfterRedeem",
+                "type": "uint256",
+              },
+            ],
+            "name": "redeemUnderlying",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_interestRateMode",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint16",
+                "name": "_referralCode",
+                "type": "uint16",
+              },
+            ],
+            "name": "borrow",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "address payable",
+                "name": "_onBehalfOf",
+                "type": "address",
+              },
+            ],
+            "name": "repay",
+            "outputs": Array [],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "swapBorrowRateMode",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "rebalanceStableBorrowRate",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "_useAsCollateral",
+                "type": "bool",
+              },
+            ],
+            "name": "setUserUseReserveAsCollateral",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_collateral",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_purchaseAmount",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "_receiveAToken",
+                "type": "bool",
+              },
+            ],
+            "name": "liquidationCall",
+            "outputs": Array [],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_receiver",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "bytes",
+                "name": "_params",
+                "type": "bytes",
+              },
+            ],
+            "name": "flashLoan",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveConfigurationData",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "ltv",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "liquidationThreshold",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "liquidationBonus",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "address",
+                "name": "interestRateStrategyAddress",
+                "type": "address",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "usageAsCollateralEnabled",
+                "type": "bool",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "borrowingEnabled",
+                "type": "bool",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "stableBorrowRateEnabled",
+                "type": "bool",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "isActive",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveData",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "totalLiquidity",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "availableLiquidity",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "totalBorrowsStable",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "totalBorrowsVariable",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "liquidityRate",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "variableBorrowRate",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "stableBorrowRate",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "averageStableBorrowRate",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "utilizationRate",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "liquidityIndex",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "variableBorrowIndex",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "address",
+                "name": "aTokenAddress",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint40",
+                "name": "lastUpdateTimestamp",
+                "type": "uint40",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "getUserAccountData",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "totalLiquidityETH",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "totalCollateralETH",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "totalBorrowsETH",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "totalFeesETH",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "availableBorrowsETH",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "currentLiquidationThreshold",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "ltv",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "healthFactor",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "getUserReserveData",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "currentATokenBalance",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "currentBorrowBalance",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "principalBorrowBalance",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "borrowRateMode",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "borrowRate",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "liquidityRate",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "originationFee",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "variableBorrowIndex",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "lastUpdateTimestamp",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "usageAsCollateralEnabled",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getReserves",
+            "outputs": Array [
+              Object {
+                "internalType": "address[]",
+                "name": "",
+                "type": "address[]",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+        ],
+        "address": "0x398ec7346dcd622edc5ae82352f02be94c62d119",
+      },
+      "LendingPoolAddressesProvider": Object {
+        "abi": Array [
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newAddress",
+                "type": "address",
+              },
+            ],
+            "name": "EthereumAddressUpdated",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newAddress",
+                "type": "address",
+              },
+            ],
+            "name": "FeeProviderUpdated",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newAddress",
+                "type": "address",
+              },
+            ],
+            "name": "LendingPoolConfiguratorUpdated",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newAddress",
+                "type": "address",
+              },
+            ],
+            "name": "LendingPoolCoreUpdated",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newAddress",
+                "type": "address",
+              },
+            ],
+            "name": "LendingPoolDataProviderUpdated",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newAddress",
+                "type": "address",
+              },
+            ],
+            "name": "LendingPoolLiquidationManagerUpdated",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newAddress",
+                "type": "address",
+              },
+            ],
+            "name": "LendingPoolManagerUpdated",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newAddress",
+                "type": "address",
+              },
+            ],
+            "name": "LendingPoolParametersProviderUpdated",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newAddress",
+                "type": "address",
+              },
+            ],
+            "name": "LendingPoolUpdated",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newAddress",
+                "type": "address",
+              },
+            ],
+            "name": "LendingRateOracleUpdated",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "previousOwner",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newAddress",
+                "type": "address",
+              },
+            ],
+            "name": "PriceOracleUpdated",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "id",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newAddress",
+                "type": "address",
+              },
+            ],
+            "name": "ProxyCreated",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newAddress",
+                "type": "address",
+              },
+            ],
+            "name": "TokenDistributorUpdated",
+            "type": "event",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "bytes32",
+                "name": "_key",
+                "type": "bytes32",
+              },
+            ],
+            "name": "getAddress",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "isOwner",
+            "outputs": Array [
+              Object {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "owner",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "renounceOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "transferOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getLendingPool",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_pool",
+                "type": "address",
+              },
+            ],
+            "name": "setLendingPoolImpl",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getLendingPoolCore",
+            "outputs": Array [
+              Object {
+                "internalType": "address payable",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_lendingPoolCore",
+                "type": "address",
+              },
+            ],
+            "name": "setLendingPoolCoreImpl",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getLendingPoolConfigurator",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_configurator",
+                "type": "address",
+              },
+            ],
+            "name": "setLendingPoolConfiguratorImpl",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getLendingPoolDataProvider",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_provider",
+                "type": "address",
+              },
+            ],
+            "name": "setLendingPoolDataProviderImpl",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getLendingPoolParametersProvider",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_parametersProvider",
+                "type": "address",
+              },
+            ],
+            "name": "setLendingPoolParametersProviderImpl",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getFeeProvider",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_feeProvider",
+                "type": "address",
+              },
+            ],
+            "name": "setFeeProviderImpl",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getLendingPoolLiquidationManager",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_manager",
+                "type": "address",
+              },
+            ],
+            "name": "setLendingPoolLiquidationManager",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getLendingPoolManager",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_lendingPoolManager",
+                "type": "address",
+              },
+            ],
+            "name": "setLendingPoolManager",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getPriceOracle",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_priceOracle",
+                "type": "address",
+              },
+            ],
+            "name": "setPriceOracle",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getLendingRateOracle",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_lendingRateOracle",
+                "type": "address",
+              },
+            ],
+            "name": "setLendingRateOracle",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getTokenDistributor",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_tokenDistributor",
+                "type": "address",
+              },
+            ],
+            "name": "setTokenDistributor",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+        ],
+        "address": "0x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+      },
+      "LendingPoolCore": Object {
+        "abi": Array [
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "internalType": "address",
+                "name": "reserve",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "liquidityRate",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "stableBorrowRate",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "variableBorrowRate",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "liquidityIndex",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "variableBorrowIndex",
+                "type": "uint256",
+              },
+            ],
+            "name": "ReserveUpdated",
+            "type": "event",
+          },
+          Object {
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "fallback",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "CORE_REVISION",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "addressesProvider",
+            "outputs": Array [
+              Object {
+                "internalType": "contract LendingPoolAddressesProvider",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "lendingPoolAddress",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "name": "reservesList",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "contract LendingPoolAddressesProvider",
+                "name": "_addressesProvider",
+                "type": "address",
+              },
+            ],
+            "name": "initialize",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "_isFirstDeposit",
+                "type": "bool",
+              },
+            ],
+            "name": "updateStateOnDeposit",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amountRedeemed",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "_userRedeemedEverything",
+                "type": "bool",
+              },
+            ],
+            "name": "updateStateOnRedeem",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_availableLiquidityBefore",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_income",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_protocolFee",
+                "type": "uint256",
+              },
+            ],
+            "name": "updateStateOnFlashLoan",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amountBorrowed",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_borrowFee",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "enum CoreLibrary.InterestRateMode",
+                "name": "_rateMode",
+                "type": "uint8",
+              },
+            ],
+            "name": "updateStateOnBorrow",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_paybackAmountMinusFees",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_originationFeeRepaid",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_balanceIncrease",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "_repaidWholeLoan",
+                "type": "bool",
+              },
+            ],
+            "name": "updateStateOnRepay",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_principalBorrowBalance",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_compoundedBorrowBalance",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_balanceIncrease",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "enum CoreLibrary.InterestRateMode",
+                "name": "_currentRateMode",
+                "type": "uint8",
+              },
+            ],
+            "name": "updateStateOnSwapRate",
+            "outputs": Array [
+              Object {
+                "internalType": "enum CoreLibrary.InterestRateMode",
+                "name": "",
+                "type": "uint8",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_principalReserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_collateralReserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amountToLiquidate",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_collateralToLiquidate",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_feeLiquidated",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_liquidatedCollateralForFee",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_balanceIncrease",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "_liquidatorReceivesAToken",
+                "type": "bool",
+              },
+            ],
+            "name": "updateStateOnLiquidation",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_balanceIncrease",
+                "type": "uint256",
+              },
+            ],
+            "name": "updateStateOnRebalance",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "_useAsCollateral",
+                "type": "bool",
+              },
+            ],
+            "name": "setUserUseReserveAsCollateral",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address payable",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+            ],
+            "name": "transferToUser",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_token",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_destination",
+                "type": "address",
+              },
+            ],
+            "name": "transferToFeeCollectionAddress",
+            "outputs": Array [],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_token",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_destination",
+                "type": "address",
+              },
+            ],
+            "name": "liquidateFee",
+            "outputs": Array [],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address payable",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+            ],
+            "name": "transferToReserve",
+            "outputs": Array [],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "getUserBasicReserveData",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256",
+              },
+            ],
+            "name": "isUserAllowedToBorrowAtStable",
+            "outputs": Array [
+              Object {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "getUserUnderlyingAssetBalance",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveInterestRateStrategyAddress",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveATokenAddress",
+            "outputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveAvailableLiquidity",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveTotalLiquidity",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveNormalizedIncome",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveTotalBorrows",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveTotalBorrowsStable",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveTotalBorrowsVariable",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveLiquidationThreshold",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveLiquidationBonus",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveCurrentVariableBorrowRate",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveCurrentStableBorrowRate",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveCurrentAverageStableBorrowRate",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveCurrentLiquidityRate",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveLiquidityCumulativeIndex",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveVariableBorrowsCumulativeIndex",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveConfiguration",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveDecimals",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "isReserveBorrowingEnabled",
+            "outputs": Array [
+              Object {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "isReserveUsageAsCollateralEnabled",
+            "outputs": Array [
+              Object {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveIsStableBorrowRateEnabled",
+            "outputs": Array [
+              Object {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveIsActive",
+            "outputs": Array [
+              Object {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveIsFreezed",
+            "outputs": Array [
+              Object {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveLastUpdate",
+            "outputs": Array [
+              Object {
+                "internalType": "uint40",
+                "name": "timestamp",
+                "type": "uint40",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "getReserveUtilizationRate",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getReserves",
+            "outputs": Array [
+              Object {
+                "internalType": "address[]",
+                "name": "",
+                "type": "address[]",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "isUserUseReserveAsCollateralEnabled",
+            "outputs": Array [
+              Object {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "getUserOriginationFee",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "getUserCurrentBorrowRateMode",
+            "outputs": Array [
+              Object {
+                "internalType": "enum CoreLibrary.InterestRateMode",
+                "name": "",
+                "type": "uint8",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "getUserCurrentStableBorrowRate",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "getUserBorrowBalances",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "getUserVariableBorrowCumulativeIndex",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address",
+              },
+            ],
+            "name": "getUserLastUpdate",
+            "outputs": Array [
+              Object {
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "refreshConfiguration",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_aTokenAddress",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_decimals",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_interestRateStrategyAddress",
+                "type": "address",
+              },
+            ],
+            "name": "initReserve",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "address",
+                "name": "_rateStrategyAddress",
+                "type": "address",
+              },
+            ],
+            "name": "setReserveInterestRateStrategyAddress",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "bool",
+                "name": "_stableBorrowRateEnabled",
+                "type": "bool",
+              },
+            ],
+            "name": "enableBorrowingOnReserve",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "disableBorrowingOnReserve",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_baseLTVasCollateral",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_liquidationThreshold",
+                "type": "uint256",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_liquidationBonus",
+                "type": "uint256",
+              },
+            ],
+            "name": "enableReserveAsCollateral",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "disableReserveAsCollateral",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "enableReserveStableBorrowRate",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "disableReserveStableBorrowRate",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "activateReserve",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "deactivateReserve",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "freezeReserve",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+            ],
+            "name": "unfreezeReserve",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_ltv",
+                "type": "uint256",
+              },
+            ],
+            "name": "setReserveBaseLTVasCollateral",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_threshold",
+                "type": "uint256",
+              },
+            ],
+            "name": "setReserveLiquidationThreshold",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_bonus",
+                "type": "uint256",
+              },
+            ],
+            "name": "setReserveLiquidationBonus",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "internalType": "address",
+                "name": "_reserve",
+                "type": "address",
+              },
+              Object {
+                "internalType": "uint256",
+                "name": "_decimals",
+                "type": "uint256",
+              },
+            ],
+            "name": "setReserveDecimals",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+        ],
+        "address": "0x3dfd23a6c5e8bbcfc9581d2e864a68feb6a076d3",
+      },
+      "aBAT": Object {
+        "address": "0xe1ba0fb44ccb0d11b80f92f4f8ed94ca3ff51d00",
+      },
+      "aBUSD": Object {
+        "address": "0x6ee0f7bb50a54ab5253da0667b0dc2ee526c30a8",
+      },
+      "aDAI": Object {
+        "address": "0xfc1e690f61efd961294b3e1ce3313fbd8aa4f85d",
+      },
+      "aETH": Object {
+        "address": "0x3a3a65aab0dd2a17e3f1947ba16138cd37d08c04",
+      },
+      "aKNC": Object {
+        "address": "0x9d91be44c06d373a8a226e1f3b146956083803eb",
+      },
+      "aLEND": Object {
+        "address": "0x7d2d3688df45ce7c552e19c27e007673da9204b8",
+      },
+      "aLINK": Object {
+        "address": "0xa64bd6c70cb9051f6a9ba1f163fdc07e0dfb5f84",
+      },
+      "aMANA": Object {
+        "address": "0x6fce4a401b6b80ace52baaefe4421bd188e76f6f",
+      },
+      "aMKR": Object {
+        "address": "0x7deb5e830be29f91e298ba5ff1356bb7f8146998",
+      },
+      "aREP": Object {
+        "address": "0x71010a9d003445ac60c4e6a7017c1e89a477b438",
+      },
+      "aSNX": Object {
+        "address": "0x328c4c80bc7aca0834db37e6600a6c49e12da4de",
+      },
+      "aSUSD": Object {
+        "address": "0x625ae63000f46200499120b906716420bd059240",
+      },
+      "aTUSD": Object {
+        "address": "0x4da9b813057d04baef4e5800e36083717b4a0341",
+      },
+      "aUSDC": Object {
+        "address": "0x9ba00d6856a4edf4665bca2c2309936572473b7e",
+      },
+      "aUSDT": Object {
+        "address": "0x71fc860f7d3a592a4a98740e39db31d25db65ae8",
+      },
+      "aWBTC": Object {
+        "address": "0xfc4b8ed459e00e5400be803a9bb3954234fd50e3",
+      },
+      "aZRX": Object {
+        "address": "0x6fb0855c404e09c47c3fbca25f08d4e41f9f062f",
+      },
+    },
+  },
   "compound": Object {
     "cTokenAbi": Array [
       Object {
