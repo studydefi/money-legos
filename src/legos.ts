@@ -1,3 +1,4 @@
+import { default as aave } from "./aave";
 import { default as curvefi } from "./curvefi";
 import { default as dappsys } from "./dappsys";
 import { default as erc20 } from "./erc20";
@@ -7,6 +8,7 @@ import { default as onesplit } from "./onesplit";
 import { default as uniswap } from "./uniswap";
 
 export const rawLegos = {
+  aave,
   curvefi,
   dappsys,
   erc20,
