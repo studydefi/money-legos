@@ -1,0 +1,72 @@
+[
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "SOLO_MARGIN",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "WETH",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "accounts",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          { "name": "actionType", "type": "uint8" },
+          { "name": "accountId", "type": "uint256" },
+          {
+            "components": [
+              { "name": "sign", "type": "bool" },
+              { "name": "denomination", "type": "uint8" },
+              { "name": "ref", "type": "uint8" },
+              { "name": "value", "type": "uint256" }
+            ],
+            "name": "amount",
+            "type": "tuple"
+          },
+          { "name": "primaryMarketId", "type": "uint256" },
+          { "name": "secondaryMarketId", "type": "uint256" },
+          { "name": "otherAddress", "type": "address" },
+          { "name": "otherAccountId", "type": "uint256" },
+          { "name": "data", "type": "bytes" }
+        ],
+        "name": "actions",
+        "type": "tuple[]"
+      },
+      { "name": "sendEthTo", "type": "address" }
+    ],
+    "name": "operate",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "name": "soloMargin", "type": "address" },
+      { "name": "weth", "type": "address" }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  { "payable": true, "stateMutability": "payable", "type": "fallback" }
+]

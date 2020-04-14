@@ -1,0 +1,262 @@
+[
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "shutDown",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "SOLO_MARGIN",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "startUp",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "operationHashes", "type": "bytes32[]" }],
+    "name": "getOperationsAreInvalid",
+    "outputs": [{ "name": "", "type": "bool[]" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "", "type": "bytes32" }],
+    "name": "g_invalidated",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "owner",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "isOwner",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "accounts",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          { "name": "actionType", "type": "uint8" },
+          { "name": "accountId", "type": "uint256" },
+          {
+            "components": [
+              { "name": "sign", "type": "bool" },
+              { "name": "denomination", "type": "uint8" },
+              { "name": "ref", "type": "uint8" },
+              { "name": "value", "type": "uint256" }
+            ],
+            "name": "amount",
+            "type": "tuple"
+          },
+          { "name": "primaryMarketId", "type": "uint256" },
+          { "name": "secondaryMarketId", "type": "uint256" },
+          { "name": "otherAddress", "type": "address" },
+          { "name": "otherAccountId", "type": "uint256" },
+          { "name": "data", "type": "bytes" }
+        ],
+        "name": "actions",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          { "name": "numActions", "type": "uint256" },
+          {
+            "components": [
+              { "name": "expiration", "type": "uint256" },
+              { "name": "salt", "type": "uint256" },
+              { "name": "sender", "type": "address" },
+              { "name": "signer", "type": "address" }
+            ],
+            "name": "header",
+            "type": "tuple"
+          },
+          { "name": "signature", "type": "bytes" }
+        ],
+        "name": "auths",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "operate",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "accounts",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          { "name": "actionType", "type": "uint8" },
+          { "name": "accountId", "type": "uint256" },
+          {
+            "components": [
+              { "name": "sign", "type": "bool" },
+              { "name": "denomination", "type": "uint8" },
+              { "name": "ref", "type": "uint8" },
+              { "name": "value", "type": "uint256" }
+            ],
+            "name": "amount",
+            "type": "tuple"
+          },
+          { "name": "primaryMarketId", "type": "uint256" },
+          { "name": "secondaryMarketId", "type": "uint256" },
+          { "name": "otherAddress", "type": "address" },
+          { "name": "otherAccountId", "type": "uint256" },
+          { "name": "data", "type": "bytes" }
+        ],
+        "name": "actions",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          { "name": "numActions", "type": "uint256" },
+          {
+            "components": [
+              { "name": "expiration", "type": "uint256" },
+              { "name": "salt", "type": "uint256" },
+              { "name": "sender", "type": "address" },
+              { "name": "signer", "type": "address" }
+            ],
+            "name": "header",
+            "type": "tuple"
+          },
+          { "name": "signature", "type": "bytes" }
+        ],
+        "name": "auth",
+        "type": "tuple"
+      }
+    ],
+    "name": "cancel",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "EIP712_DOMAIN_HASH",
+    "outputs": [{ "name": "", "type": "bytes32" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "newOwner", "type": "address" }],
+    "name": "transferOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "g_isOperational",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "name": "soloMargin", "type": "address" },
+      { "name": "chainId", "type": "uint256" }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": false, "name": "operational", "type": "bool" }],
+    "name": "ContractStatusSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "operationHash", "type": "bytes32" },
+      { "indexed": true, "name": "signer", "type": "address" },
+      { "indexed": true, "name": "sender", "type": "address" }
+    ],
+    "name": "LogOperationExecuted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "operationHash", "type": "bytes32" },
+      { "indexed": true, "name": "canceler", "type": "address" }
+    ],
+    "name": "LogOperationCanceled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "previousOwner", "type": "address" },
+      { "indexed": true, "name": "newOwner", "type": "address" }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  }
+]

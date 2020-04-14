@@ -1,0 +1,263 @@
+[
+  {
+    "constant": true,
+    "inputs": [
+      { "name": "", "type": "address" },
+      { "name": "", "type": "address" }
+    ],
+    "name": "g_approvedSender",
+    "outputs": [{ "name": "", "type": "uint32" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "SOLO_MARGIN",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "account",
+        "type": "tuple"
+      },
+      { "name": "marketId", "type": "uint256" }
+    ],
+    "name": "getExpiry",
+    "outputs": [{ "name": "", "type": "uint32" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "sender", "type": "address" },
+      { "name": "minTimeDelta", "type": "uint32" }
+    ],
+    "name": "approveSender",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "inputMarketId", "type": "uint256" },
+      { "name": "outputMarketId", "type": "uint256" },
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "makerAccount",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "name": "sign", "type": "bool" },
+          { "name": "value", "type": "uint128" }
+        ],
+        "name": "oldInputPar",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "name": "sign", "type": "bool" },
+          { "name": "value", "type": "uint128" }
+        ],
+        "name": "newInputPar",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "name": "sign", "type": "bool" },
+          { "name": "value", "type": "uint256" }
+        ],
+        "name": "inputWei",
+        "type": "tuple"
+      },
+      { "name": "data", "type": "bytes" }
+    ],
+    "name": "getTradeCost",
+    "outputs": [
+      {
+        "components": [
+          { "name": "sign", "type": "bool" },
+          { "name": "denomination", "type": "uint8" },
+          { "name": "ref", "type": "uint8" },
+          { "name": "value", "type": "uint256" }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "", "type": "address" },
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "account",
+        "type": "tuple"
+      },
+      { "name": "data", "type": "bytes" }
+    ],
+    "name": "callFunction",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "owner",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "isOwner",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      { "name": "heldMarketId", "type": "uint256" },
+      { "name": "owedMarketId", "type": "uint256" },
+      { "name": "expiry", "type": "uint32" }
+    ],
+    "name": "getSpreadAdjustedPrices",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      },
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "g_expiryRampTime",
+    "outputs": [{ "name": "", "type": "uint256" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "newOwner", "type": "address" }],
+    "name": "transferOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "newExpiryRampTime", "type": "uint256" }],
+    "name": "ownerSetExpiryRampTime",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "name": "soloMargin", "type": "address" },
+      { "name": "expiryRampTime", "type": "uint256" }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "owner", "type": "address" },
+      { "indexed": false, "name": "number", "type": "uint256" },
+      { "indexed": false, "name": "marketId", "type": "uint256" },
+      { "indexed": false, "name": "time", "type": "uint32" }
+    ],
+    "name": "ExpirySet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "expiryRampTime", "type": "uint256" }
+    ],
+    "name": "LogExpiryRampTimeSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "approver", "type": "address" },
+      { "indexed": false, "name": "sender", "type": "address" },
+      { "indexed": false, "name": "minTimeDelta", "type": "uint32" }
+    ],
+    "name": "LogSenderApproved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "previousOwner", "type": "address" },
+      { "indexed": true, "name": "newOwner", "type": "address" }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  }
+]

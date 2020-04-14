@@ -1,0 +1,361 @@
+[
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "g_taker",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "g_fillArgs",
+    "outputs": [
+      { "name": "price", "type": "uint256" },
+      { "name": "fee", "type": "uint128" },
+      { "name": "isNegativeFee", "type": "bool" }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "shutDown",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "SOLO_MARGIN",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "startUp",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "inputMarketId", "type": "uint256" },
+      { "name": "outputMarketId", "type": "uint256" },
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "makerAccount",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "takerAccount",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "name": "sign", "type": "bool" },
+          { "name": "value", "type": "uint128" }
+        ],
+        "name": "oldInputPar",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "name": "sign", "type": "bool" },
+          { "name": "value", "type": "uint128" }
+        ],
+        "name": "newInputPar",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "name": "sign", "type": "bool" },
+          { "name": "value", "type": "uint256" }
+        ],
+        "name": "inputWei",
+        "type": "tuple"
+      },
+      { "name": "data", "type": "bytes" }
+    ],
+    "name": "getTradeCost",
+    "outputs": [
+      {
+        "components": [
+          { "name": "sign", "type": "bool" },
+          { "name": "denomination", "type": "uint8" },
+          { "name": "ref", "type": "uint8" },
+          { "name": "value", "type": "uint256" }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [
+          { "name": "flags", "type": "bytes32" },
+          { "name": "baseMarket", "type": "uint256" },
+          { "name": "quoteMarket", "type": "uint256" },
+          { "name": "amount", "type": "uint256" },
+          { "name": "limitPrice", "type": "uint256" },
+          { "name": "triggerPrice", "type": "uint256" },
+          { "name": "limitFee", "type": "uint256" },
+          { "name": "makerAccountOwner", "type": "address" },
+          { "name": "makerAccountNumber", "type": "uint256" },
+          { "name": "expiration", "type": "uint256" }
+        ],
+        "name": "order",
+        "type": "tuple"
+      }
+    ],
+    "name": "cancelOrder",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "", "type": "address" },
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "accountInfo",
+        "type": "tuple"
+      },
+      { "name": "data", "type": "bytes" }
+    ],
+    "name": "callFunction",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "owner",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "isOwner",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "orderHashes", "type": "bytes32[]" }],
+    "name": "getOrderStates",
+    "outputs": [
+      {
+        "components": [
+          { "name": "orderStatus", "type": "uint8" },
+          { "name": "filledAmount", "type": "uint256" }
+        ],
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "", "type": "bytes32" }],
+    "name": "g_status",
+    "outputs": [{ "name": "", "type": "uint8" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [
+          { "name": "flags", "type": "bytes32" },
+          { "name": "baseMarket", "type": "uint256" },
+          { "name": "quoteMarket", "type": "uint256" },
+          { "name": "amount", "type": "uint256" },
+          { "name": "limitPrice", "type": "uint256" },
+          { "name": "triggerPrice", "type": "uint256" },
+          { "name": "limitFee", "type": "uint256" },
+          { "name": "makerAccountOwner", "type": "address" },
+          { "name": "makerAccountNumber", "type": "uint256" },
+          { "name": "expiration", "type": "uint256" }
+        ],
+        "name": "order",
+        "type": "tuple"
+      }
+    ],
+    "name": "approveOrder",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "", "type": "bytes32" }],
+    "name": "g_filledAmount",
+    "outputs": [{ "name": "", "type": "uint256" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "EIP712_DOMAIN_HASH",
+    "outputs": [{ "name": "", "type": "bytes32" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "newOwner", "type": "address" }],
+    "name": "transferOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "taker", "type": "address" }],
+    "name": "setTakerAddress",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "g_isOperational",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "name": "soloMargin", "type": "address" },
+      { "name": "taker", "type": "address" },
+      { "name": "chainId", "type": "uint256" }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": false, "name": "operational", "type": "bool" }],
+    "name": "LogContractStatusSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": false, "name": "taker", "type": "address" }],
+    "name": "LogTakerSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "orderHash", "type": "bytes32" },
+      { "indexed": true, "name": "canceler", "type": "address" },
+      { "indexed": false, "name": "baseMarket", "type": "uint256" },
+      { "indexed": false, "name": "quoteMarket", "type": "uint256" }
+    ],
+    "name": "LogCanonicalOrderCanceled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "orderHash", "type": "bytes32" },
+      { "indexed": true, "name": "approver", "type": "address" },
+      { "indexed": false, "name": "baseMarket", "type": "uint256" },
+      { "indexed": false, "name": "quoteMarket", "type": "uint256" }
+    ],
+    "name": "LogCanonicalOrderApproved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "orderHash", "type": "bytes32" },
+      { "indexed": true, "name": "orderMaker", "type": "address" },
+      { "indexed": false, "name": "fillAmount", "type": "uint256" },
+      { "indexed": false, "name": "triggerPrice", "type": "uint256" },
+      { "indexed": false, "name": "orderFlags", "type": "bytes32" },
+      {
+        "components": [
+          { "name": "price", "type": "uint256" },
+          { "name": "fee", "type": "uint128" },
+          { "name": "isNegativeFee", "type": "bool" }
+        ],
+        "indexed": false,
+        "name": "fill",
+        "type": "tuple"
+      }
+    ],
+    "name": "LogCanonicalOrderFilled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "previousOwner", "type": "address" },
+      { "indexed": true, "name": "newOwner", "type": "address" }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  }
+]

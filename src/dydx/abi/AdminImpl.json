@@ -1,0 +1,136 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "token", "type": "address" },
+      { "indexed": false, "name": "amount", "type": "uint256" }
+    ],
+    "name": "LogWithdrawExcessTokens",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "marketId", "type": "uint256" },
+      { "indexed": false, "name": "token", "type": "address" }
+    ],
+    "name": "LogAddMarket",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "marketId", "type": "uint256" },
+      { "indexed": false, "name": "isClosing", "type": "bool" }
+    ],
+    "name": "LogSetIsClosing",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "marketId", "type": "uint256" },
+      { "indexed": false, "name": "priceOracle", "type": "address" }
+    ],
+    "name": "LogSetPriceOracle",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "marketId", "type": "uint256" },
+      { "indexed": false, "name": "interestSetter", "type": "address" }
+    ],
+    "name": "LogSetInterestSetter",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "marketId", "type": "uint256" },
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "indexed": false,
+        "name": "marginPremium",
+        "type": "tuple"
+      }
+    ],
+    "name": "LogSetMarginPremium",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "marketId", "type": "uint256" },
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "indexed": false,
+        "name": "spreadPremium",
+        "type": "tuple"
+      }
+    ],
+    "name": "LogSetSpreadPremium",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "indexed": false,
+        "name": "marginRatio",
+        "type": "tuple"
+      }
+    ],
+    "name": "LogSetMarginRatio",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "indexed": false,
+        "name": "liquidationSpread",
+        "type": "tuple"
+      }
+    ],
+    "name": "LogSetLiquidationSpread",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "indexed": false,
+        "name": "earningsRate",
+        "type": "tuple"
+      }
+    ],
+    "name": "LogSetEarningsRate",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "indexed": false,
+        "name": "minBorrowedValue",
+        "type": "tuple"
+      }
+    ],
+    "name": "LogSetMinBorrowedValue",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "operator", "type": "address" },
+      { "indexed": false, "name": "approved", "type": "bool" }
+    ],
+    "name": "LogSetGlobalOperator",
+    "type": "event"
+  }
+]
