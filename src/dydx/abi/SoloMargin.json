@@ -1,0 +1,965 @@
+[
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "marketId", "type": "uint256" },
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "spreadPremium",
+        "type": "tuple"
+      }
+    ],
+    "name": "ownerSetSpreadPremium",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "operator", "type": "address" }],
+    "name": "getIsGlobalOperator",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getMarketTokenAddress",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "marketId", "type": "uint256" },
+      { "name": "interestSetter", "type": "address" }
+    ],
+    "name": "ownerSetInterestSetter",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "account",
+        "type": "tuple"
+      }
+    ],
+    "name": "getAccountValues",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      },
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getMarketPriceOracle",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getMarketInterestSetter",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getMarketSpreadPremium",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getNumMarkets",
+    "outputs": [{ "name": "", "type": "uint256" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "token", "type": "address" },
+      { "name": "recipient", "type": "address" }
+    ],
+    "name": "ownerWithdrawUnsupportedTokens",
+    "outputs": [{ "name": "", "type": "uint256" }],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "minBorrowedValue",
+        "type": "tuple"
+      }
+    ],
+    "name": "ownerSetMinBorrowedValue",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "spread",
+        "type": "tuple"
+      }
+    ],
+    "name": "ownerSetLiquidationSpread",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "earningsRate",
+        "type": "tuple"
+      }
+    ],
+    "name": "ownerSetEarningsRate",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      { "name": "owner", "type": "address" },
+      { "name": "operator", "type": "address" }
+    ],
+    "name": "getIsLocalOperator",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "account",
+        "type": "tuple"
+      },
+      { "name": "marketId", "type": "uint256" }
+    ],
+    "name": "getAccountPar",
+    "outputs": [
+      {
+        "components": [
+          { "name": "sign", "type": "bool" },
+          { "name": "value", "type": "uint128" }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "marketId", "type": "uint256" },
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "marginPremium",
+        "type": "tuple"
+      }
+    ],
+    "name": "ownerSetMarginPremium",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getMarginRatio",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getMarketCurrentIndex",
+    "outputs": [
+      {
+        "components": [
+          { "name": "borrow", "type": "uint96" },
+          { "name": "supply", "type": "uint96" },
+          { "name": "lastUpdate", "type": "uint32" }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getMarketIsClosing",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getRiskParams",
+    "outputs": [
+      {
+        "components": [
+          {
+            "components": [{ "name": "value", "type": "uint256" }],
+            "name": "marginRatio",
+            "type": "tuple"
+          },
+          {
+            "components": [{ "name": "value", "type": "uint256" }],
+            "name": "liquidationSpread",
+            "type": "tuple"
+          },
+          {
+            "components": [{ "name": "value", "type": "uint256" }],
+            "name": "earningsRate",
+            "type": "tuple"
+          },
+          {
+            "components": [{ "name": "value", "type": "uint256" }],
+            "name": "minBorrowedValue",
+            "type": "tuple"
+          }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "account",
+        "type": "tuple"
+      }
+    ],
+    "name": "getAccountBalances",
+    "outputs": [
+      { "name": "", "type": "address[]" },
+      {
+        "components": [
+          { "name": "sign", "type": "bool" },
+          { "name": "value", "type": "uint128" }
+        ],
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          { "name": "sign", "type": "bool" },
+          { "name": "value", "type": "uint256" }
+        ],
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getMinBorrowedValue",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [
+          { "name": "operator", "type": "address" },
+          { "name": "trusted", "type": "bool" }
+        ],
+        "name": "args",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "setOperators",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getMarketPrice",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "owner",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "isOwner",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "marketId", "type": "uint256" },
+      { "name": "recipient", "type": "address" }
+    ],
+    "name": "ownerWithdrawExcessTokens",
+    "outputs": [{ "name": "", "type": "uint256" }],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "token", "type": "address" },
+      { "name": "priceOracle", "type": "address" },
+      { "name": "interestSetter", "type": "address" },
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "marginPremium",
+        "type": "tuple"
+      },
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "spreadPremium",
+        "type": "tuple"
+      }
+    ],
+    "name": "ownerAddMarket",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "accounts",
+        "type": "tuple[]"
+      },
+      {
+        "components": [
+          { "name": "actionType", "type": "uint8" },
+          { "name": "accountId", "type": "uint256" },
+          {
+            "components": [
+              { "name": "sign", "type": "bool" },
+              { "name": "denomination", "type": "uint8" },
+              { "name": "ref", "type": "uint8" },
+              { "name": "value", "type": "uint256" }
+            ],
+            "name": "amount",
+            "type": "tuple"
+          },
+          { "name": "primaryMarketId", "type": "uint256" },
+          { "name": "secondaryMarketId", "type": "uint256" },
+          { "name": "otherAddress", "type": "address" },
+          { "name": "otherAccountId", "type": "uint256" },
+          { "name": "data", "type": "bytes" }
+        ],
+        "name": "actions",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "operate",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getMarketWithInfo",
+    "outputs": [
+      {
+        "components": [
+          { "name": "token", "type": "address" },
+          {
+            "components": [
+              { "name": "borrow", "type": "uint128" },
+              { "name": "supply", "type": "uint128" }
+            ],
+            "name": "totalPar",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              { "name": "borrow", "type": "uint96" },
+              { "name": "supply", "type": "uint96" },
+              { "name": "lastUpdate", "type": "uint32" }
+            ],
+            "name": "index",
+            "type": "tuple"
+          },
+          { "name": "priceOracle", "type": "address" },
+          { "name": "interestSetter", "type": "address" },
+          {
+            "components": [{ "name": "value", "type": "uint256" }],
+            "name": "marginPremium",
+            "type": "tuple"
+          },
+          {
+            "components": [{ "name": "value", "type": "uint256" }],
+            "name": "spreadPremium",
+            "type": "tuple"
+          },
+          { "name": "isClosing", "type": "bool" }
+        ],
+        "name": "",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "name": "borrow", "type": "uint96" },
+          { "name": "supply", "type": "uint96" },
+          { "name": "lastUpdate", "type": "uint32" }
+        ],
+        "name": "",
+        "type": "tuple"
+      },
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      },
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "ratio",
+        "type": "tuple"
+      }
+    ],
+    "name": "ownerSetMarginRatio",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getLiquidationSpread",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "account",
+        "type": "tuple"
+      },
+      { "name": "marketId", "type": "uint256" }
+    ],
+    "name": "getAccountWei",
+    "outputs": [
+      {
+        "components": [
+          { "name": "sign", "type": "bool" },
+          { "name": "value", "type": "uint256" }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getMarketTotalPar",
+    "outputs": [
+      {
+        "components": [
+          { "name": "borrow", "type": "uint128" },
+          { "name": "supply", "type": "uint128" }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      { "name": "heldMarketId", "type": "uint256" },
+      { "name": "owedMarketId", "type": "uint256" }
+    ],
+    "name": "getLiquidationSpreadForPair",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getNumExcessTokens",
+    "outputs": [
+      {
+        "components": [
+          { "name": "sign", "type": "bool" },
+          { "name": "value", "type": "uint256" }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getMarketCachedIndex",
+    "outputs": [
+      {
+        "components": [
+          { "name": "borrow", "type": "uint96" },
+          { "name": "supply", "type": "uint96" },
+          { "name": "lastUpdate", "type": "uint32" }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "account",
+        "type": "tuple"
+      }
+    ],
+    "name": "getAccountStatus",
+    "outputs": [{ "name": "", "type": "uint8" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getEarningsRate",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "marketId", "type": "uint256" },
+      { "name": "priceOracle", "type": "address" }
+    ],
+    "name": "ownerSetPriceOracle",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getRiskLimits",
+    "outputs": [
+      {
+        "components": [
+          { "name": "marginRatioMax", "type": "uint64" },
+          { "name": "liquidationSpreadMax", "type": "uint64" },
+          { "name": "earningsRateMax", "type": "uint64" },
+          { "name": "marginPremiumMax", "type": "uint64" },
+          { "name": "spreadPremiumMax", "type": "uint64" },
+          { "name": "minBorrowedValueMax", "type": "uint128" }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getMarket",
+    "outputs": [
+      {
+        "components": [
+          { "name": "token", "type": "address" },
+          {
+            "components": [
+              { "name": "borrow", "type": "uint128" },
+              { "name": "supply", "type": "uint128" }
+            ],
+            "name": "totalPar",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              { "name": "borrow", "type": "uint96" },
+              { "name": "supply", "type": "uint96" },
+              { "name": "lastUpdate", "type": "uint32" }
+            ],
+            "name": "index",
+            "type": "tuple"
+          },
+          { "name": "priceOracle", "type": "address" },
+          { "name": "interestSetter", "type": "address" },
+          {
+            "components": [{ "name": "value", "type": "uint256" }],
+            "name": "marginPremium",
+            "type": "tuple"
+          },
+          {
+            "components": [{ "name": "value", "type": "uint256" }],
+            "name": "spreadPremium",
+            "type": "tuple"
+          },
+          { "name": "isClosing", "type": "bool" }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "marketId", "type": "uint256" },
+      { "name": "isClosing", "type": "bool" }
+    ],
+    "name": "ownerSetIsClosing",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "operator", "type": "address" },
+      { "name": "approved", "type": "bool" }
+    ],
+    "name": "ownerSetGlobalOperator",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "newOwner", "type": "address" }],
+    "name": "transferOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "account",
+        "type": "tuple"
+      }
+    ],
+    "name": "getAdjustedAccountValues",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      },
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getMarketMarginPremium",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "marketId", "type": "uint256" }],
+    "name": "getMarketInterestRate",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "components": [{ "name": "value", "type": "uint256" }],
+            "name": "marginRatio",
+            "type": "tuple"
+          },
+          {
+            "components": [{ "name": "value", "type": "uint256" }],
+            "name": "liquidationSpread",
+            "type": "tuple"
+          },
+          {
+            "components": [{ "name": "value", "type": "uint256" }],
+            "name": "earningsRate",
+            "type": "tuple"
+          },
+          {
+            "components": [{ "name": "value", "type": "uint256" }],
+            "name": "minBorrowedValue",
+            "type": "tuple"
+          }
+        ],
+        "name": "riskParams",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "name": "marginRatioMax", "type": "uint64" },
+          { "name": "liquidationSpreadMax", "type": "uint64" },
+          { "name": "earningsRateMax", "type": "uint64" },
+          { "name": "marginPremiumMax", "type": "uint64" },
+          { "name": "spreadPremiumMax", "type": "uint64" },
+          { "name": "minBorrowedValueMax", "type": "uint128" }
+        ],
+        "name": "riskLimits",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "owner", "type": "address" },
+      { "indexed": false, "name": "operator", "type": "address" },
+      { "indexed": false, "name": "trusted", "type": "bool" }
+    ],
+    "name": "LogOperatorSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "previousOwner", "type": "address" },
+      { "indexed": true, "name": "newOwner", "type": "address" }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  }
+]

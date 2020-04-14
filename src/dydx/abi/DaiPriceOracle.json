@@ -1,0 +1,323 @@
+[
+  {
+    "constant": false,
+    "inputs": [{ "name": "newPoker", "type": "address" }],
+    "name": "ownerSetPokerAddress",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getBoundedTargetPrice",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getMedianizerPrice",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "ethUsd",
+        "type": "tuple"
+      }
+    ],
+    "name": "getOasisPrice",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "OASIS",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "DEVIATION_PARAMS",
+    "outputs": [
+      { "name": "denominator", "type": "uint64" },
+      { "name": "maximumPerSecond", "type": "uint64" },
+      { "name": "maximumAbsolute", "type": "uint64" }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "", "type": "address" }],
+    "name": "getPrice",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "ethUsd",
+        "type": "tuple"
+      }
+    ],
+    "name": "getUniswapPrice",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "ONE_DOLLAR",
+    "outputs": [{ "name": "", "type": "uint256" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "g_poker",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "owner",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "isOwner",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "MEDIANIZER",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "OASIS_ETH_AMOUNT",
+    "outputs": [{ "name": "", "type": "uint256" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "minimum",
+        "type": "tuple"
+      },
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "maximum",
+        "type": "tuple"
+      }
+    ],
+    "name": "updatePrice",
+    "outputs": [
+      {
+        "components": [
+          { "name": "price", "type": "uint128" },
+          { "name": "lastUpdate", "type": "uint32" }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "WETH",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "g_priceInfo",
+    "outputs": [
+      { "name": "price", "type": "uint128" },
+      { "name": "lastUpdate", "type": "uint32" }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getTargetPrice",
+    "outputs": [
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "UNISWAP",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "DAI",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "newOwner", "type": "address" }],
+    "name": "transferOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "name": "poker", "type": "address" },
+      { "name": "weth", "type": "address" },
+      { "name": "dai", "type": "address" },
+      { "name": "medianizer", "type": "address" },
+      { "name": "oasis", "type": "address" },
+      { "name": "uniswap", "type": "address" },
+      { "name": "oasisEthAmount", "type": "uint256" },
+      {
+        "components": [
+          { "name": "denominator", "type": "uint64" },
+          { "name": "maximumPerSecond", "type": "uint64" },
+          { "name": "maximumAbsolute", "type": "uint64" }
+        ],
+        "name": "deviationParams",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          { "name": "price", "type": "uint128" },
+          { "name": "lastUpdate", "type": "uint32" }
+        ],
+        "indexed": false,
+        "name": "newPriceInfo",
+        "type": "tuple"
+      }
+    ],
+    "name": "PriceSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "previousOwner", "type": "address" },
+      { "indexed": true, "name": "newOwner", "type": "address" }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  }
+]

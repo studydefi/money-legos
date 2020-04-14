@@ -1,0 +1,51 @@
+[
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "SOLO_MARGIN",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "fromAccount",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "name": "owner", "type": "address" },
+          { "name": "number", "type": "uint256" }
+        ],
+        "name": "liquidAccount",
+        "type": "tuple"
+      },
+      {
+        "components": [{ "name": "value", "type": "uint256" }],
+        "name": "minLiquidatorRatio",
+        "type": "tuple"
+      },
+      { "name": "minValueLiquidated", "type": "uint256" },
+      { "name": "owedPreferences", "type": "uint256[]" },
+      { "name": "heldPreferences", "type": "uint256[]" }
+    ],
+    "name": "liquidate",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "name": "soloMargin", "type": "address" }],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  }
+]
