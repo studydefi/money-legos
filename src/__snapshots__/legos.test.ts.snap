@@ -25844,6 +25844,6730 @@ Object {
       },
     },
   },
+  "dydx": Object {
+    "contracts": Object {
+      "adminImpl": Object {
+        "abi": Array [
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "token",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "amount",
+                "type": "uint256",
+              },
+            ],
+            "name": "LogWithdrawExcessTokens",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "token",
+                "type": "address",
+              },
+            ],
+            "name": "LogAddMarket",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "isClosing",
+                "type": "bool",
+              },
+            ],
+            "name": "LogSetIsClosing",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "priceOracle",
+                "type": "address",
+              },
+            ],
+            "name": "LogSetPriceOracle",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "interestSetter",
+                "type": "address",
+              },
+            ],
+            "name": "LogSetInterestSetter",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "indexed": false,
+                "name": "marginPremium",
+                "type": "tuple",
+              },
+            ],
+            "name": "LogSetMarginPremium",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "indexed": false,
+                "name": "spreadPremium",
+                "type": "tuple",
+              },
+            ],
+            "name": "LogSetSpreadPremium",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "indexed": false,
+                "name": "marginRatio",
+                "type": "tuple",
+              },
+            ],
+            "name": "LogSetMarginRatio",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "indexed": false,
+                "name": "liquidationSpread",
+                "type": "tuple",
+              },
+            ],
+            "name": "LogSetLiquidationSpread",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "indexed": false,
+                "name": "earningsRate",
+                "type": "tuple",
+              },
+            ],
+            "name": "LogSetEarningsRate",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "indexed": false,
+                "name": "minBorrowedValue",
+                "type": "tuple",
+              },
+            ],
+            "name": "LogSetMinBorrowedValue",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "operator",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "approved",
+                "type": "bool",
+              },
+            ],
+            "name": "LogSetGlobalOperator",
+            "type": "event",
+          },
+        ],
+        "address": "0x8a6629fEba4196E0A61B8E8C94D4905e525bc055",
+      },
+      "canonicalOrders": Object {
+        "abi": Array [
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "g_taker",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "g_fillArgs",
+            "outputs": Array [
+              Object {
+                "name": "price",
+                "type": "uint256",
+              },
+              Object {
+                "name": "fee",
+                "type": "uint128",
+              },
+              Object {
+                "name": "isNegativeFee",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "shutDown",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "SOLO_MARGIN",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "startUp",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "inputMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "outputMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "makerAccount",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "takerAccount",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "oldInputPar",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "newInputPar",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "inputWei",
+                "type": "tuple",
+              },
+              Object {
+                "name": "data",
+                "type": "bytes",
+              },
+            ],
+            "name": "getTradeCost",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "denomination",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "ref",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "renounceOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "flags",
+                    "type": "bytes32",
+                  },
+                  Object {
+                    "name": "baseMarket",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "quoteMarket",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "amount",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "limitPrice",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "triggerPrice",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "limitFee",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "makerAccountOwner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "makerAccountNumber",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "expiration",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "order",
+                "type": "tuple",
+              },
+            ],
+            "name": "cancelOrder",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "accountInfo",
+                "type": "tuple",
+              },
+              Object {
+                "name": "data",
+                "type": "bytes",
+              },
+            ],
+            "name": "callFunction",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "owner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "isOwner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "orderHashes",
+                "type": "bytes32[]",
+              },
+            ],
+            "name": "getOrderStates",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "orderStatus",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "filledAmount",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple[]",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "bytes32",
+              },
+            ],
+            "name": "g_status",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint8",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "flags",
+                    "type": "bytes32",
+                  },
+                  Object {
+                    "name": "baseMarket",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "quoteMarket",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "amount",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "limitPrice",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "triggerPrice",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "limitFee",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "makerAccountOwner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "makerAccountNumber",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "expiration",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "order",
+                "type": "tuple",
+              },
+            ],
+            "name": "approveOrder",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "bytes32",
+              },
+            ],
+            "name": "g_filledAmount",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "EIP712_DOMAIN_HASH",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bytes32",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "transferOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "taker",
+                "type": "address",
+              },
+            ],
+            "name": "setTakerAddress",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "g_isOperational",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "name": "soloMargin",
+                "type": "address",
+              },
+              Object {
+                "name": "taker",
+                "type": "address",
+              },
+              Object {
+                "name": "chainId",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "operational",
+                "type": "bool",
+              },
+            ],
+            "name": "LogContractStatusSet",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "taker",
+                "type": "address",
+              },
+            ],
+            "name": "LogTakerSet",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "orderHash",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": true,
+                "name": "canceler",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "baseMarket",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "quoteMarket",
+                "type": "uint256",
+              },
+            ],
+            "name": "LogCanonicalOrderCanceled",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "orderHash",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": true,
+                "name": "approver",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "baseMarket",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "quoteMarket",
+                "type": "uint256",
+              },
+            ],
+            "name": "LogCanonicalOrderApproved",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "orderHash",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": true,
+                "name": "orderMaker",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "fillAmount",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "triggerPrice",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "orderFlags",
+                "type": "bytes32",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "price",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "fee",
+                    "type": "uint128",
+                  },
+                  Object {
+                    "name": "isNegativeFee",
+                    "type": "bool",
+                  },
+                ],
+                "indexed": false,
+                "name": "fill",
+                "type": "tuple",
+              },
+            ],
+            "name": "LogCanonicalOrderFilled",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "previousOwner",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event",
+          },
+        ],
+        "address": "0xCd81398895bEa7AD9EFF273aeFFc41A9d83B4dAD",
+      },
+      "daiPriceOracle": Object {
+        "abi": Array [
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newPoker",
+                "type": "address",
+              },
+            ],
+            "name": "ownerSetPokerAddress",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getBoundedTargetPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getMedianizerPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "ethUsd",
+                "type": "tuple",
+              },
+            ],
+            "name": "getOasisPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "OASIS",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "DEVIATION_PARAMS",
+            "outputs": Array [
+              Object {
+                "name": "denominator",
+                "type": "uint64",
+              },
+              Object {
+                "name": "maximumPerSecond",
+                "type": "uint64",
+              },
+              Object {
+                "name": "maximumAbsolute",
+                "type": "uint64",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "name": "getPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "ethUsd",
+                "type": "tuple",
+              },
+            ],
+            "name": "getUniswapPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "ONE_DOLLAR",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "renounceOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "g_poker",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "owner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "isOwner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "MEDIANIZER",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "OASIS_ETH_AMOUNT",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "minimum",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "maximum",
+                "type": "tuple",
+              },
+            ],
+            "name": "updatePrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "price",
+                    "type": "uint128",
+                  },
+                  Object {
+                    "name": "lastUpdate",
+                    "type": "uint32",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "WETH",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "g_priceInfo",
+            "outputs": Array [
+              Object {
+                "name": "price",
+                "type": "uint128",
+              },
+              Object {
+                "name": "lastUpdate",
+                "type": "uint32",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getTargetPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "UNISWAP",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "DAI",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "transferOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "name": "poker",
+                "type": "address",
+              },
+              Object {
+                "name": "weth",
+                "type": "address",
+              },
+              Object {
+                "name": "dai",
+                "type": "address",
+              },
+              Object {
+                "name": "medianizer",
+                "type": "address",
+              },
+              Object {
+                "name": "oasis",
+                "type": "address",
+              },
+              Object {
+                "name": "uniswap",
+                "type": "address",
+              },
+              Object {
+                "name": "oasisEthAmount",
+                "type": "uint256",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "denominator",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "maximumPerSecond",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "maximumAbsolute",
+                    "type": "uint64",
+                  },
+                ],
+                "name": "deviationParams",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "price",
+                    "type": "uint128",
+                  },
+                  Object {
+                    "name": "lastUpdate",
+                    "type": "uint32",
+                  },
+                ],
+                "indexed": false,
+                "name": "newPriceInfo",
+                "type": "tuple",
+              },
+            ],
+            "name": "PriceSet",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "previousOwner",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event",
+          },
+        ],
+        "address": "0x0fBd14718d8FAB8f9f40Ee5c5612b1F0717100A2",
+      },
+      "expiry": Object {
+        "abi": Array [
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "SOLO_MARGIN",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "account",
+                "type": "tuple",
+              },
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getExpiry",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint32",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "inputMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "outputMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "makerAccount",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "oldInputPar",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "newInputPar",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "inputWei",
+                "type": "tuple",
+              },
+              Object {
+                "name": "data",
+                "type": "bytes",
+              },
+            ],
+            "name": "getTradeCost",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "denomination",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "ref",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "renounceOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "account",
+                "type": "tuple",
+              },
+              Object {
+                "name": "data",
+                "type": "bytes",
+              },
+            ],
+            "name": "callFunction",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "owner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "isOwner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "heldMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "owedMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "expiry",
+                "type": "uint32",
+              },
+            ],
+            "name": "getSpreadAdjustedPrices",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "g_expiryRampTime",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "transferOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newExpiryRampTime",
+                "type": "uint256",
+              },
+            ],
+            "name": "ownerSetExpiryRampTime",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "name": "soloMargin",
+                "type": "address",
+              },
+              Object {
+                "name": "expiryRampTime",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "owner",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "number",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "time",
+                "type": "uint32",
+              },
+            ],
+            "name": "ExpirySet",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "expiryRampTime",
+                "type": "uint256",
+              },
+            ],
+            "name": "LogExpiryRampTimeSet",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "previousOwner",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event",
+          },
+        ],
+        "address": "0x0ECE224FBC24D40B446c6a94a142dc41fAe76f2d",
+      },
+      "expiryV2": Object {
+        "abi": Array [
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "name": "g_approvedSender",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint32",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "SOLO_MARGIN",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "account",
+                "type": "tuple",
+              },
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getExpiry",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint32",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "sender",
+                "type": "address",
+              },
+              Object {
+                "name": "minTimeDelta",
+                "type": "uint32",
+              },
+            ],
+            "name": "approveSender",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "inputMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "outputMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "makerAccount",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "oldInputPar",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "newInputPar",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "inputWei",
+                "type": "tuple",
+              },
+              Object {
+                "name": "data",
+                "type": "bytes",
+              },
+            ],
+            "name": "getTradeCost",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "denomination",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "ref",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "renounceOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "account",
+                "type": "tuple",
+              },
+              Object {
+                "name": "data",
+                "type": "bytes",
+              },
+            ],
+            "name": "callFunction",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "owner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "isOwner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "heldMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "owedMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "expiry",
+                "type": "uint32",
+              },
+            ],
+            "name": "getSpreadAdjustedPrices",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "g_expiryRampTime",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "transferOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newExpiryRampTime",
+                "type": "uint256",
+              },
+            ],
+            "name": "ownerSetExpiryRampTime",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "name": "soloMargin",
+                "type": "address",
+              },
+              Object {
+                "name": "expiryRampTime",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "owner",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "number",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "time",
+                "type": "uint32",
+              },
+            ],
+            "name": "ExpirySet",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "expiryRampTime",
+                "type": "uint256",
+              },
+            ],
+            "name": "LogExpiryRampTimeSet",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "approver",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "sender",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "minTimeDelta",
+                "type": "uint32",
+              },
+            ],
+            "name": "LogSenderApproved",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "previousOwner",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event",
+          },
+        ],
+        "address": "0x739A1DF6725657f6a16dC2d5519DC36FD7911A12",
+      },
+      "limitOrders": Object {
+        "abi": Array [
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "shutDown",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "SOLO_MARGIN",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "startUp",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "inputMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "outputMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "makerAccount",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "takerAccount",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "inputWei",
+                "type": "tuple",
+              },
+              Object {
+                "name": "data",
+                "type": "bytes",
+              },
+            ],
+            "name": "getTradeCost",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "denomination",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "ref",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "bytes32",
+              },
+            ],
+            "name": "g_makerFilledAmount",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "renounceOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "accountInfo",
+                "type": "tuple",
+              },
+              Object {
+                "name": "data",
+                "type": "bytes",
+              },
+            ],
+            "name": "callFunction",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "owner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "isOwner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "makerMarket",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "takerMarket",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "makerAmount",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "takerAmount",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "makerAccountOwner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "makerAccountNumber",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "takerAccountOwner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "takerAccountNumber",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "expiration",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "salt",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "order",
+                "type": "tuple",
+              },
+            ],
+            "name": "cancelOrder",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "orderHashes",
+                "type": "bytes32[]",
+              },
+            ],
+            "name": "getOrderStates",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "orderStatus",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "orderMakerFilledAmount",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple[]",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "bytes32",
+              },
+            ],
+            "name": "g_status",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint8",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "makerMarket",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "takerMarket",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "makerAmount",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "takerAmount",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "makerAccountOwner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "makerAccountNumber",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "takerAccountOwner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "takerAccountNumber",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "expiration",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "salt",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "order",
+                "type": "tuple",
+              },
+            ],
+            "name": "approveOrder",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "EIP712_DOMAIN_HASH",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bytes32",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "transferOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "g_isOperational",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "name": "soloMargin",
+                "type": "address",
+              },
+              Object {
+                "name": "chainId",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "operational",
+                "type": "bool",
+              },
+            ],
+            "name": "ContractStatusSet",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "orderHash",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": true,
+                "name": "canceler",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "makerMarket",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "takerMarket",
+                "type": "uint256",
+              },
+            ],
+            "name": "LogLimitOrderCanceled",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "orderHash",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": true,
+                "name": "approver",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "makerMarket",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "takerMarket",
+                "type": "uint256",
+              },
+            ],
+            "name": "LogLimitOrderApproved",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "orderHash",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": true,
+                "name": "orderMaker",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "makerFillAmount",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "totalMakerFilledAmount",
+                "type": "uint256",
+              },
+            ],
+            "name": "LogLimitOrderFilled",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "previousOwner",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event",
+          },
+        ],
+        "address": "0xDEf136D9884528e1EB302f39457af0E4d3AD24EB",
+      },
+      "liquidatorProxyV1ForSoloMargin": Object {
+        "abi": Array [
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "SOLO_MARGIN",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "fromAccount",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "liquidAccount",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "minLiquidatorRatio",
+                "type": "tuple",
+              },
+              Object {
+                "name": "minValueLiquidated",
+                "type": "uint256",
+              },
+              Object {
+                "name": "owedPreferences",
+                "type": "uint256[]",
+              },
+              Object {
+                "name": "heldPreferences",
+                "type": "uint256[]",
+              },
+            ],
+            "name": "liquidate",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "name": "soloMargin",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+        ],
+        "address": "0xD4B6cd147ad8A0D5376b6FDBa85fE8128C6f0686",
+      },
+      "operationImpl": Object {
+        "abi": Array [],
+        "address": "0x56E7d4520ABFECf10b38368b00723d9BD3c21ee1",
+      },
+      "payableProxyForSoloMargin": Object {
+        "abi": Array [
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "SOLO_MARGIN",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "WETH",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "accounts",
+                "type": "tuple[]",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "actionType",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "accountId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "sign",
+                        "type": "bool",
+                      },
+                      Object {
+                        "name": "denomination",
+                        "type": "uint8",
+                      },
+                      Object {
+                        "name": "ref",
+                        "type": "uint8",
+                      },
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "amount",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "name": "primaryMarketId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "secondaryMarketId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "otherAddress",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "otherAccountId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "data",
+                    "type": "bytes",
+                  },
+                ],
+                "name": "actions",
+                "type": "tuple[]",
+              },
+              Object {
+                "name": "sendEthTo",
+                "type": "address",
+              },
+            ],
+            "name": "operate",
+            "outputs": Array [],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "name": "soloMargin",
+                "type": "address",
+              },
+              Object {
+                "name": "weth",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+          Object {
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "fallback",
+          },
+        ],
+        "address": "0xa8b39829cE2246f89B31C013b8Cde15506Fb9A76",
+      },
+      "polynomialInterestSetter": Object {
+        "abi": Array [
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getMaxAPR",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getCoefficients",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256[]",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+              Object {
+                "name": "borrowWei",
+                "type": "uint256",
+              },
+              Object {
+                "name": "supplyWei",
+                "type": "uint256",
+              },
+            ],
+            "name": "getInterestRate",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "maxAPR",
+                    "type": "uint128",
+                  },
+                  Object {
+                    "name": "coefficients",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "params",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+        ],
+        "address": "0xaEE83ca85Ad63DFA04993adcd76CB2B3589eCa49",
+      },
+      "refunder": Object {
+        "abi": Array [
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "name": "g_givers",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "SOLO_MARGIN",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "inputMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "makerAccount",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "takerAccount",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "inputWei",
+                "type": "tuple",
+              },
+              Object {
+                "name": "",
+                "type": "bytes",
+              },
+            ],
+            "name": "getTradeCost",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "denomination",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "ref",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "giver",
+                "type": "address",
+              },
+            ],
+            "name": "addGiver",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "giver",
+                "type": "address",
+              },
+            ],
+            "name": "removeGiver",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "renounceOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "owner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "isOwner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "transferOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "name": "soloMargin",
+                "type": "address",
+              },
+              Object {
+                "name": "givers",
+                "type": "address[]",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "giver",
+                "type": "address",
+              },
+            ],
+            "name": "LogGiverAdded",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "giver",
+                "type": "address",
+              },
+            ],
+            "name": "LogGiverRemoved",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "indexed": false,
+                "name": "account",
+                "type": "tuple",
+              },
+              Object {
+                "indexed": false,
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "amount",
+                "type": "uint256",
+              },
+            ],
+            "name": "LogRefund",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "previousOwner",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event",
+          },
+        ],
+        "address": "0x7454dF5d0758D4E7A538c3aCF4841FA9137F0f74",
+      },
+      "saiPriceOracle": Object {
+        "abi": Array [
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newPoker",
+                "type": "address",
+              },
+            ],
+            "name": "ownerSetPokerAddress",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getBoundedTargetPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getMedianizerPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "ethUsd",
+                "type": "tuple",
+              },
+            ],
+            "name": "getOasisPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "OASIS",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "DEVIATION_PARAMS",
+            "outputs": Array [
+              Object {
+                "name": "denominator",
+                "type": "uint64",
+              },
+              Object {
+                "name": "maximumPerSecond",
+                "type": "uint64",
+              },
+              Object {
+                "name": "maximumAbsolute",
+                "type": "uint64",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "name": "getPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "ethUsd",
+                "type": "tuple",
+              },
+            ],
+            "name": "getUniswapPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "ONE_DOLLAR",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "renounceOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "g_poker",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "owner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "isOwner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "MEDIANIZER",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "OASIS_ETH_AMOUNT",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "minimum",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "maximum",
+                "type": "tuple",
+              },
+            ],
+            "name": "updatePrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "price",
+                    "type": "uint128",
+                  },
+                  Object {
+                    "name": "lastUpdate",
+                    "type": "uint32",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "WETH",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "g_priceInfo",
+            "outputs": Array [
+              Object {
+                "name": "price",
+                "type": "uint128",
+              },
+              Object {
+                "name": "lastUpdate",
+                "type": "uint32",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getTargetPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "UNISWAP",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "DAI",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "transferOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "name": "poker",
+                "type": "address",
+              },
+              Object {
+                "name": "weth",
+                "type": "address",
+              },
+              Object {
+                "name": "dai",
+                "type": "address",
+              },
+              Object {
+                "name": "medianizer",
+                "type": "address",
+              },
+              Object {
+                "name": "oasis",
+                "type": "address",
+              },
+              Object {
+                "name": "uniswap",
+                "type": "address",
+              },
+              Object {
+                "name": "oasisEthAmount",
+                "type": "uint256",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "denominator",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "maximumPerSecond",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "maximumAbsolute",
+                    "type": "uint64",
+                  },
+                ],
+                "name": "deviationParams",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "price",
+                    "type": "uint128",
+                  },
+                  Object {
+                    "name": "lastUpdate",
+                    "type": "uint32",
+                  },
+                ],
+                "indexed": false,
+                "name": "newPriceInfo",
+                "type": "tuple",
+              },
+            ],
+            "name": "PriceSet",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "previousOwner",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event",
+          },
+        ],
+        "address": "0x787F552BDC17332c98aA360748884513e3cB401a",
+      },
+      "signedOperationProxy": Object {
+        "abi": Array [
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "shutDown",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "SOLO_MARGIN",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "startUp",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "operationHashes",
+                "type": "bytes32[]",
+              },
+            ],
+            "name": "getOperationsAreInvalid",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool[]",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "bytes32",
+              },
+            ],
+            "name": "g_invalidated",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "renounceOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "owner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "isOwner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "accounts",
+                "type": "tuple[]",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "actionType",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "accountId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "sign",
+                        "type": "bool",
+                      },
+                      Object {
+                        "name": "denomination",
+                        "type": "uint8",
+                      },
+                      Object {
+                        "name": "ref",
+                        "type": "uint8",
+                      },
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "amount",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "name": "primaryMarketId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "secondaryMarketId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "otherAddress",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "otherAccountId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "data",
+                    "type": "bytes",
+                  },
+                ],
+                "name": "actions",
+                "type": "tuple[]",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "numActions",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "expiration",
+                        "type": "uint256",
+                      },
+                      Object {
+                        "name": "salt",
+                        "type": "uint256",
+                      },
+                      Object {
+                        "name": "sender",
+                        "type": "address",
+                      },
+                      Object {
+                        "name": "signer",
+                        "type": "address",
+                      },
+                    ],
+                    "name": "header",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "name": "signature",
+                    "type": "bytes",
+                  },
+                ],
+                "name": "auths",
+                "type": "tuple[]",
+              },
+            ],
+            "name": "operate",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "accounts",
+                "type": "tuple[]",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "actionType",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "accountId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "sign",
+                        "type": "bool",
+                      },
+                      Object {
+                        "name": "denomination",
+                        "type": "uint8",
+                      },
+                      Object {
+                        "name": "ref",
+                        "type": "uint8",
+                      },
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "amount",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "name": "primaryMarketId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "secondaryMarketId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "otherAddress",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "otherAccountId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "data",
+                    "type": "bytes",
+                  },
+                ],
+                "name": "actions",
+                "type": "tuple[]",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "numActions",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "expiration",
+                        "type": "uint256",
+                      },
+                      Object {
+                        "name": "salt",
+                        "type": "uint256",
+                      },
+                      Object {
+                        "name": "sender",
+                        "type": "address",
+                      },
+                      Object {
+                        "name": "signer",
+                        "type": "address",
+                      },
+                    ],
+                    "name": "header",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "name": "signature",
+                    "type": "bytes",
+                  },
+                ],
+                "name": "auth",
+                "type": "tuple",
+              },
+            ],
+            "name": "cancel",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "EIP712_DOMAIN_HASH",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bytes32",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "transferOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "g_isOperational",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "name": "soloMargin",
+                "type": "address",
+              },
+              Object {
+                "name": "chainId",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "operational",
+                "type": "bool",
+              },
+            ],
+            "name": "ContractStatusSet",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "operationHash",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": true,
+                "name": "signer",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "name": "sender",
+                "type": "address",
+              },
+            ],
+            "name": "LogOperationExecuted",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "operationHash",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": true,
+                "name": "canceler",
+                "type": "address",
+              },
+            ],
+            "name": "LogOperationCanceled",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "previousOwner",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event",
+          },
+        ],
+        "address": "0x2a842bC64343FAD4Ec4a8424ba7ff3c0A70b6e55",
+      },
+      "soloMargin": Object {
+        "abi": Array [
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "spreadPremium",
+                "type": "tuple",
+              },
+            ],
+            "name": "ownerSetSpreadPremium",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "operator",
+                "type": "address",
+              },
+            ],
+            "name": "getIsGlobalOperator",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getMarketTokenAddress",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "interestSetter",
+                "type": "address",
+              },
+            ],
+            "name": "ownerSetInterestSetter",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "account",
+                "type": "tuple",
+              },
+            ],
+            "name": "getAccountValues",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getMarketPriceOracle",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getMarketInterestSetter",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getMarketSpreadPremium",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getNumMarkets",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "token",
+                "type": "address",
+              },
+              Object {
+                "name": "recipient",
+                "type": "address",
+              },
+            ],
+            "name": "ownerWithdrawUnsupportedTokens",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "minBorrowedValue",
+                "type": "tuple",
+              },
+            ],
+            "name": "ownerSetMinBorrowedValue",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "spread",
+                "type": "tuple",
+              },
+            ],
+            "name": "ownerSetLiquidationSpread",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "earningsRate",
+                "type": "tuple",
+              },
+            ],
+            "name": "ownerSetEarningsRate",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "owner",
+                "type": "address",
+              },
+              Object {
+                "name": "operator",
+                "type": "address",
+              },
+            ],
+            "name": "getIsLocalOperator",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "account",
+                "type": "tuple",
+              },
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getAccountPar",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "marginPremium",
+                "type": "tuple",
+              },
+            ],
+            "name": "ownerSetMarginPremium",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getMarginRatio",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getMarketCurrentIndex",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "borrow",
+                    "type": "uint96",
+                  },
+                  Object {
+                    "name": "supply",
+                    "type": "uint96",
+                  },
+                  Object {
+                    "name": "lastUpdate",
+                    "type": "uint32",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getMarketIsClosing",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getRiskParams",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "marginRatio",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "liquidationSpread",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "earningsRate",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "minBorrowedValue",
+                    "type": "tuple",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "account",
+                "type": "tuple",
+              },
+            ],
+            "name": "getAccountBalances",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address[]",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "",
+                "type": "tuple[]",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple[]",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "renounceOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getMinBorrowedValue",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "operator",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "trusted",
+                    "type": "bool",
+                  },
+                ],
+                "name": "args",
+                "type": "tuple[]",
+              },
+            ],
+            "name": "setOperators",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getMarketPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "owner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "isOwner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "recipient",
+                "type": "address",
+              },
+            ],
+            "name": "ownerWithdrawExcessTokens",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "token",
+                "type": "address",
+              },
+              Object {
+                "name": "priceOracle",
+                "type": "address",
+              },
+              Object {
+                "name": "interestSetter",
+                "type": "address",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "marginPremium",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "spreadPremium",
+                "type": "tuple",
+              },
+            ],
+            "name": "ownerAddMarket",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "accounts",
+                "type": "tuple[]",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "actionType",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "accountId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "sign",
+                        "type": "bool",
+                      },
+                      Object {
+                        "name": "denomination",
+                        "type": "uint8",
+                      },
+                      Object {
+                        "name": "ref",
+                        "type": "uint8",
+                      },
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "amount",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "name": "primaryMarketId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "secondaryMarketId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "otherAddress",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "otherAccountId",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "data",
+                    "type": "bytes",
+                  },
+                ],
+                "name": "actions",
+                "type": "tuple[]",
+              },
+            ],
+            "name": "operate",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getMarketWithInfo",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "token",
+                    "type": "address",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "borrow",
+                        "type": "uint128",
+                      },
+                      Object {
+                        "name": "supply",
+                        "type": "uint128",
+                      },
+                    ],
+                    "name": "totalPar",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "borrow",
+                        "type": "uint96",
+                      },
+                      Object {
+                        "name": "supply",
+                        "type": "uint96",
+                      },
+                      Object {
+                        "name": "lastUpdate",
+                        "type": "uint32",
+                      },
+                    ],
+                    "name": "index",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "name": "priceOracle",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "interestSetter",
+                    "type": "address",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "marginPremium",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "spreadPremium",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "name": "isClosing",
+                    "type": "bool",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "borrow",
+                    "type": "uint96",
+                  },
+                  Object {
+                    "name": "supply",
+                    "type": "uint96",
+                  },
+                  Object {
+                    "name": "lastUpdate",
+                    "type": "uint32",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "ratio",
+                "type": "tuple",
+              },
+            ],
+            "name": "ownerSetMarginRatio",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getLiquidationSpread",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "account",
+                "type": "tuple",
+              },
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getAccountWei",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getMarketTotalPar",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "borrow",
+                    "type": "uint128",
+                  },
+                  Object {
+                    "name": "supply",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "heldMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "owedMarketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getLiquidationSpreadForPair",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getNumExcessTokens",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getMarketCachedIndex",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "borrow",
+                    "type": "uint96",
+                  },
+                  Object {
+                    "name": "supply",
+                    "type": "uint96",
+                  },
+                  Object {
+                    "name": "lastUpdate",
+                    "type": "uint32",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "account",
+                "type": "tuple",
+              },
+            ],
+            "name": "getAccountStatus",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint8",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getEarningsRate",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "priceOracle",
+                "type": "address",
+              },
+            ],
+            "name": "ownerSetPriceOracle",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "getRiskLimits",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "marginRatioMax",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "liquidationSpreadMax",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "earningsRateMax",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "marginPremiumMax",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "spreadPremiumMax",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "minBorrowedValueMax",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getMarket",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "token",
+                    "type": "address",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "borrow",
+                        "type": "uint128",
+                      },
+                      Object {
+                        "name": "supply",
+                        "type": "uint128",
+                      },
+                    ],
+                    "name": "totalPar",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "borrow",
+                        "type": "uint96",
+                      },
+                      Object {
+                        "name": "supply",
+                        "type": "uint96",
+                      },
+                      Object {
+                        "name": "lastUpdate",
+                        "type": "uint32",
+                      },
+                    ],
+                    "name": "index",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "name": "priceOracle",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "interestSetter",
+                    "type": "address",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "marginPremium",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "spreadPremium",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "name": "isClosing",
+                    "type": "bool",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "isClosing",
+                "type": "bool",
+              },
+            ],
+            "name": "ownerSetIsClosing",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "operator",
+                "type": "address",
+              },
+              Object {
+                "name": "approved",
+                "type": "bool",
+              },
+            ],
+            "name": "ownerSetGlobalOperator",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "transferOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "account",
+                "type": "tuple",
+              },
+            ],
+            "name": "getAdjustedAccountValues",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getMarketMarginPremium",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "marketId",
+                "type": "uint256",
+              },
+            ],
+            "name": "getMarketInterestRate",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "marginRatio",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "liquidationSpread",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "earningsRate",
+                    "type": "tuple",
+                  },
+                  Object {
+                    "components": Array [
+                      Object {
+                        "name": "value",
+                        "type": "uint256",
+                      },
+                    ],
+                    "name": "minBorrowedValue",
+                    "type": "tuple",
+                  },
+                ],
+                "name": "riskParams",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "marginRatioMax",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "liquidationSpreadMax",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "earningsRateMax",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "marginPremiumMax",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "spreadPremiumMax",
+                    "type": "uint64",
+                  },
+                  Object {
+                    "name": "minBorrowedValueMax",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "riskLimits",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "owner",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "operator",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "trusted",
+                "type": "bool",
+              },
+            ],
+            "name": "LogOperatorSet",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "previousOwner",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event",
+          },
+        ],
+        "address": "0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e",
+      },
+      "stopLimitOrders": Object {
+        "abi": Array [
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "makerMarket",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "takerMarket",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "makerAmount",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "takerAmount",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "makerAccountOwner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "makerAccountNumber",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "takerAccountOwner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "takerAccountNumber",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "triggerPrice",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "decreaseOnly",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "expiration",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "salt",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "order",
+                "type": "tuple",
+              },
+            ],
+            "name": "approveOrder",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "shutDown",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "SOLO_MARGIN",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "startUp",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "inputMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "name": "outputMarketId",
+                "type": "uint256",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "makerAccount",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "takerAccount",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "oldInputPar",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint128",
+                  },
+                ],
+                "name": "newInputPar",
+                "type": "tuple",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "inputWei",
+                "type": "tuple",
+              },
+              Object {
+                "name": "data",
+                "type": "bytes",
+              },
+            ],
+            "name": "getTradeCost",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "sign",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "denomination",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "ref",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "bytes32",
+              },
+            ],
+            "name": "g_makerFilledAmount",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [],
+            "name": "renounceOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "makerMarket",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "takerMarket",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "makerAmount",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "takerAmount",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "makerAccountOwner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "makerAccountNumber",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "takerAccountOwner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "takerAccountNumber",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "triggerPrice",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "decreaseOnly",
+                    "type": "bool",
+                  },
+                  Object {
+                    "name": "expiration",
+                    "type": "uint256",
+                  },
+                  Object {
+                    "name": "salt",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "order",
+                "type": "tuple",
+              },
+            ],
+            "name": "cancelOrder",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "owner",
+                    "type": "address",
+                  },
+                  Object {
+                    "name": "number",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "accountInfo",
+                "type": "tuple",
+              },
+              Object {
+                "name": "data",
+                "type": "bytes",
+              },
+            ],
+            "name": "callFunction",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "owner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "isOwner",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "orderHashes",
+                "type": "bytes32[]",
+              },
+            ],
+            "name": "getOrderStates",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "orderStatus",
+                    "type": "uint8",
+                  },
+                  Object {
+                    "name": "orderMakerFilledAmount",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple[]",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "bytes32",
+              },
+            ],
+            "name": "g_status",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint8",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "EIP712_DOMAIN_HASH",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bytes32",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": false,
+            "inputs": Array [
+              Object {
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "transferOwnership",
+            "outputs": Array [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "g_isOperational",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "bool",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "name": "soloMargin",
+                "type": "address",
+              },
+              Object {
+                "name": "chainId",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": false,
+                "name": "operational",
+                "type": "bool",
+              },
+            ],
+            "name": "ContractStatusSet",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "orderHash",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": true,
+                "name": "canceler",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "makerMarket",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "takerMarket",
+                "type": "uint256",
+              },
+            ],
+            "name": "LogStopLimitOrderCanceled",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "orderHash",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": true,
+                "name": "approver",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "makerMarket",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "takerMarket",
+                "type": "uint256",
+              },
+            ],
+            "name": "LogStopLimitOrderApproved",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "orderHash",
+                "type": "bytes32",
+              },
+              Object {
+                "indexed": true,
+                "name": "orderMaker",
+                "type": "address",
+              },
+              Object {
+                "indexed": false,
+                "name": "makerFillAmount",
+                "type": "uint256",
+              },
+              Object {
+                "indexed": false,
+                "name": "totalMakerFilledAmount",
+                "type": "uint256",
+              },
+            ],
+            "name": "LogStopLimitOrderFilled",
+            "type": "event",
+          },
+          Object {
+            "anonymous": false,
+            "inputs": Array [
+              Object {
+                "indexed": true,
+                "name": "previousOwner",
+                "type": "address",
+              },
+              Object {
+                "indexed": true,
+                "name": "newOwner",
+                "type": "address",
+              },
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event",
+          },
+        ],
+        "address": "0xbFb635e8c6689ac3874aD9A60FaB1c29270f1710",
+      },
+      "usdcPriceOracle": Object {
+        "abi": Array [
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "name": "getPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "ONE_DOLLAR",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+        ],
+        "address": "0x52f1c952A48a4588f9ae615d38cfdbf8dF036e60",
+      },
+      "wethPriceOracle": Object {
+        "abi": Array [
+          Object {
+            "constant": true,
+            "inputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "name": "getPrice",
+            "outputs": Array [
+              Object {
+                "components": Array [
+                  Object {
+                    "name": "value",
+                    "type": "uint256",
+                  },
+                ],
+                "name": "",
+                "type": "tuple",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "ONE_DOLLAR",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "uint256",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "constant": true,
+            "inputs": Array [],
+            "name": "MEDIANIZER",
+            "outputs": Array [
+              Object {
+                "name": "",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function",
+          },
+          Object {
+            "inputs": Array [
+              Object {
+                "name": "medianizer",
+                "type": "address",
+              },
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor",
+          },
+        ],
+        "address": "0xf61AE328463CD997C7b58e7045CdC613e1cFdb69",
+      },
+    },
+  },
   "erc20": Object {
     "contracts": Object {
       "abi": Array [
