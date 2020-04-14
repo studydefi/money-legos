@@ -7,6 +7,7 @@
   - [Mainnet Addresses](overview_mainnet_address.md)
 
 - Integrations
+  - [Aave](aave.md)
   - [Compound](compound.md)
   - [CurveFi](curvefi.md)
   - [Maker](maker.md)
