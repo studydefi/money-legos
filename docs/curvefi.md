@@ -288,7 +288,7 @@ const main = async () => {
 ```solidity
 pragma solidity ^0.5.0;
 
-import "@studydefi/money-legos/src/curvefi/interface/ICurveFiCurve.sol";
+import "@studydefi/money-legos/src/curvefi/contracts/ICurveFiCurve.sol";
 
 contract CurveFiManager {
     address constant curveFi_curve_cDai_cUsdc = 0xA2B47E3D5c44877cca798226B7B8118F9BFb7A56;
@@ -308,7 +308,7 @@ contract CurveFiManager {
 ```solidity
 pragma solidity ^0.5.0;
 
-import "@studydefi/money-legos/src/curvefi/interface/ICurveFiCurve.sol";
+import "@studydefi/money-legos/src/curvefi/contracts/ICurveFiCurve.sol";
 
 contract CurveFiManager {
     address constant curveFi_curve_cDai_cUsdc = 0xA2B47E3D5c44877cca798226B7B8118F9BFb7A56;
@@ -328,7 +328,7 @@ contract CurveFiManager {
 ```solidity
 pragma solidity ^0.5.0;
 
-import "@studydefi/money-legos/src/curvefi/interface/ICurveFiZap.sol";
+import "@studydefi/money-legos/src/curvefi/contracts/ICurveFiZap.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 

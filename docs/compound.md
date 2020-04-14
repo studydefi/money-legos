@@ -299,9 +299,9 @@ As of April 2020, there is no way to transfer collateral/debt between accounts. 
 ```solidity
 pragma solidity ^0.5.0;
 
-import "@studydefi/money-legos/src/compound/interface/IComptroller.sol";
-import "@studydefi/money-legos/src/compound/interface/ICEther.sol";
-import "@studydefi/money-legos/src/compound/interface/ICToken.sol";
+import "@studydefi/money-legos/src/compound/contracts/IComptroller.sol";
+import "@studydefi/money-legos/src/compound/contracts/ICEther.sol";
+import "@studydefi/money-legos/src/compound/contracts/ICToken.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";

@@ -28,7 +28,7 @@ rawLegos.erc20.contracts.dai.address[networks.mainnet]
 ```solidity
 pragma solidity ^0.5.0;
 
-import "@studydefi/money-legos/src/onesplit/interface/IOneSplit.sol";
+import "@studydefi/money-legos/src/onesplit/contracts/IOneSplit.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
