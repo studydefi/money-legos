@@ -1,16 +1,19 @@
 {
   "name": "@studydefi/money-legos",
   "version": "1.0.12",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "repository": "git@github.com:studydefi/money-legos.git",
   "author": "Adrian Li <li.adrianmc@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc --declaration",
+    "build": "tsc --declaration && cp package.json dist && cp README.md dist",
     "build:docs": "yarn build && node scripts/genAddrMainnetOverview.js > docs/overview_mainnet_address.md",
     "serve:docs": "docsify serve ./docs",
-    "test": "jest"
+    "test": "jest",
+    "link": "yarn build && cd dist && npm link",
+    "prepublishOnly": "echo \"Error: Don't run 'npm publish' in root. Use 'npm run dist' instead.\" && exit 1",
+    "dist": "cd lib && npm publish --ignore-scripts"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
