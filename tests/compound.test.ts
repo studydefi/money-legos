@@ -41,7 +41,7 @@ describe("compound", () => {
     expect(after).toEqual([cEther.address, cDAI.address]);
   });
 
-  test("supply 1 ETH (i.e. mint cETH)", async () => {
+  test("supply 10 ETH (i.e. mint cETH)", async () => {
     const cEtherContract = new ethers.Contract(
       compound.contracts.cEther.address,
       compound.contracts.cEther.abi,
@@ -54,7 +54,7 @@ describe("compound", () => {
     // we supply ETH by minting cETH
     await cEtherContract.mint({
       gasLimit: 1500000,
-      value: ethers.utils.parseEther("1"),
+      value: ethers.utils.parseEther("10"),
     });
 
     const after = await cEtherContract.balanceOf(wallet.address);
@@ -153,8 +153,8 @@ describe("compound", () => {
 
     const ethAfter = await wallet.getBalance();
 
-    const ethGained = parseFloat(fromWei(ethAfter.sub(ethBefore), 8));
-    expect(ethGained).toBe(1);
+    const ethGained = parseFloat(fromWei(ethAfter.sub(ethBefore)));
+    expect(ethGained).toBeCloseTo(1);
   });
 
   test("repay 1 DAI of debt", async () => {
