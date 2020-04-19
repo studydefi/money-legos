@@ -136,4 +136,52 @@ describe("compound", () => {
     expect(parseFloat(fromWei(supplied))).toBeCloseTo(5);
     expect(parseFloat(fromWei(borrowBalance))).toBeCloseTo(20);
   });
+
+  test("withdraw 1 ETH from collateral", async () => {
+    const cEtherContract = new ethers.Contract(
+      compound.contracts.cEther.address,
+      compound.contracts.cEther.abi,
+      wallet,
+    );
+
+    const ethBefore = await wallet.getBalance();
+
+    // withdraw 1 Ether
+    await cEtherContract.redeemUnderlying(ethers.utils.parseEther("1"), {
+      gasLimit: 1500000,
+    });
+
+    const ethAfter = await wallet.getBalance();
+
+    const ethGained = parseFloat(fromWei(ethAfter.sub(ethBefore), 8));
+    expect(ethGained).toBe(1);
+  });
+
+  test("repay 1 DAI of debt", async () => {
+    const amountToRepay = ethers.utils.parseUnits(
+      "1",
+      erc20.contracts.dai.decimals,
+    );
+
+    const cDaiContract = new ethers.Contract(
+      compound.contracts.cDAI.address,
+      compound.contracts.cDAI.abi,
+      wallet,
+    );
+
+    // approve transferFrom
+    await daiContract.approve(compound.contracts.cDAI.address, amountToRepay);
+
+    const daiBefore = await daiContract.balanceOf(wallet.address);
+
+    // Repays 1 DAI
+    await cDaiContract.repayBorrow(amountToRepay, {
+      gasLimit: 1500000,
+    });
+
+    const daiAfter = await daiContract.balanceOf(wallet.address);
+
+    const daiSpent = parseFloat(fromWei(daiBefore.sub(daiAfter)));
+    expect(daiSpent).toBe(1);
+  });
 });
