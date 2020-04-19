@@ -19,6 +19,9 @@
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "docsify-cli": "^4.4.0",
+    "dotenv": "^8.2.0",
+    "ethers": "^4.0.46",
+    "ganache-core": "^2.10.2",
     "jest": "^25.3.0",
     "json2md": "^1.7.0",
     "ts-jest": "^25.3.1",
