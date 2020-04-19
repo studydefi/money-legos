@@ -6,10 +6,12 @@ import { fromWei } from "./utils";
 // import legos
 import erc20 from "../src/erc20";
 
-describe("integration tests with forked mainnet", () => {
+describe("initial conditions", () => {
   let wallet: Wallet, daiContract: Contract;
 
   beforeAll(async () => {
+    ethers.errors.setLogLevel("error");
+    
     // @ts-ignore
     wallet = global.wallet;
     daiContract = new ethers.Contract(
@@ -24,7 +26,8 @@ describe("integration tests with forked mainnet", () => {
     expect(fromWei(daiBalance)).toBe("0.0");
   });
 
-  test("initial ETH balance of ~1000 ETH", async () => {
+  test("initial ETH balance of 1000 ETH", async () => {
+    // note: this is set in test-environment.js when we spin up the test chain
     const ethBalance = await wallet.getBalance();
     expect(fromWei(ethBalance)).toBe("1000.0");
   });

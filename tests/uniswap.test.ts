@@ -11,6 +11,8 @@ describe("uniswap", () => {
   let wallet: Wallet, daiContract: Contract;
 
   beforeAll(async () => {
+    ethers.errors.setLogLevel("error");
+    
     // @ts-ignore
     wallet = global.wallet;
     daiContract = new ethers.Contract(
