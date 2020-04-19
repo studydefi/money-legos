@@ -1,5 +1,4 @@
 import erc20 from "../erc20";
-import networks from "../networks";
 
 const ilks = {
   batA: {
@@ -8,9 +7,7 @@ const ilks = {
   },
   ethA: {
     symbol: "ETH-A",
-    token: {
-      address: { [networks.mainnet]: erc20.contracts.eth.address },
-    },
+    token: { address: erc20.contracts.eth.address },
   },
   usdcA: {
     symbol: "USDC-A",
