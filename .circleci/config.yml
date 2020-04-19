@@ -59,7 +59,7 @@ jobs:
           command: |
             # Sometimes we just wanna update the readme file
             if ./.circleci/check_npm_version.sh; then
-              npm publish --access public
+              npm run dist
             fi
 
 workflows:
