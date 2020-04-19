@@ -14,7 +14,7 @@
     "test": "jest",
     "link": "yarn build && cd dist && npm link",
     "prepublishOnly": "echo \"Error: Don't run 'npm publish' in root. Use 'npm run dist' instead.\" && exit 1",
-    "dist": "cd lib && npm publish --ignore-scripts"
+    "dist": "cd dist && npm publish --ignore-scripts"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
