@@ -6,6 +6,7 @@ import { Wallet, Contract, ethers } from "ethers";
 import erc20 from "../src/erc20";
 import compound from "../src/compound";
 import { fromWei } from "./utils";
+import { BigNumber } from "ethers/utils";
 
 describe("compound", () => {
   let wallet: Wallet, daiContract: Contract;
@@ -40,7 +41,7 @@ describe("compound", () => {
     expect(after).toEqual([cEther.address, cDAI.address]);
   });
 
-  test("supply 1 ETH; mint cETH", async () => {
+  test("supply 1 ETH (i.e. mint cETH)", async () => {
     const cEtherContract = new ethers.Contract(
       compound.contracts.cEther.address,
       compound.contracts.cEther.abi,
@@ -109,10 +110,30 @@ describe("compound", () => {
     const daiAfter = await daiContract.balanceOf(wallet.address);
     const cDaiAfter = await cDaiContract.balanceOf(wallet.address);
 
-    const daiLost = parseFloat(fromWei(daiBefore.sub(daiAfter)));
+    const daiSpent = parseFloat(fromWei(daiBefore.sub(daiAfter)));
     const cDaiGained = parseFloat(fromWei(cDaiAfter.sub(cDaiBefore), 8));
 
-    expect(daiLost).toBe(5);
+    expect(daiSpent).toBe(5);
     expect(cDaiGained).toBeGreaterThan(0);
+  });
+  test("get supply/borrow balances for DAI", async () => {
+    const cDaiContract = new ethers.Contract(
+      compound.contracts.cDAI.address,
+      compound.contracts.cDAI.abi,
+      wallet,
+    );
+
+    const [
+      _,
+      cTokenBalance,
+      borrowBalance,
+      exchangeRateMantissa,
+    ] = await cDaiContract.getAccountSnapshot(wallet.address);
+
+    const expScale = new BigNumber(10).pow(18);
+    const supplied = cTokenBalance.mul(exchangeRateMantissa).div(expScale);
+
+    expect(parseFloat(fromWei(supplied))).toBeCloseTo(5);
+    expect(parseFloat(fromWei(borrowBalance))).toBeCloseTo(20);
   });
 });
