@@ -1,30 +1,55 @@
 # Quickstart
-`money-legos` helps you quickly compose your next Defi Dapp.
+
+`money-legos` help you quickly build your next Defi dapp in no time:
+
+- Typescript-powered auto-complete
+- ABIs and addresses to the following protocols and standards
+  - AAVE
+  - Compound
+  - Curve Finance
+  - DappSys
+  - DyDx
+  - ERC20
+  - MakerDAO
+  - OneSplit
+  - Uniswap v1
 
 ## Install
+
 ```bash
 npm install @studydefi/money-legos
+```
+
+or 
+
+```bash
+yarn add @studydefi/money-legos
 ```
 
 ## Usage
 
 ### JavaScript
+
 ```javascript
-const { getLegosFor, networks, rawLegos } = require('@studydefi/money-legos')
-const legos = getLegosFor(networks.mainnet)
+import { legos } from "@studydefi/money-legos";
 
-// Access ABIs and addresses
-legos.erc20.contracts.dai.address
-legos.erc20.contracts.dai.abi
+// access ABIs and addresses
+legos.erc20.abi;
+legos.erc20.contracts.dai.address;
 
-legos.uniswap.contracts.factory.abi
-legos.uniswap.contracts.factory.address
+// of many popular DeFi protocols
+legos.uniswap.contracts.factory.abi;
+legos.uniswap.contracts.factory.address;
 
-// Alternatively, if you want a specific network
-rawLegos.erc20.contracts.dai.address[networks.mainnet]
+// import only the protocol you are interested in
+import uniswap from "@studydefi/money-legos/uniswap";
+
+uniswap.contracts.factory.abi;
+uniswap.contracts.factory.address;
 ```
 
 ### Solidity
+
 ```solidity
 pragma solidity ^0.5.0;
 
@@ -64,4 +89,5 @@ contract OneSplitSwapper {
 ```
 
 # Documentation
+
 Documentation and integration examples at https://money-legos.studydefi.com/

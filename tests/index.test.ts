@@ -16,7 +16,7 @@ describe("integration tests with forked mainnet", () => {
     wallet = await startChain();
     daiContract = new ethers.Contract(
       erc20.contracts.dai.address,
-      erc20.contracts.abi,
+      erc20.abi,
       wallet,
     );
   });
