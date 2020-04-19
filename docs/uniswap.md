@@ -199,8 +199,8 @@ main();
 ```solidity
 pragma solidity ^0.5.0;
 
-import "@studydefi/money-legos/src/uniswap/contracts/IUniswapExchange.sol";
-import "@studydefi/money-legos/src/uniswap/contracts/IUniswapFactory.sol";
+import "@studydefi/money-legos/uniswap/contracts/IUniswapExchange.sol";
+import "@studydefi/money-legos/uniswap/contracts/IUniswapFactory.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 

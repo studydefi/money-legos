@@ -20,8 +20,8 @@ Your smart contract will need to inherit from `FlashLoanReceiverBase` and have t
 pragma solidity ^0.5.0;
 pragma experimental ABIEncoderV2;
 
-import "@studydefi/money-legos/src/aave/contracts/ILendingPool.sol";
-import "@studydefi/money-legos/src/aave/contracts/IFlashLoanReceiver.sol";
+import "@studydefi/money-legos/aave/contracts/ILendingPool.sol";
+import "@studydefi/money-legos/aave/contracts/IFlashLoanReceiver.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 

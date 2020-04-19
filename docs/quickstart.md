@@ -53,7 +53,7 @@ uniswap.contracts.factory.address;
 ```solidity
 pragma solidity ^0.5.0;
 
-import "@studydefi/money-legos/src/onesplit/contracts/IOneSplit.sol";
+import "@studydefi/money-legos/onesplit/contracts/IOneSplit.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 

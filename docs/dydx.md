@@ -28,8 +28,8 @@ Your smart contract will need to inherit from `DydxFlashloanBase` and have two f
 pragma solidity ^0.5.0;
 pragma experimental ABIEncoderV2;
 
-import "@studydefi/money-legos/src/dydx/contracts/DydxFlashloanBase.sol";
-import "@studydefi/money-legos/src/dydx/contracts/ICallee.sol";
+import "@studydefi/money-legos/dydx/contracts/DydxFlashloanBase.sol";
+import "@studydefi/money-legos/dydx/contracts/ICallee.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 

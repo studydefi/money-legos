@@ -149,7 +149,7 @@ Fortunately, the primitives are well written in [DssProxyActions.sol](https://gi
 ```solidity
 pragma solidity ^0.5.0;
 
-import "@studydefi/money-legos/src/maker/contracts/DssProxyActionsBase.sol";
+import "@studydefi/money-legos/maker/contracts/DssProxyActionsBase.sol";
 
 
 contract MyCustomVaultManager is DssProxyActionsBase {
