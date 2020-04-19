@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/repo
   docker:
-    - image: circleci/node:8.9.1
+    - image: circleci/node:lts
 
 jobs:
   build:
@@ -10,19 +10,27 @@ jobs:
       - checkout
 
       - restore_cache:
+          name: Restore Yarn Package Cache
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - yarn-packages-{{ checksum "yarn.lock" }}
 
-      - run: npm install
-      - run: npm test
-      - run: npm run build
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+
+      - run:
+          name: Run Tests
+          command: yarn test
+
+      - run:
+          name: Build Project
+          command: yarn build
 
       - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+            - ~/.cache/yarn
 
       - persist_to_workspace:
           root: ~/repo
@@ -33,7 +41,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
-          
+
       - run:
           name: Check Package Version Valid on NPM
           command: ./.circleci/check_npm_version.sh
@@ -52,7 +60,7 @@ jobs:
             # Sometimes we just wanna update the readme file
             if ./.circleci/check_npm_version.sh; then
               npm publish --access public
-            fi            
+            fi
 
 workflows:
   version: 2
