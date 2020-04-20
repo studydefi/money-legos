@@ -1,11 +1,10 @@
 import ERC20Abi from "./abi/ERC20.json";
 
-const contracts = {
+const tokens = {
   eth: {
     symbol: "ETH",
     decimals: 18,
     address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-    abi: ERC20Abi,
   },
   bat: {
     symbol: "BAT",
@@ -57,4 +56,4 @@ const contracts = {
   },
 };
 
-export default contracts;
+export default tokens;
