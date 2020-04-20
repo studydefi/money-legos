@@ -6,4 +6,4 @@
 
 `money-legos` provides you with all you need to start integrating with mainnet Ethereum DeFi protocols such as Uniswap, Maker, Compound, etc.
 
-No more scanning through etherscan, github, and multiple websites to find all the addresses and ABIs!
+No more scanning through Etherscan, github, and multiple websites to find all the addresses and ABIs!

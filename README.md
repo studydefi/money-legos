@@ -36,17 +36,17 @@ import { legos } from "@studydefi/money-legos";
 
 // access ABIs and addresses
 legos.erc20.abi;
-legos.erc20.contracts.dai.address;
+legos.erc20.dai.address;
 
 // of many popular DeFi protocols
-legos.uniswap.contracts.factory.abi;
-legos.uniswap.contracts.factory.address;
+legos.uniswap.factory.abi;
+legos.uniswap.factory.address;
 
 // import only the protocol you are interested in
 import uniswap from "@studydefi/money-legos/uniswap";
 
-uniswap.contracts.factory.abi;
-uniswap.contracts.factory.address;
+uniswap.factory.abi;
+uniswap.factory.address;
 ```
 
 ### Solidity
