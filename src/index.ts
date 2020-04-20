@@ -1,4 +1,4 @@
-import { default as aave } from "./curvefi";
+import { default as aave } from "./aave";
 import { default as curvefi } from "./curvefi";
 import { default as dappsys } from "./dappsys";
 import { default as dydx } from "./dydx";

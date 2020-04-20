@@ -1,7 +1,5 @@
 const json2md = require("json2md");
-const { getLegosFor, networks } = require("../dist");
-
-const legos = getLegosFor(networks.mainnet);
+const { legos } = require("../dist");
 
 const prettyTitle = (t) => t.charAt(0).toUpperCase() + t.slice(1);
 const formatToEtherscanLink = (l) =>
@@ -35,7 +33,7 @@ Object.keys(legos)
       },
     });
 
-    const contracts = legos[curDefiProtocol].contracts;
+    const contracts = legos[curDefiProtocol];
 
     // If its a funky protocol, we need to do some custom formatting
     // E.g. curveFi, where it has multiple contracts, each for a different
