@@ -63,8 +63,8 @@ contract IDssProxyActions{
 ```javascript
 const main = async () => {
   const proxyRegistry = new ethers.Contract(
-    legos.maker.contracts.proxyRegistry.address,
-    legos.maker.contracts.proxyRegistry.abi,
+    legos.maker.proxyRegistry.address,
+    legos.maker.proxyRegistry.abi,
     wallet
   );
 
@@ -81,12 +81,12 @@ The example below will open a new vault, collateralize 1 ETH and take out 20 DAI
 
 ```javascript
 const newTokenContract = (address) =>
-  new ethers.Contract(address, legos.erc20.contracts.abi, wallet);
+  new ethers.Contract(address, legos.erc20.abi, wallet);
 
 const main = async () => {
   const proxyRegistry = new ethers.Contract(
-    legos.maker.contracts.proxyRegistry.address,
-    legos.maker.contracts.proxyRegistry.abi,
+    legos.maker.proxyRegistry.address,
+    legos.maker.proxyRegistry.abi,
     wallet
   );
 
@@ -100,27 +100,27 @@ const main = async () => {
   // Note: MakerDAO uses dappsys's DSProxy
   const proxyContract = new ethers.Contract(
     proxyAddress,
-    legos.dappsys.contracts.dsProxy.abi,
+    legos.dappsys.dsProxy.abi,
     wallet
   );
 
   // Perpares teh data for delegate call
   const IDssProxyActions = new ethers.utils.Interface(
-    legos.maker.contracts.dssProxyActions.abi
+    legos.maker.dssProxyActions.abi
   );
 
   const _data = IDssProxyActions.functions.openLockETHAndDraw.encode([
-    legos.maker.contracts.dssCdpManager.address,
-    legos.maker.contracts.jug.address,
-    legos.maker.contracts.ethA.join.address,
-    legos.maker.contracts.daiJoin.address,
-    ethers.utils.formatBytes32String(legos.maker.ilks.ethA.symbol),
-    ethers.utils.parseUnits("20", legos.erc20.contracts.dai.decimals),
+    legos.maker.dssCdpManager.address,
+    legos.maker.jug.address,
+    legos.maker.ethA.join.address,
+    legos.maker.daiJoin.address,
+    ethers.utils.formatBytes32String(legos.maker.ethA.symbol),
+    ethers.utils.parseUnits("20", legos.erc20.dai.decimals),
   ]);
 
   // Open vault through proxy
   await proxyContract.execute(
-    legos.maker.contracts.dssProxyActions.address,
+    legos.maker.dssProxyActions.address,
     _data,
     {
       gasLimit: 2500000,
@@ -129,7 +129,7 @@ const main = async () => {
   );
 
   const daiBalance = await newTokenContract(
-    legos.erc20.contracts.dai.address
+    legos.erc20.dai.address
   ).balanceOf(wallet.address);
 
   console.log(
@@ -186,6 +186,6 @@ contract MyCustomVaultManager is DssProxyActionsBase {
 
 ```
 
-To execute the contract, you'll need to perform the delegate-call via proxy, just like the JavaScript example of opening a vault. But this time, instead of using `legos.maker.contracts.dssProxyActions.abi` as the abi for interface encoding, you'll need to supply your contract's abi (in this example it's `MyCustomVaultManager`), and change the encoding function from `openLockETHAndDraw` to your newly defined function (in this example it's `myCustomOpenVaultFunction`).
+To execute the contract, you'll need to perform the delegate-call via proxy, just like the JavaScript example of opening a vault. But this time, instead of using `legos.maker.dssProxyActions.abi` as the abi for interface encoding, you'll need to supply your contract's abi (in this example it's `MyCustomVaultManager`), and change the encoding function from `openLockETHAndDraw` to your newly defined function (in this example it's `myCustomOpenVaultFunction`).
 
 Note that you don't need to redeploy a proxy registry / proxy contract to make it work with your new `MyCustomVaultManager` contract and can simply use your existing Maker proxy.

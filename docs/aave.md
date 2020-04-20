@@ -107,7 +107,7 @@ const main = async () => {
 
   const tx = await contractWithFlashLoan.initateFlashLoan(
     contractWithFlashLoanAddress, // The callback function is located in the same contract
-    legos.erc20.contracts.dai.address, // We would like to loan DAI
+    legos.erc20.dai.address, // We would like to loan DAI
     ethers.utils.parseEther("1"), // We would like to loan 1 DAI in 18 decimals
     myCustomDataEncoded, // _params encoded
     {
