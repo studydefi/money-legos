@@ -12,31 +12,26 @@ describe("uniswap", () => {
 
   beforeAll(async () => {
     ethers.errors.setLogLevel("error");
-    
+
     // @ts-ignore
     wallet = global.wallet;
-    daiContract = new ethers.Contract(
-      erc20.contracts.dai.address,
-      erc20.abi,
-      wallet,
-    );
+    daiContract = new ethers.Contract(erc20.dai.address, erc20.abi, wallet);
   });
 
   test("buy DAI from Uniswap", async () => {
-    const { factory, exchange } = uniswap.contracts;
     const uniswapFactoryContract = new ethers.Contract(
-      factory.address,
-      factory.abi,
+      uniswap.factory.address,
+      uniswap.factory.abi,
       wallet,
     );
 
     const daiExchangeAddress = await uniswapFactoryContract.getExchange(
-      erc20.contracts.dai.address,
+      erc20.dai.address,
     );
 
     const daiExchangeContract = new ethers.Contract(
       daiExchangeAddress,
-      exchange.abi,
+      uniswap.exchange.abi,
       wallet,
     );
 

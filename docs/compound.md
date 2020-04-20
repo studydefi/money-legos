@@ -150,14 +150,14 @@ interface ICToken {
 ```javascript
 const main = async () => {
   const comptrollerContract = new ethers.Contract(
-    legos.compound.contracts.comptroller.address,
-    legos.compound.contracts.comptroller.abi,
+    legos.compound.comptroller.address,
+    legos.compound.comptroller.abi,
     wallet,
   );
 
   await comptrollerContract.enterMarkets([
-    legos.compound.contracts.cEther.address,
-    legos.compound.contracts.cDAI.address,
+    legos.compound.cEther.address,
+    legos.compound.cDAI.address,
   ]);
 };
 
@@ -170,16 +170,16 @@ Note that you'll need to call `enterMarkets` with a cToken before you're able to
 
 ```javascript
 const newCTokenContract = (address) =>
-  new ethers.Contract(address, legos.compound.contracts.cTokenAbi, wallet);
+  new ethers.Contract(address, legos.compound.cTokenAbi, wallet);
 
 const newTokenContract = (address) =>
-  new ethers.Contract(address, legos.erc20.contracts.abi, wallet);
+  new ethers.Contract(address, legos.erc20.abi, wallet);
 
 const main = async () => {
   // Supply 1 ETH
   const cEtherContract = new ethers.Contract(
-    legos.compound.contracts.cEther.address,
-    legos.compound.contracts.cEther.abi,
+    legos.compound.cEther.address,
+    legos.compound.cEther.abi,
     wallet
   );
   await cEtherContract.mint({
@@ -188,19 +188,19 @@ const main = async () => {
   });
 
   // Borrow 20 DAI
-  const cDaiContract = newCTokenContract(legos.compound.contracts.cDAI.address);
+  const cDaiContract = newCTokenContract(legos.compound.cDAI.address);
   await cDaiContract.borrow(
-    ethers.utils.parseUnits("20", legos.erc20.contracts.dai.decimals),
+    ethers.utils.parseUnits("20", legos.erc20.dai.decimals),
     { gasLimit: 1500000 }
   );
 
   // Supply 5 DAI (need to approve transferFrom first to cDAI)
   const daiToSupply = ethers.utils.parseUnits(
     "1",
-    legos.erc20.contracts.dai.decimals
+    legos.erc20.dai.decimals
   );
-  await newTokenContract(legos.erc20.contracts.dai.address).approve(
-    legos.compound.contracts.cDAI.address,
+  await newTokenContract(legos.erc20.dai.address).approve(
+    legos.compound.cDAI.address,
     daiToSupply
   );
   await cDaiContract.mint(daiToSupply, { gasLimit: 1500000 });
@@ -214,11 +214,11 @@ Unfortunately this feature isn't documented nicely in [Compound's docs](https://
 
 ```javascript
 const newCTokenContract = (address) =>
-  new ethers.Contract(address, legos.compound.contracts.cTokenAbi, wallet);
+  new ethers.Contract(address, legos.compound.cTokenAbi, wallet);
 
 const main = async () => {
-  const cDaiContract = newCTokenContract(legos.compound.contracts.cDAI.address);
-  const daiDecimals = legos.erc20.contracts.dai.decimals;
+  const cDaiContract = newCTokenContract(legos.compound.cDAI.address);
+  const daiDecimals = legos.erc20.dai.decimals;
 
   const [
     err,
@@ -243,8 +243,8 @@ main();
 ```javascript
 const main = async () => {
   const cEtherContract = new ethers.Contract(
-    legos.compound.contracts.cEther.address,
-    legos.compound.contracts.cEther.abi,
+    legos.compound.cEther.address,
+    legos.compound.cEther.abi,
     wallet
   );
 
@@ -260,23 +260,23 @@ main();
 ### Repay Debt
 ```javascript
 const newCTokenContract = (address) =>
-  new ethers.Contract(address, legos.compound.contracts.cTokenAbi, wallet);
+  new ethers.Contract(address, legos.compound.cTokenAbi, wallet);
 
 const newTokenContract = (address) =>
-  new ethers.Contract(address, legos.erc20.contracts.abi, wallet);
+  new ethers.Contract(address, legos.erc20.abi, wallet);
 
 const main = async () => {
   const amountToRepay = ethers.utils.parseUnits(
     "1",
-    legos.erc20.contracts.dai.decimals
+    legos.erc20.dai.decimals
   );
 
-  const daiContract = newTokenContract(legos.erc20.contracts.dai.address);
-  const cDaiContract = newCTokenContract(legos.compound.contracts.cDAI.address);
+  const daiContract = newTokenContract(legos.erc20.dai.address);
+  const cDaiContract = newCTokenContract(legos.compound.cDAI.address);
 
   // Approves transferFrom
   await daiContract.approve(
-    legos.compound.contracts.cDAI.address,
+    legos.compound.cDAI.address,
     amountToRepay
   );
 

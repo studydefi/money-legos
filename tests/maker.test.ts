@@ -13,20 +13,16 @@ describe("maker", () => {
 
   beforeAll(async () => {
     ethers.errors.setLogLevel("error");
-    
+
     // @ts-ignore
     wallet = global.wallet;
-    daiContract = new ethers.Contract(
-      erc20.contracts.dai.address,
-      erc20.abi,
-      wallet,
-    );
+    daiContract = new ethers.Contract(erc20.dai.address, erc20.abi, wallet);
   });
 
   test("create a proxy on Maker", async () => {
     const proxyRegistry = new ethers.Contract(
-      maker.contracts.proxyRegistry.address,
-      maker.contracts.proxyRegistry.abi,
+      maker.proxyRegistry.address,
+      maker.proxyRegistry.abi,
       wallet,
     );
 
@@ -42,8 +38,8 @@ describe("maker", () => {
 
   test("open Vault on Maker", async () => {
     const proxyRegistry = new ethers.Contract(
-      maker.contracts.proxyRegistry.address,
-      maker.contracts.proxyRegistry.abi,
+      maker.proxyRegistry.address,
+      maker.proxyRegistry.abi,
       wallet,
     );
 
@@ -57,36 +53,32 @@ describe("maker", () => {
     // Note: MakerDAO uses dappsys's DSProxy
     const proxyContract = new ethers.Contract(
       proxyAddress,
-      dappsys.contracts.dsProxy.abi,
+      dappsys.dsProxy.abi,
       wallet,
     );
 
     // Prepare data for delegate call
     const IDssProxyActions = new ethers.utils.Interface(
-      maker.contracts.dssProxyActions.abi,
+      maker.dssProxyActions.abi,
     );
 
     const _data = IDssProxyActions.functions.openLockETHAndDraw.encode([
-      maker.contracts.dssCdpManager.address,
-      maker.contracts.jug.address,
-      maker.contracts.ethAJoin.address,
-      maker.contracts.daiJoin.address,
-      ethers.utils.formatBytes32String(maker.ilks.ethA.symbol),
-      ethers.utils.parseUnits("20", erc20.contracts.dai.decimals),
+      maker.dssCdpManager.address,
+      maker.jug.address,
+      maker.ethAJoin.address,
+      maker.daiJoin.address,
+      ethers.utils.formatBytes32String(maker.ethA.symbol),
+      ethers.utils.parseUnits("20", erc20.dai.decimals),
     ]);
 
     const ethBefore = await await wallet.getBalance();
     const daiBefore = await daiContract.balanceOf(wallet.address);
 
     // Open vault through proxy
-    await proxyContract.execute(
-      maker.contracts.dssProxyActions.address,
-      _data,
-      {
-        gasLimit: 2500000,
-        value: ethers.utils.parseEther("1"),
-      },
-    );
+    await proxyContract.execute(maker.dssProxyActions.address, _data, {
+      gasLimit: 2500000,
+      value: ethers.utils.parseEther("1"),
+    });
 
     const ethAfter = await await wallet.getBalance();
     const daiAfter = await daiContract.balanceOf(wallet.address);

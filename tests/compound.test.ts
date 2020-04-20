@@ -16,23 +16,19 @@ describe("compound", () => {
 
     // @ts-ignore
     wallet = global.wallet;
-    daiContract = new ethers.Contract(
-      erc20.contracts.dai.address,
-      erc20.abi,
-      wallet,
-    );
+    daiContract = new ethers.Contract(erc20.dai.address, erc20.abi, wallet);
   });
 
   test("enter markets", async () => {
     const comptroller = new ethers.Contract(
-      compound.contracts.comptroller.address,
-      compound.contracts.comptroller.abi,
+      compound.comptroller.address,
+      compound.comptroller.abi,
       wallet,
     );
 
     const before = await comptroller.getAssetsIn(wallet.address);
 
-    const { cEther, cDAI } = compound.contracts;
+    const { cEther, cDAI } = compound;
     await comptroller.enterMarkets([cEther.address, cDAI.address]);
 
     const after = await comptroller.getAssetsIn(wallet.address);
@@ -43,8 +39,8 @@ describe("compound", () => {
 
   test("supply 10 ETH (i.e. mint cETH)", async () => {
     const cEtherContract = new ethers.Contract(
-      compound.contracts.cEther.address,
-      compound.contracts.cEther.abi,
+      compound.cEther.address,
+      compound.cEther.abi,
       wallet,
     );
 
@@ -66,15 +62,15 @@ describe("compound", () => {
 
   test("borrow 20 DAI", async () => {
     const cDaiContract = new ethers.Contract(
-      compound.contracts.cDAI.address,
-      compound.contracts.cDAI.abi,
+      compound.cDAI.address,
+      compound.cDAI.abi,
       wallet,
     );
 
     const before = await daiContract.balanceOf(wallet.address);
 
     await cDaiContract.borrow(
-      ethers.utils.parseUnits("20", erc20.contracts.dai.decimals),
+      ethers.utils.parseUnits("20", erc20.dai.decimals),
       { gasLimit: 1500000 },
     );
 
@@ -86,8 +82,8 @@ describe("compound", () => {
 
   test("supply 5 DAI", async () => {
     const cDaiContract = new ethers.Contract(
-      compound.contracts.cDAI.address,
-      compound.contracts.cDAI.abi,
+      compound.cDAI.address,
+      compound.cDAI.abi,
       wallet,
     );
 
@@ -95,13 +91,10 @@ describe("compound", () => {
     const daiBefore = await daiContract.balanceOf(wallet.address);
     const cDaiBefore = await cDaiContract.balanceOf(wallet.address);
 
-    const daiToSupply = ethers.utils.parseUnits(
-      "5",
-      erc20.contracts.dai.decimals,
-    );
+    const daiToSupply = ethers.utils.parseUnits("5", erc20.dai.decimals);
 
     // need to approve first
-    await daiContract.approve(compound.contracts.cDAI.address, daiToSupply);
+    await daiContract.approve(compound.cDAI.address, daiToSupply);
 
     // we supply DAI by minting cDAI
     await cDaiContract.mint(daiToSupply, { gasLimit: 1500000 });
@@ -118,8 +111,8 @@ describe("compound", () => {
   });
   test("get supply/borrow balances for DAI", async () => {
     const cDaiContract = new ethers.Contract(
-      compound.contracts.cDAI.address,
-      compound.contracts.cDAI.abi,
+      compound.cDAI.address,
+      compound.cDAI.abi,
       wallet,
     );
 
@@ -139,8 +132,8 @@ describe("compound", () => {
 
   test("withdraw 1 ETH from collateral", async () => {
     const cEtherContract = new ethers.Contract(
-      compound.contracts.cEther.address,
-      compound.contracts.cEther.abi,
+      compound.cEther.address,
+      compound.cEther.abi,
       wallet,
     );
 
@@ -158,19 +151,16 @@ describe("compound", () => {
   });
 
   test("repay 1 DAI of debt", async () => {
-    const amountToRepay = ethers.utils.parseUnits(
-      "1",
-      erc20.contracts.dai.decimals,
-    );
+    const amountToRepay = ethers.utils.parseUnits("1", erc20.dai.decimals);
 
     const cDaiContract = new ethers.Contract(
-      compound.contracts.cDAI.address,
-      compound.contracts.cDAI.abi,
+      compound.cDAI.address,
+      compound.cDAI.abi,
       wallet,
     );
 
     // approve transferFrom
-    await daiContract.approve(compound.contracts.cDAI.address, amountToRepay);
+    await daiContract.approve(compound.cDAI.address, amountToRepay);
 
     const daiBefore = await daiContract.balanceOf(wallet.address);
 

@@ -1,7 +1,7 @@
-import { default as contracts } from "./contracts";
+import { default as tokens } from "./tokens";
 import abi from "./abi/ERC20.json";
 
 export default {
-  contracts,
+  ...tokens,
   abi,
 };

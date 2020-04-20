@@ -15,7 +15,7 @@ describe("initial conditions", () => {
     // @ts-ignore
     wallet = global.wallet;
     daiContract = new ethers.Contract(
-      erc20.contracts.dai.address,
+      erc20.dai.address,
       erc20.abi,
       wallet,
     );

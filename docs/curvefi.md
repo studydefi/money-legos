@@ -155,8 +155,8 @@ contract ICurveFiZap {
 ### Get Swap Return Amount
 
 ```javascript
-// Quick reference
-const curveFi = legos.curvefi.contracts;
+import { legos } from "@studydefi/money-legos";
+const { curveFi, erc20 } = legos;
 
 // Curve finance cDai and cUSDC contract
 const curveFicDU = new ethers.Contract(
@@ -170,7 +170,7 @@ const main = async () => {
   const daiAmount = 10;
   const daiAmountWei = ethers.utils.parseUnits(
     daiAmount.toString(),
-    legos.erc20.contracts.dai.decimals
+    erc20.dai.decimals
   );
 
   // How much USDC we'll get for cDAI we supplied
@@ -185,7 +185,8 @@ const main = async () => {
 ### Stable Coin Swapping
 
 ```javascript
-const curveFi = legos.curvefi.contracts;
+import { legos } from "@studydefi/money-legos";
+const { curveFi, erc20 } = legos;
 
 // Curve finance cDai and cUSDC contract
 const curveFicDU = new ethers.Contract(
@@ -195,8 +196,8 @@ const curveFicDU = new ethers.Contract(
 );
 
 const daiContract = new ethers.Contract(
-  legos.erc20.contracts.dai.address,
-  legos.erc20.contracts.abi,
+  erc20.dai.address,
+  erc20.abi,
   wallet
 )
 
@@ -221,15 +222,15 @@ const main = async () => {
 ### Providing Liquidity
 
 ```javascript
+import { legos } from "@studydefi/money-legos";
+const { curveFi, erc20 } = legos;
+
 const newTokenContract = (address) =>
-  new ethers.Contract(address, legos.erc20.contracts.abi, wallet);
+  new ethers.Contract(address, erc20.abi, wallet);
 
 // ERC20 Contracts
-const daiContract = newTokenContract(legos.erc20.contracts.dai.address);
-const usdcContract = newTokenContract(legos.erc20.contracts.usdc.address);
-
-// Quick reference
-const curveFi = legos.curvefi.contracts;
+const daiContract = newTokenContract(erc20.dai.address);
+const usdcContract = newTokenContract(erc20.usdc.address);
 
 // Curve finance cDai and cUSDC contract
 const curveFicDU = new ethers.Contract(
@@ -249,14 +250,14 @@ const main = async () => {
   const daiAmount = 100;
   const daiAmountWei = ethers.utils.parseUnits(
     daiAmount.toString(),
-    legos.erc20.contracts.dai.decimals
+    erc20.dai.decimals
   );
 
   // Amount of USDC to provide
   const usdcAmount = 100;
   const usdcAmountWei = ethers.utils.parseUnits(
     usdcAmount.toString(),
-    legos.erc20.contracts.usdc.decimals
+    erc20.usdc.decimals
   )
 
   // Approve USDC Contract and USDC contract
