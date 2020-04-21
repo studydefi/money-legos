@@ -5,13 +5,12 @@ Check out the [docs](https://uniswap.org/docs/v1) for more info.
 ## Interface
 
 ### Factory
-```javascript
+```js
+// ../src/uniswap/contracts/IUniswapFactory.sol
+
 pragma solidity ^0.5.0;
 
 interface IUniswapFactory {
-    // Public Variables
-    address public exchangeTemplate;
-    uint256 public tokenCount;
     // Create Exchange
     function createExchange(address token) external returns (address exchange);
     // Get Exchange and Token Info
@@ -24,10 +23,12 @@ interface IUniswapFactory {
 ```
 
 ### Exchange
-```javascript
+```js
+// ../src/uniswap/contracts/IUniswapExchange.sol
+
 pragma solidity ^0.5.0;
 
-interface UniswapExchangeInterface {
+interface IUniswapExchange {
     // Address of ERC20 token sold on this exchange
     function tokenAddress() external view returns (address token);
     // Address of Uniswap Factory
@@ -61,9 +62,9 @@ interface UniswapExchangeInterface {
     function tokenToExchangeSwapOutput(uint256 tokens_bought, uint256 max_tokens_sold, uint256 max_eth_sold, uint256 deadline, address exchange_addr) external returns (uint256  tokens_sold);
     function tokenToExchangeTransferOutput(uint256 tokens_bought, uint256 max_tokens_sold, uint256 max_eth_sold, uint256 deadline, address recipient, address exchange_addr) external returns (uint256  tokens_sold);
     // ERC20 comaptibility for liquidity tokens
-    bytes32 public name;
-    bytes32 public symbol;
-    uint256 public decimals;
+    function name() external view returns (bytes32);
+    function symbol() external view returns (bytes32);
+    function decimals() external view returns (uint256);
     function transfer(address _to, uint256 _value) external returns (bool);
     function transferFrom(address _from, address _to, uint256 value) external returns (bool);
     function approve(address _spender, uint256 _value) external returns (bool);
@@ -73,13 +74,14 @@ interface UniswapExchangeInterface {
     // Never use
     function setup(address token_addr) external;
 }
+
 ```
 
 ## Examples
 
 ### JavaScript
 
-```javascript
+```js
 const { ethers } = require("ethers");
 const { getLegosFor, networks } = require("@studydefi/money-legos");
 
@@ -196,7 +198,7 @@ main();
 ```
 
 ### Solidity
-```solidity
+```js
 pragma solidity ^0.5.0;
 
 import "@studydefi/money-legos/uniswap/contracts/IUniswapExchange.sol";

@@ -6,7 +6,11 @@
 ## Interface
 
 ### Curve
-```solidity
+```js
+// ../src/curvefi/contracts/ICurveFiCurve.sol
+
+pragma solidity ^0.5.0;
+
 contract ICurveFiCurve {
     function get_virtual_price() external returns (uint256 out);
 
@@ -103,10 +107,16 @@ contract ICurveFiCurve {
 
     function future_owner() external returns (address out);
 }
+
 ```
 
 ### Zap
-```solidity
+```js
+// ../src/curvefi/contracts/ICurveFiZap.sol
+
+pragma solidity ^0.5.0;
+
+
 contract ICurveFiZap {
     function add_liquidity(
         uint256[2] calldata uamounts,
@@ -148,13 +158,14 @@ contract ICurveFiZap {
 
     function token() external returns (address);
 }
+
 ```
 
 ## Examples (JavaScript)
 
 ### Get Swap Return Amount
 
-```javascript
+```js
 import { legos } from "@studydefi/money-legos";
 const { curveFi, erc20 } = legos;
 
@@ -184,7 +195,7 @@ const main = async () => {
 
 ### Stable Coin Swapping
 
-```javascript
+```js
 import { legos } from "@studydefi/money-legos";
 const { curveFi, erc20 } = legos;
 
@@ -221,7 +232,7 @@ const main = async () => {
 
 ### Providing Liquidity
 
-```javascript
+```js
 import { legos } from "@studydefi/money-legos";
 const { curveFi, erc20 } = legos;
 
@@ -286,7 +297,7 @@ const main = async () => {
 
 ### Get Swap Return Amount
 
-```solidity
+```js
 pragma solidity ^0.5.0;
 
 import "@studydefi/money-legos/curvefi/contracts/ICurveFiCurve.sol";
@@ -306,7 +317,7 @@ contract CurveFiManager {
 
 ### Stable Coins Swapping
 
-```solidity
+```js
 pragma solidity ^0.5.0;
 
 import "@studydefi/money-legos/curvefi/contracts/ICurveFiCurve.sol";
@@ -326,7 +337,7 @@ contract CurveFiManager {
 
 ### Providing Liquidity
 
-```solidity
+```js
 pragma solidity ^0.5.0;
 
 import "@studydefi/money-legos/curvefi/contracts/ICurveFiZap.sol";
