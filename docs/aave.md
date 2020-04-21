@@ -16,12 +16,15 @@ Your smart contract will need to inherit from `FlashLoanReceiverBase` and have t
 1. An entrypoint function where __you__ call to initiate the flashloan (`initateFlashLoan` in the example below).
 2. A callback function called `executeOperation` that contains the action logic to perform once the loan is given to us.
 
-```solidity
+```js
+// ../tests/aave.test.sol
+
 pragma solidity ^0.5.0;
 pragma experimental ABIEncoderV2;
 
 import "@studydefi/money-legos/aave/contracts/ILendingPool.sol";
 import "@studydefi/money-legos/aave/contracts/IFlashLoanReceiver.sol";
+import "@studydefi/money-legos/aave/contracts/FlashloanReceiverBase.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
@@ -84,7 +87,7 @@ Before you can initiate flashloans, you first need to deploy you flashloan smart
 
 According the smart contract example provided above, the data we would like to encode for `_params` is `MyCustomData`.
 
-```javascript
+```js
 // You don't need truffle artifacts as long as you have a way to retrieve
 // the address and abi of the deployed contract nicely
 const ContractWithFlashLoanArtifact = require("./build/contracts/ContractWithFlashLoan.json");

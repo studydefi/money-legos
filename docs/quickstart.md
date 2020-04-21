@@ -30,7 +30,7 @@ yarn add @studydefi/money-legos
 
 ### JavaScript
 
-```javascript
+```js
 import { legos } from "@studydefi/money-legos";
 
 // access ABIs and addresses
@@ -50,7 +50,7 @@ uniswap.factory.address;
 
 ### Solidity
 
-```solidity
+```js
 pragma solidity ^0.5.0;
 
 import "@studydefi/money-legos/onesplit/contracts/IOneSplit.sol";

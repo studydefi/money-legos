@@ -24,7 +24,7 @@ Your smart contract will need to inherit from `DydxFlashloanBase` and have two f
 2. A callback function called `callFunction` that contains the action logic to perform once the loan is given to us.
 
 
-```solidity
+```js
 pragma solidity ^0.5.0;
 pragma experimental ABIEncoderV2;
 
@@ -101,7 +101,7 @@ contract DydxFlashloaner is ICallee, DydxFlashloanBase {
 
 Once you've deployed the contract, you can then call initiate the flashloan using the example below. Note that you can `MyCustomData` can be anything you desire, and if you would like to encode the data from the JS side, you can use `ethers.utils.defaultAbiCoder`.
 
-```javascript
+```js
 const dydxFlashloanerContract = new ethers.Contract(
   dydxFlashloanerAddress,
   def.abi,

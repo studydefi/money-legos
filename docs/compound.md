@@ -4,7 +4,9 @@
 
 ### ICEther
 
-```javascript
+```js
+// ../src/compound/contracts/ICEther.sol
+
 pragma solidity ^0.5.0;
 
 contract ICEther {
@@ -24,7 +26,9 @@ contract ICEther {
 
 ### ICompoundPriceOracle
 
-```javascript
+```js
+// ../src/compound/contracts/ICompoundPriceOracle.sol
+
 pragma solidity ^0.5.0;
 
 contract ICompoundPriceOracle {
@@ -34,7 +38,9 @@ contract ICompoundPriceOracle {
 
 ### IComptroller
 
-```javascript
+```js
+// ../src/compound/contracts/IComptroller.sol
+
 pragma solidity ^0.5.0;
 
 interface IComptroller {
@@ -117,7 +123,9 @@ interface IComptroller {
 
 ### ICToken
 
-```javascript
+```js
+// ../src/compound/contracts/ICToken.sol
+
 pragma solidity 0.5.16;
 
 interface ICToken {
@@ -132,7 +140,7 @@ interface ICToken {
     function borrowBalanceStored(address account) external view returns (uint256);
     function balanceOfUnderlying(address account) external returns (uint);
     function getAccountSnapshot(address account) external view returns (uint, uint, uint, uint);
-
+    
     function underlying() external view returns (address);
     function totalSupply() external view returns (uint256);
     function balanceOf(address owner) external view returns (uint256 balance);
@@ -147,81 +155,99 @@ interface ICToken {
 
 ### Entering Markets
 
-```javascript
-const main = async () => {
-  const comptrollerContract = new ethers.Contract(
-    legos.compound.comptroller.address,
-    legos.compound.comptroller.abi,
+```js
+// ../tests/compound.test.ts#L22-L38
+
+test("enter markets", async () => {
+  const comptroller = new ethers.Contract(
+    compound.comptroller.address,
+    compound.comptroller.abi,
     wallet,
   );
 
-  await comptrollerContract.enterMarkets([
-    legos.compound.cEther.address,
-    legos.compound.cDAI.address,
-  ]);
-};
+  const before = await comptroller.getAssetsIn(wallet.address);
 
-main();
+  const { cEther, cDAI } = compound;
+  await comptroller.enterMarkets([cEther.address, cDAI.address]);
+
+  const after = await comptroller.getAssetsIn(wallet.address);
+
+  expect(before).toEqual([]);
+  expect(after).toEqual([cEther.address, cDAI.address]);
+});
 ```
 
 ### Supplying/Borrowing Tokens
 
 Note that you'll need to call `enterMarkets` with a cToken before you're able to `mint` or `borrow` from that particular cToken.
 
-```javascript
-const newCTokenContract = (address) =>
-  new ethers.Contract(address, legos.compound.cTokenAbi, wallet);
+```js
+// ../tests/compound.test.ts#L40-L61
 
-const newTokenContract = (address) =>
-  new ethers.Contract(address, legos.erc20.abi, wallet);
-
-const main = async () => {
-  // Supply 1 ETH
+test("supply 10 ETH (i.e. mint cETH)", async () => {
   const cEtherContract = new ethers.Contract(
-    legos.compound.cEther.address,
-    legos.compound.cEther.abi,
-    wallet
+    compound.cEther.address,
+    compound.cEther.abi,
+    wallet,
   );
+
+  const before = await cEtherContract.balanceOf(wallet.address);
+  const cEthBefore = parseFloat(fromWei(before, 8));
+
+  // we supply ETH by minting cETH
   await cEtherContract.mint({
     gasLimit: 1500000,
-    value: ethers.utils.parseEther("1"),
+    value: ethers.utils.parseEther("10"),
   });
 
-  // Borrow 20 DAI
-  const cDaiContract = newCTokenContract(legos.compound.cDAI.address);
+  const after = await cEtherContract.balanceOf(wallet.address);
+  const cEthAfter = parseFloat(fromWei(after, 8));
+
+  expect(cEthBefore).toBe(0);
+  expect(cEthAfter).toBeGreaterThan(0);
+});
+```
+
+```js
+// ../tests/compound.test.ts#L63-L81
+
+test("borrow 20 DAI", async () => {
+  const cDaiContract = new ethers.Contract(
+    compound.cDAI.address,
+    compound.cDAI.abi,
+    wallet,
+  );
+
+  const before = await daiContract.balanceOf(wallet.address);
+
   await cDaiContract.borrow(
-    ethers.utils.parseUnits("20", legos.erc20.dai.decimals),
-    { gasLimit: 1500000 }
+    ethers.utils.parseUnits("20", erc20.dai.decimals),
+    { gasLimit: 1500000 },
   );
 
-  // Supply 5 DAI (need to approve transferFrom first to cDAI)
-  const daiToSupply = ethers.utils.parseUnits(
-    "1",
-    legos.erc20.dai.decimals
-  );
-  await newTokenContract(legos.erc20.dai.address).approve(
-    legos.compound.cDAI.address,
-    daiToSupply
-  );
-  await cDaiContract.mint(daiToSupply, { gasLimit: 1500000 });
-};
+  const after = await daiContract.balanceOf(wallet.address);
 
-main();
+  const daiGained = parseFloat(fromWei(after.sub(before)));
+  expect(daiGained).toBe(20);
+});
 ```
 
 ### Retrieve Supply/Borrow Balance
+
 Unfortunately this feature isn't documented nicely in [Compound's docs](https://compound.finance/developers). The best way quickly retrieve a supply/borrow balance for a particular cToken is through the `getAccountSnapshot` function (as it is a `view` function and doesn't modify state).
 
-```javascript
-const newCTokenContract = (address) =>
-  new ethers.Contract(address, legos.compound.cTokenAbi, wallet);
+```js
+// ../tests/compound.test.ts#L113-L132
 
-const main = async () => {
-  const cDaiContract = newCTokenContract(legos.compound.cDAI.address);
-  const daiDecimals = legos.erc20.dai.decimals;
+test("get supply/borrow balances for DAI", async () => {
+  const cDaiContract = new ethers.Contract(
+    compound.cDAI.address,
+    compound.cDAI.abi,
+    wallet,
+  );
 
   const [
-    err,
+    _,
     cTokenBalance,
     borrowBalance,
     exchangeRateMantissa,
@@ -230,65 +256,62 @@ const main = async () => {
   const expScale = new BigNumber(10).pow(18);
   const supplied = cTokenBalance.mul(exchangeRateMantissa).div(expScale);
 
-  console.log(`DAI Supply: ${ethers.utils.formatUnits(supplied, daiDecimals)}`);
-  console.log(
-    `DAI Borrowed: ${ethers.utils.formatUnits(borrowBalance, daiDecimals)}`
-  );
-};
-
-main();
+  expect(parseFloat(fromWei(supplied))).toBeCloseTo(5);
+  expect(parseFloat(fromWei(borrowBalance))).toBeCloseTo(20);
+});
 ```
 
 ### Withdraw Supply
-```javascript
-const main = async () => {
+
+```js
+// ../tests/compound.test.ts#L134-L152
+
+test("withdraw 1 ETH from collateral", async () => {
   const cEtherContract = new ethers.Contract(
-    legos.compound.cEther.address,
-    legos.compound.cEther.abi,
-    wallet
+    compound.cEther.address,
+    compound.cEther.abi,
+    wallet,
   );
 
-  // Withdraws 1 Ether
+  const ethBefore = await wallet.getBalance();
+
+  // withdraw 1 Ether
   await cEtherContract.redeemUnderlying(ethers.utils.parseEther("1"), {
     gasLimit: 1500000,
   });
-};
 
-main();
+  const ethAfter = await wallet.getBalance();
+
+  const ethGained = parseFloat(fromWei(ethAfter.sub(ethBefore)));
+  expect(ethGained).toBeCloseTo(1);
+});
 ```
 
 ### Repay Debt
-```javascript
-const newCTokenContract = (address) =>
-  new ethers.Contract(address, legos.compound.cTokenAbi, wallet);
 
-const newTokenContract = (address) =>
-  new ethers.Contract(address, legos.erc20.abi, wallet);
+```js
+// ../tests/compound.test.ts#L134-L152
 
-const main = async () => {
-  const amountToRepay = ethers.utils.parseUnits(
-    "1",
-    legos.erc20.dai.decimals
+test("withdraw 1 ETH from collateral", async () => {
+  const cEtherContract = new ethers.Contract(
+    compound.cEther.address,
+    compound.cEther.abi,
+    wallet,
   );
 
-  const daiContract = newTokenContract(legos.erc20.dai.address);
-  const cDaiContract = newCTokenContract(legos.compound.cDAI.address);
+  const ethBefore = await wallet.getBalance();
 
-  // Approves transferFrom
-  await daiContract.approve(
-    legos.compound.cDAI.address,
-    amountToRepay
-  );
-
-  // Repays 1 DAI
-  await cDaiContract.repayBorrow(amountToRepay, {
+  // withdraw 1 Ether
+  await cEtherContract.redeemUnderlying(ethers.utils.parseEther("1"), {
     gasLimit: 1500000,
   });
-};
 
-main();
+  const ethAfter = await wallet.getBalance();
+
+  const ethGained = parseFloat(fromWei(ethAfter.sub(ethBefore)));
+  expect(ethGained).toBeCloseTo(1);
+});
 ```
-
 
 ## Examples (Solidity)
 
@@ -296,7 +319,9 @@ The source code below comes from [Dedge's Compound Manager](https://github.com/s
 
 As of April 2020, there is no way to transfer collateral/debt between accounts. As such, the recommended way to interact with the `CompoundManager` code is through a [proxy with delegatecall support](https://eips.ethereum.org/EIPS/eip-1822).
 
-```solidity
+```js
+// ../tests/compound.test.sol
+
 pragma solidity ^0.5.0;
 
 import "@studydefi/money-legos/compound/contracts/IComptroller.sol";

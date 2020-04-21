@@ -4,7 +4,9 @@ OneSplit is an on-chain DEX aggregator. As it is built on top of a ton of other 
 
 ## Interface
 
-```javascript
+```js
+// ../src/onesplit/contracts/IOneSplit.sol
+
 pragma solidity ^0.5.0;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
@@ -74,7 +76,7 @@ contract IOneSplit is IOneSplitConsts {
 
 ### JavaScript
 
-```javascript
+```js
 const { ethers } = require("ethers");
 const { getLegosFor, networks } = require("@studydefi/money-legos");
 
@@ -187,7 +189,7 @@ main();
 
 ### Solidity
 
-```solidity
+```js
 pragma solidity ^0.5.0;
 
 import "@studydefi/money-legos/onesplit/contracts/IOneSplit.sol";

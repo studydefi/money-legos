@@ -109,6 +109,7 @@ describe("compound", () => {
     expect(daiSpent).toBe(5);
     expect(cDaiGained).toBeGreaterThan(0);
   });
+  
   test("get supply/borrow balances for DAI", async () => {
     const cDaiContract = new ethers.Contract(
       compound.cDAI.address,
