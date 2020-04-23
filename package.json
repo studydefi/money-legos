@@ -1,6 +1,6 @@
 {
   "name": "@studydefi/money-legos",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "main": "index.js",
   "types": "index.d.ts",
   "repository": "git@github.com:studydefi/money-legos.git",
