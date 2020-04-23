@@ -33,7 +33,7 @@ describe("maker", () => {
     const after = await proxyRegistry.proxies(wallet.address);
 
     expect(before).toBe("0x0000000000000000000000000000000000000000");
-    expect(after).toBe("0x4EA44929b2E69Ab14Fd131F59D317B82322E5844");
+    expect(after).not.toBe("0x0000000000000000000000000000000000000000");
   });
 
   test("open Vault on Maker", async () => {
