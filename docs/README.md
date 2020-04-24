@@ -2,7 +2,7 @@
 
 > Get **ABIs** and **Addresses** to popular DeFi protocols
 
-#### Now with Typescript-powered autocomplete!
+**Now with Typescript-powered autocomplete!**
 
 - Github: https://github.com/studydefi/money-legos
 - NPM: https://www.npmjs.com/package/@studydefi/money-legos

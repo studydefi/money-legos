@@ -1,10 +1,8 @@
 <!-- docs/_sidebar.md -->
 
-- Getting started
-  - [Quick start](quickstart.md)
-
 - Overview
-  - [Mainnet Addresses (full list)](overview_mainnet_address.md)
+  - [Quick start](quickstart.md)
+  - [Addresses](overview_mainnet_address.md)
 
 - Reference Guides
   - [Aave](aave.md)
