@@ -1,14 +1,17 @@
 # money-legos
 
-[![CircleCI](https://circleci.com/gh/studydefi/money-legos.svg?style=svg)](https://circleci.com/gh/studydefi/money-legos)
+![circleci](https://badgen.net/circleci/github/studydefi/money-legos)
+![npm](https://badgen.net/npm/v/@studydefi/money-legos)
+![types](https://badgen.net/npm/types/@studydefi/money-legos)
+![minzip](https://badgen.net/bundlephobia/minzip/@studydefi/money-legos)
+
+![legos autocomplete](./assets/legos-autocomplete.gif)
 
 > Get **ABIs** and **Addresses** to popular DeFi protocols
 
 **Now with Typescript-powered autocomplete!**
 
 `money-legos` is an NPM package that provides you with the **mainnet address** and the **ABI** for popular DeFi protocols.
-
-![legos autocomplete](./assets/legos-autocomplete.gif)
 
 ### Click [here](https://money-legos.studydefi.com/) for docs!
 

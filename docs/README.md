@@ -1,5 +1,10 @@
 # money-legos
 
+![circleci](https://badgen.net/circleci/github/studydefi/money-legos)
+![npm](https://badgen.net/npm/v/@studydefi/money-legos)
+![types](https://badgen.net/npm/types/@studydefi/money-legos)
+![minzip](https://badgen.net/bundlephobia/minzip/@studydefi/money-legos)
+
 > Get **ABIs** and **Addresses** to popular DeFi protocols
 
 **Now with Typescript-powered autocomplete!**
