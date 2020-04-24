@@ -29,7 +29,7 @@ Protocols supported:
 
 Importing specific protocols is also supported:
 
-![size of protocols](./assets/weight.png)
+<img src="./assets/weight.png" alt="size" style="max-width:540px;">
 
 ## Install
 
