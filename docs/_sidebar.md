@@ -4,9 +4,9 @@
   - [Quick start](quickstart.md)
 
 - Overview
-  - [Mainnet Addresses](overview_mainnet_address.md)
+  - [Mainnet Addresses (full list)](overview_mainnet_address.md)
 
-- Integrations
+- Reference Guides
   - [Aave](aave.md)
   - [Compound](compound.md)
   - [CurveFi](curvefi.md)
