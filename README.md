@@ -1,30 +1,37 @@
-# Money-legos
+# money-legos
+
 [![CircleCI](https://circleci.com/gh/studydefi/money-legos.svg?style=svg)](https://circleci.com/gh/studydefi/money-legos)
 
-`money-legos` help you quickly build your next Defi dapp in no time:
+> Get **ABIs** and **Addresses** to popular DeFi protocols
 
-- Typescript-powered auto-complete
-- ABIs and addresses to the following protocols and standards
-  - AAVE
-  - Compound
-  - Curve Finance
-  - DappSys
-  - DyDx
-  - ERC20
-  - MakerDAO
-  - OneSplit
-  - Uniswap v1
+**Now with Typescript-powered autocomplete!**
+
+`money-legos` is an NPM package that provides you with the **mainnet address** and the **ABI** for popular DeFi protocols.
+
+![legos autocomplete](./assets/legos-autocomplete.gif)
+
+### Click [here](https://money-legos.studydefi.com/) for docs!
+
+Protocols supported:
+
+- AAVE
+- Compound
+- Curve Finance
+- DappSys
+- DyDx
+- ERC20
+- MakerDAO
+- OneSplit
+- Uniswap v1
+
+Importing specific protocols is also supported:
+
+![size of protocols](./assets/weight.png)
 
 ## Install
 
 ```bash
 npm install @studydefi/money-legos
-```
-
-or 
-
-```bash
-yarn add @studydefi/money-legos
 ```
 
 ## Usage
@@ -88,7 +95,3 @@ contract OneSplitSwapper {
     }
 }
 ```
-
-# Documentation
-
-Documentation and integration examples at https://money-legos.studydefi.com/
