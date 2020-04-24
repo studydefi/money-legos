@@ -11,6 +11,8 @@
 
 `money-legos` provides you with the ABIs and addresses of popular Ethereum Mainnet DeFi protocols.
 
+![autocomplete](../assets/legos-autocomplete.gif)
+
 ## Protocols supported
 
 - AAVE
