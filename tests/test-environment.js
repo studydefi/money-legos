@@ -6,6 +6,9 @@ const Ganache = require("ganache-core");
 const NodeEnvironment = require("jest-environment-node");
 
 const startChain = async () => {
+  if (!process.env.PRIV_KEY || !process.env.MAINNET_NODE_URL) {
+    throw Error("PRIV_KEY and MAINNET_NODE_URL not found in .env");
+  }
   const ganache = Ganache.provider({
     fork: process.env.MAINNET_NODE_URL,
     network_id: 1,
