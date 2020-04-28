@@ -33,32 +33,20 @@ class CustomEnvironment extends NodeEnvironment {
   // Our own vars
   wallet;
   provider;
-  snapshotId;
 
   constructor(config, context) {
     super(config);
     this.testPath = context.testPath;
     this.docblockPragmas = context.docblockPragmas;
-    this.snapshotId = null;
   }
 
   async setup() {
     await super.setup();
-    if (!this.wallet) {
-      const { wallet, provider } = await startChain();
-      this.wallet = wallet;
-      this.provider = provider;
-      this.global.wallet = wallet;
-      this.global.provider = provider;
-    }
-
-    if (this.snapshotId) {
-      await this.provider.send("evm_revert", [this.snapshotId]);
-    }
-
-    // take snapshot of current chain state
-    this.snapshotId = await this.provider.send("evm_snapshot", []);
-    this.global.snapshotId = this.snapshotId;
+    const { wallet, provider } = await startChain();
+    this.wallet = wallet;
+    this.provider = provider;
+    this.global.wallet = wallet;
+    this.global.provider = provider;
   }
 
   async teardown() {
