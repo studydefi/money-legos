@@ -11,6 +11,8 @@
 
 - Github: https://github.com/studydefi/money-legos
 - NPM: https://www.npmjs.com/package/@studydefi/money-legos
+- Twitter: https://twitter.com/studydefi
+- Discord: https://discord.gg/rBr3U32
 
 ## What is this?
 
