@@ -167,12 +167,12 @@ contract ICurveFiZap {
 
 ```js
 import { legos } from "@studydefi/money-legos";
-const { curveFi, erc20 } = legos;
+const { curvefi, erc20 } = legos;
 
 // Curve finance cDai and cUSDC contract
 const curveFicDU = new ethers.Contract(
-  curveFi.cDai_cUsdc.curve.address,
-  curveFi.curveAbi,
+  curvefi.cDai_cUsdc.curve.address,
+  curvefi.curveAbi,
   wallet
 );
 
@@ -186,8 +186,8 @@ const main = async () => {
 
   // How much USDC we'll get for cDAI we supplied
   const usdcRecvWei = await curveFicDU.get_dy_underlying(
-    curveFi.cDai_cUsdc.indexes.dai,
-    curveFi.cDai_cUsdc.indexes.usdc,
+    curvefi.cDai_cUsdc.indexes.dai,
+    curvefi.cDai_cUsdc.indexes.usdc,
     daiAmountWei
   );
 };
@@ -197,12 +197,12 @@ const main = async () => {
 
 ```js
 import { legos } from "@studydefi/money-legos";
-const { curveFi, erc20 } = legos;
+const { curvefi, erc20 } = legos;
 
 // Curve finance cDai and cUSDC contract
 const curveFicDU = new ethers.Contract(
-  curveFi.cDai_cUsdc.curve.address,
-  curveFi.curveAbi,
+  curvefi.cDai_cUsdc.curve.address,
+  curvefi.curveAbi,
   wallet
 );
 
@@ -214,15 +214,15 @@ const daiContract = new ethers.Contract(
 
 const main = async () => {
   // Need to approve transferFrom to curve contract
-  await daiContract.approve(curveFi.cDai_cUsdc.curve.address, daiAmountWei);
+  await daiContract.approve(curvefi.cDai_cUsdc.curve.address, daiAmountWei);
 
   // Perform swap
   // Note that we have to manually specify this function as the newer
   // versions have an extra parameter: `deadline`
   // API is subject to change
   const tx = await curveFicDU['exchange_underlying(int128,int128,uint256,uint256)'](
-    curveFi.cDai_cUsdc.indexes.dai,
-    curveFi.cDai_cUsdc.indexes.usdc,
+    curvefi.cDai_cUsdc.indexes.dai,
+    curvefi.cDai_cUsdc.indexes.usdc,
     daiAmountWei,
     1,
   );
@@ -234,7 +234,7 @@ const main = async () => {
 
 ```js
 import { legos } from "@studydefi/money-legos";
-const { curveFi, erc20 } = legos;
+const { curvefi, erc20 } = legos;
 
 const newTokenContract = (address) =>
   new ethers.Contract(address, erc20.abi, wallet);
@@ -245,14 +245,14 @@ const usdcContract = newTokenContract(erc20.usdc.address);
 
 // Curve finance cDai and cUSDC contract
 const curveFicDU = new ethers.Contract(
-  curveFi.cDai_cUsdc.curve.address,
-  curveFi.curveAbi,
+  curvefi.cDai_cUsdc.curve.address,
+  curvefi.curveAbi,
   wallet
 );
 
 const curveFicZap = new ethers.Contract(
-  curveFi.cDai_cUsdc.zap.address,
-  curveFi.curveAbi,
+  curvefi.cDai_cUsdc.zap.address,
+  curvefi.curveAbi,
   wallet
 )
 
@@ -273,11 +273,11 @@ const main = async () => {
 
   // Approve USDC Contract and USDC contract
   await daiContract.approve(
-    curveFi.cDai_cUsdc.zap.address,
+    curvefi.cDai_cUsdc.zap.address,
     daiAmountWei
   )
   await usdcContract.approve(
-    curveFi.cDai_cUsdc.zap.address,
+    curvefi.cDai_cUsdc.zap.address,
     usdcAmountWei
   )
 
