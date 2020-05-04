@@ -7,7 +7,7 @@
 
 ![legos autocomplete](./assets/legos-autocomplete.gif)
 
-> Get **ABIs** and **Addresses** to popular DeFi protocols
+> Get **ABIs**, **Addresses**, and **Solidity Interfaces** to popular DeFi protocols
 
 **Now with Typescript-powered autocomplete!**
 

@@ -5,7 +5,7 @@
 ![types](https://badgen.net/npm/types/@studydefi/money-legos)
 ![minzip](https://badgen.net/bundlephobia/minzip/@studydefi/money-legos)
 
-> Get **ABIs** and **Addresses** to popular DeFi protocols
+> Get **ABIs**, **Addresses**, and **Solidity Interfaces** to popular DeFi protocols
 
 **Now with Typescript-powered autocomplete!**
 
