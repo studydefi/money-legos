@@ -10,7 +10,7 @@
     "clean": "rm -rf dist",
     "build": "yarn clean && tsc --declaration && cp package.json dist && cp README.md dist",
     "postbuild": "copyfiles --verbose -u 1 src/**/*.sol dist",
-    "build:docs": "yarn build && node scripts/genAddrMainnetOverview.js > docs/overview_mainnet_address.md",
+    "build:docs": "embedme docs/* && yarn build && node scripts/genAddrMainnetOverview.js > docs/overview_mainnet_address.md",
     "serve:docs": "docsify serve ./docs",
     "test": "jest --verbose",
     "link": "yarn build && cd dist && npm link",
