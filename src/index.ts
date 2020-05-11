@@ -7,6 +7,7 @@ import { default as compound } from "./compound";
 import { default as maker } from "./maker";
 import { default as onesplit } from "./onesplit";
 import { default as uniswap } from "./uniswap";
+import { default as kyber } from "./kyber";
 
 export const legos = {
   aave,
@@ -18,4 +19,5 @@ export const legos = {
   maker,
   onesplit,
   uniswap,
+  kyber,
 };

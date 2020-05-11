@@ -1,6 +1,7 @@
 <!-- docs/_sidebar.md -->
 
 - Overview
+
   - [Quick start](quickstart.md)
   - [Addresses](overview_mainnet_address.md)
 
@@ -12,3 +13,4 @@
   - [Maker](maker.md)
   - [OneSplit](onesplit.md)
   - [Uniswap V1](uniswap.md)
+  - [Kyber.Network](kyber.md)

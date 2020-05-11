@@ -29,3 +29,4 @@
 - MakerDAO
 - OneSplit
 - Uniswap v1
+- Kyber.Network
