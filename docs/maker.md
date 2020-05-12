@@ -9,6 +9,7 @@ Unfortunately Maker has a tendency to name things unintuitively, go through the 
 ## Interface
 
 ### IDssProxyActions
+
 ```js
 // ../src/maker/contracts/IDssProxyActions.sol#L149-L351
 
@@ -219,6 +220,26 @@ contract IDssProxyActions {
 
 ## Examples (JavaScript)
 
+### Reading ETH price from the Medianizer
+
+```js
+// ../tests/medianizer.test.ts#L19-L31
+
+test("read ETH price from medianizer", async () => {
+  const makerMedianizer = new ethers.Contract(
+    maker.ethUsdPriceFeed.address,
+    maker.ethUsdPriceFeed.abi,
+    wallet,
+  );
+
+  const ethPriceUsdWei = await makerMedianizer.read();
+  const ethPriceUsd = parseFloat(fromWei(ethPriceUsdWei));
+
+  expect(ethPriceUsd).toBeGreaterThan(0);
+  expect(ethPriceUsd).toBeLessThan(1000);
+});
+```
+
 ### Creating A Proxy
 
 ```js
@@ -238,7 +259,7 @@ test("create a proxy on Maker", async () => {
   const after = await proxyRegistry.proxies(wallet.address);
 
   expect(before).toBe("0x0000000000000000000000000000000000000000");
-  expect(after).toBe("0x4EA44929b2E69Ab14Fd131F59D317B82322E5844");
+  expect(after).not.toBe("0x0000000000000000000000000000000000000000");
 });
 ```
 

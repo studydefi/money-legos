@@ -1,0 +1,599 @@
+[
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rawValue",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FixedPoint.Unsigned",
+        "name": "_fixedOracleFeePerSecondPerPfc",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rawValue",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FixedPoint.Unsigned",
+        "name": "_weeklyDelayFeePerSecondPerPfc",
+        "type": "tuple"
+      },
+      {
+        "internalType": "address",
+        "name": "_timerAddress",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "roleId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newMember",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "manager",
+        "type": "address"
+      }
+    ],
+    "name": "AddedSharedMember",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rawValue",
+            "type": "uint256"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct FixedPoint.Unsigned",
+        "name": "newFinalFee",
+        "type": "tuple"
+      }
+    ],
+    "name": "NewFinalFee",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rawValue",
+            "type": "uint256"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct FixedPoint.Unsigned",
+        "name": "newOracleFee",
+        "type": "tuple"
+      }
+    ],
+    "name": "NewFixedOracleFeePerSecondPerPfc",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rawValue",
+            "type": "uint256"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct FixedPoint.Unsigned",
+        "name": "newWeeklyDelayFeePerSecondPerPfc",
+        "type": "tuple"
+      }
+    ],
+    "name": "NewWeeklyDelayFeePerSecondPerPfc",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "roleId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "oldMember",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "manager",
+        "type": "address"
+      }
+    ],
+    "name": "RemovedSharedMember",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "roleId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newMember",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "manager",
+        "type": "address"
+      }
+    ],
+    "name": "ResetExclusiveMember",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "SECONDS_PER_WEEK",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "roleId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "newMember",
+        "type": "address"
+      }
+    ],
+    "name": "addMember",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "finalFees",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "rawValue",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "fixedOracleFeePerSecondPerPfc",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "rawValue",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "getCurrentTime",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "roleId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getMember",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "roleId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "memberToCheck",
+        "type": "address"
+      }
+    ],
+    "name": "holdsRole",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "roleId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "memberToRemove",
+        "type": "address"
+      }
+    ],
+    "name": "removeMember",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "roleId",
+        "type": "uint256"
+      }
+    ],
+    "name": "renounceMembership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "roleId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "newMember",
+        "type": "address"
+      }
+    ],
+    "name": "resetMember",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "time",
+        "type": "uint256"
+      }
+    ],
+    "name": "setCurrentTime",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "timerAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "weeklyDelayFeePerSecondPerPfc",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "rawValue",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "erc20Address",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdrawErc20",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "payOracleFees",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function",
+    "payable": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "erc20Address",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rawValue",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FixedPoint.Unsigned",
+        "name": "amount",
+        "type": "tuple"
+      }
+    ],
+    "name": "payOracleFeesErc20",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "startTime",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "endTime",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rawValue",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FixedPoint.Unsigned",
+        "name": "pfc",
+        "type": "tuple"
+      }
+    ],
+    "name": "computeRegularFee",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rawValue",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FixedPoint.Unsigned",
+        "name": "regularFee",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rawValue",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FixedPoint.Unsigned",
+        "name": "latePenalty",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "currency",
+        "type": "address"
+      }
+    ],
+    "name": "computeFinalFee",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rawValue",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FixedPoint.Unsigned",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rawValue",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FixedPoint.Unsigned",
+        "name": "newFixedOracleFeePerSecondPerPfc",
+        "type": "tuple"
+      }
+    ],
+    "name": "setFixedOracleFeePerSecondPerPfc",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rawValue",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FixedPoint.Unsigned",
+        "name": "newWeeklyDelayFeePerSecondPerPfc",
+        "type": "tuple"
+      }
+    ],
+    "name": "setWeeklyDelayFeePerSecondPerPfc",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "currency",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rawValue",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FixedPoint.Unsigned",
+        "name": "newFinalFee",
+        "type": "tuple"
+      }
+    ],
+    "name": "setFinalFee",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

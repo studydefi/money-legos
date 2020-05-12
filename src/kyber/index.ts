@@ -1,5 +1,5 @@
 import { default as contracts } from "./contracts";
 
-export = {
+export default {
   ...contracts,
 };

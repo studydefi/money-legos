@@ -7,11 +7,11 @@
 
 ![legos autocomplete](./assets/legos-autocomplete.gif)
 
-> Get **ABIs** and **Addresses** to popular DeFi protocols
+> Get **ABIs**, **Addresses**, and **Solidity Interfaces** to popular DeFi protocols
 
 **Now with Typescript-powered autocomplete!**
 
-`money-legos` is an NPM package that provides you with the **mainnet address** and the **ABI** for popular DeFi protocols.
+`money-legos` is an NPM package that provides you with the **mainnet addresses**, **ABIs**, and **Solidity interfaces** for popular DeFi protocols.
 
 ### Click [here](https://money-legos.studydefi.com/) for docs!
 
