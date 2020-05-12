@@ -105,6 +105,13 @@
  - weth: [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)
  - zrx: [0xE41d2489571d322189246DaFA5ebDe1F4699F498](https://etherscan.io/address/0xE41d2489571d322189246DaFA5ebDe1F4699F498)
 
+## Kyber
+
+[Link to ABIs](https://github.com/studydefi/money-legos/tree/master/src/kyber/abi)
+
+
+ - network: [0x818E6FECD516Ecc3849DAf6845e3EC868087B755](https://etherscan.io/address/0x818E6FECD516Ecc3849DAf6845e3EC868087B755)
+
 ## Maker
 
 [Link to ABIs](https://github.com/studydefi/money-legos/tree/master/src/maker/abi)
