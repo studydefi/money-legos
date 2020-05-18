@@ -1,8 +1,8 @@
 pragma solidity ^0.5.0;
 
-import "@studydefi/money-legos/compound/contracts/IComptroller.sol";
-import "@studydefi/money-legos/compound/contracts/ICEther.sol";
-import "@studydefi/money-legos/compound/contracts/ICToken.sol";
+import "../src/compound/contracts/IComptroller.sol";
+import "../src/compound/contracts/ICEther.sol";
+import "../src/compound/contracts/ICToken.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";

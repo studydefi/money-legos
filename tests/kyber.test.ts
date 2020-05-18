@@ -1,35 +1,36 @@
-jest.setTimeout(500000);
-
-import { Wallet, Contract, ethers } from "ethers";
+import { expect } from "chai";
+import { ethers } from "@nomiclabs/buidler";
+import { Contract } from "ethers";
 import { fromWei } from "./utils";
 
 // import legos
 import erc20 from "../src/erc20";
 import kyber from "../src/kyber";
+import { BigNumber } from "ethers/utils";
 
 const { parseEther, bigNumberify } = ethers.utils;
 
 describe("kyber", () => {
-  let wallet: Wallet, daiContract: Contract;
+  let wallet: any;
+  let daiContract: Contract;
+  let kyberNetworkContract: Contract;
+  const ethToSwap = 5;
 
-  beforeAll(async () => {
+  before(async () => {
     ethers.errors.setLogLevel("error");
 
-    // @ts-ignore
-    wallet = global.wallet;
+    [wallet] = await ethers.getSigners();
     daiContract = new ethers.Contract(erc20.dai.address, erc20.abi, wallet);
-  });
-
-  test("buy DAI from Kyber.Network", async () => {
-    const kyberNetworkContract = new ethers.Contract(
+    kyberNetworkContract = new ethers.Contract(
       kyber.network.address,
       kyber.network.abi,
       wallet,
     );
+  });
 
-    const ethToSwap = 5;
+  it("buy DAI from Kyber.Network", async () => {
     const ethBefore = await wallet.getBalance();
-    const daiBefore = await daiContract.balanceOf(wallet.address);
+    const daiBefore = await daiContract.balanceOf(wallet.getAddress());
 
     const {
       expectedRate,
@@ -54,12 +55,43 @@ describe("kyber", () => {
     );
 
     const ethAfter = await wallet.getBalance();
-    const daiAfter = await daiContract.balanceOf(wallet.address);
+    const daiAfter = await daiContract.balanceOf(wallet.getAddress());
 
     const ethLost = parseFloat(fromWei(ethBefore.sub(ethAfter)));
 
-    expect(fromWei(daiBefore)).toBe("0.0");
-    expect(fromWei(daiAfter)).toBe(fromWei(expectedDai));
-    expect(ethLost).toBeCloseTo(ethToSwap);
+    expect(fromWei(daiBefore)).to.equal("0.0");
+    expect(fromWei(daiAfter)).to.equal(fromWei(expectedDai));
+    expect(ethLost).to.be.approximately(ethToSwap, 0.1);
+  });
+
+  it("solidity tests", async () => {
+    const KyberLiteBase = await ethers.getContractFactory("KyberLiteBase");
+    const kyberLiteBase = await KyberLiteBase.deploy();
+
+    await kyberLiteBase.deployed();
+
+    const daiBefore = await daiContract.balanceOf(wallet.getAddress());
+
+    const { expectedRate } = await kyberNetworkContract.getExpectedRate(
+      erc20.eth.address,
+      erc20.dai.address,
+      parseEther(`${ethToSwap}`),
+    );
+
+    const expectedDai = expectedRate.mul(bigNumberify(`${ethToSwap}`));
+
+    await kyberLiteBase.ethToToken(erc20.dai.address, {
+      value: parseEther(`${ethToSwap}`),
+      gasLimit: 4000000,
+    });
+
+    const daiAfter: BigNumber = await daiContract.balanceOf(
+      wallet.getAddress(),
+    );
+
+    expect(parseFloat(fromWei(daiAfter))).to.be.approximately(
+      parseFloat(fromWei(daiBefore.add(expectedDai))),
+      0.1,
+    );
   });
 });

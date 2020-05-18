@@ -1,9 +1,9 @@
 pragma solidity ^0.5.0;
 pragma experimental ABIEncoderV2;
 
-import "@studydefi/money-legos/aave/contracts/ILendingPool.sol";
-import "@studydefi/money-legos/aave/contracts/IFlashLoanReceiver.sol";
-import "@studydefi/money-legos/aave/contracts/FlashloanReceiverBase.sol";
+import "../src/aave/contracts/ILendingPool.sol";
+import "../src/aave/contracts/IFlashLoanReceiver.sol";
+import "../src/aave/contracts/FlashloanReceiverBase.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
