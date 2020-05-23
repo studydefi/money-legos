@@ -10,7 +10,7 @@ const contracts = {
     abi: ComptrollerAbi,
   },
   priceOracle: {
-    address: "0x1d8aedc9e924730dd3f9641cdb4d1b92b848b4bd",
+    address: "0xDDc46a3B076aec7ab3Fc37420A8eDd2959764Ec4",
     abi: CompoundPriceOracleAbi,
   },
   cEther: {
