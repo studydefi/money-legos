@@ -5,6 +5,7 @@
 _Special thanks to [mrdavey](https://github.com/mrdavey/) for his [ez-flashloan example](https://github.com/mrdavey/ez-flashloan)._
 
 Flashloans are a bit tricky as they require you deploy a smart contract before you can start ultilizing it. The current standard way to interact with flashloans is by:
+
 1. Deploying a smart contract with specific logic that will return you a profit (e.g. arbitrage, liquidating acounts).
 2. Interacting with the application specific smart contract from step 1.
 
@@ -13,7 +14,8 @@ One thing to note about flashloan supported smart contracts is that they can get
 ### Flashloan Logic (Solidity)
 
 Your smart contract will need to inherit from `FlashLoanReceiverBase` and have two functions:
-1. An entrypoint function where __you__ call to initiate the flashloan (`initateFlashLoan` in the example below).
+
+1. An entrypoint function where **you** call to initiate the flashloan (`initateFlashLoan` in the example below).
 2. A callback function called `executeOperation` that contains the action logic to perform once the loan is given to us.
 
 ```js
@@ -98,14 +100,14 @@ const contractWithFlashLoanAddress =
 const contractWithFlashLoan = new ethers.Contract(
   contractWithFlashLoanAddress,
   ContractWithFlashLoanArtifact.abi,
-  wallet
+  wallet,
 );
 
 const main = async () => {
   // Encoding our custom data
   const myCustomDataEncoded = ethers.utils.defaultAbiCoder.encode(
     ["address", "uint"],
-    ["0x0000000000000000000000000000000000000000", 42]
+    ["0x0000000000000000000000000000000000000000", 42],
   );
 
   const tx = await contractWithFlashLoan.initateFlashLoan(
@@ -115,8 +117,157 @@ const main = async () => {
     myCustomDataEncoded, // _params encoded
     {
       gasLimit: 4000000,
-    }
+    },
   );
   await tx.wait();
 };
+```
+
+## Examples (JavaScript)
+
+### Supplying/Borrowing Tokens
+
+```js
+// ../tests/aave.test.ts#L43-L62
+
+test("lend 10 ETH (i.e. mint aETH)", async () => {
+  // given
+  const ethToLend = 10;
+  const before = await aEthContract.balanceOf(wallet.address);
+
+  // when
+  const { address: reserveAddress } = erc20.eth;
+  const amount = parseEther(ethToLend.toString());
+  const referralCode = "0";
+  await lendingPool.deposit(reserveAddress, amount, referralCode, {
+    gasLimit: 1500000,
+    value: amount,
+  });
+
+  // then
+  const after = await aEthContract.balanceOf(wallet.address);
+
+  const ethLended = parseFloat(fromWei(after.sub(before)));
+  expect(ethLended).toBeCloseTo(ethToLend);
+});
+```
+
+```js
+// ../tests/aave.test.ts#L64-L85
+
+test("borrow 20 DAI", async () => {
+  // given
+  const before = await daiContract.balanceOf(wallet.address);
+
+  // when
+  const { address: reserveAddress } = erc20.dai;
+  const amount = parseEther("20");
+  const interestRateMode = 1; // 1 = STABLE RATE, 2 = VARIABLE RATE
+  const referralCode = "0";
+  await lendingPool.borrow(
+    reserveAddress,
+    amount,
+    interestRateMode,
+    referralCode,
+    { gasLimit: 1500000 },
+  );
+
+  // then
+  const after = await daiContract.balanceOf(wallet.address);
+  const daiBorrowed = parseFloat(fromWei(after.sub(before)));
+  expect(daiBorrowed).toBe(20);
+});
+```
+
+### Retrieve Supply/Borrow Balance
+
+```js
+// ../tests/aave.test.ts#L111-L121
+
+test("get supply/borrow balances for DAI", async () => {
+  // when
+  const {
+    currentATokenBalance: daiLended,
+    currentBorrowBalance: daiBorrowed,
+  } = await lendingPool.getUserReserveData(erc20.dai.address, wallet.address);
+
+  // then
+  expect(parseFloat(fromWei(daiBorrowed))).toBeCloseTo(20);
+  expect(parseFloat(fromWei(daiLended))).toBeCloseTo(5);
+});
+```
+
+### Withdraw Supply
+
+```js
+// ../tests/aave.test.ts#L123-L139
+
+test("withdraw 1 ETH from collateral", async () => {
+  // given
+  const ethBefore = await wallet.getBalance();
+  const ethToRedeem = 1;
+  const ethToRedeemInWei = parseEther(ethToRedeem.toString());
+
+  // when
+  await aEthContract.redeem(ethToRedeemInWei, {
+    gasLimit: 1500000,
+  });
+
+  // then
+  const ethAfter = await wallet.getBalance();
+
+  const ethGained = parseFloat(fromWei(ethAfter.sub(ethBefore)));
+  expect(ethGained).toBeCloseTo(ethToRedeem, 1);
+});
+```
+
+### Repay Debt
+
+```js
+// ../tests/aave.test.ts#L141-L165
+
+test("repay 1 DAI of debt", async () => {
+  // given
+  const daiToRepay = 1;
+  const daiToRepayInWei = parseEther(daiToRepay.toString());
+
+  const daiBefore = await daiContract.balanceOf(wallet.address);
+
+  // when
+  await daiContract.approve(aave.LendingPoolCore.address, daiToRepayInWei);
+
+  await lendingPool.repay(
+    erc20.dai.address,
+    daiToRepayInWei,
+    wallet.address,
+    {
+      gasLimit: 1500000,
+    },
+  );
+
+  // then
+  const daiAfter = await daiContract.balanceOf(wallet.address);
+
+  const daiSpent = parseFloat(fromWei(daiBefore.sub(daiAfter)));
+  expect(daiSpent).toBe(daiToRepay);
+});
+```
+
+### Retrieve Health Factor
+
+The health factor should be > 1 otherwise the user's positions can be liquidated.
+See more: https://docs.aave.com/developers/developing-on-aave/the-protocol/lendingpool#liquidationcall
+
+```js
+// ../tests/aave.test.ts#L167-L175
+
+test("retrieve current health factor", async () => {
+  // when
+  const { healthFactor } = await lendingPool.getUserAccountData(
+    wallet.address,
+  );
+
+  // then
+  expect(parseFloat(fromWei(healthFactor))).toBeGreaterThan(1);
+});
 ```
