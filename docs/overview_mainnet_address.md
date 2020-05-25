@@ -40,7 +40,7 @@
  - cWBTC: [0xc11b1268c1a384e55c48c2391d8d480264a3a7f4](https://etherscan.io/address/0xc11b1268c1a384e55c48c2391d8d480264a3a7f4)
  - cZRX: [0xb3319f5d18bc0d84dd1b4825dcde5d5f7266d407](https://etherscan.io/address/0xb3319f5d18bc0d84dd1b4825dcde5d5f7266d407)
  - comptroller: [0x3d9819210a31b4961b30ef54be2aed79b9c9cd3b](https://etherscan.io/address/0x3d9819210a31b4961b30ef54be2aed79b9c9cd3b)
- - priceOracle: [0x1d8aedc9e924730dd3f9641cdb4d1b92b848b4bd](https://etherscan.io/address/0x1d8aedc9e924730dd3f9641cdb4d1b92b848b4bd)
+ - priceOracle: [0xDDc46a3B076aec7ab3Fc37420A8eDd2959764Ec4](https://etherscan.io/address/0xDDc46a3B076aec7ab3Fc37420A8eDd2959764Ec4)
 
 ## Curvefi
 
