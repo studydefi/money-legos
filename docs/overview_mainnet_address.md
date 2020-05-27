@@ -105,6 +105,24 @@
  - weth: [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)
  - zrx: [0xE41d2489571d322189246DaFA5ebDe1F4699F498](https://etherscan.io/address/0xE41d2489571d322189246DaFA5ebDe1F4699F498)
 
+## Idle
+
+[Link to ABIs](https://github.com/studydefi/money-legos/tree/master/src/idle/abi)
+
+#### maxYield
+
+
+ - dai: [0x78751b12da02728f467a44eac40f5cbc16bd7934](https://etherscan.io/address/0x78751b12da02728f467a44eac40f5cbc16bd7934)
+ - usdc: [0x12B98C621E8754Ae70d0fDbBC73D6208bC3e3cA6](https://etherscan.io/address/0x12B98C621E8754Ae70d0fDbBC73D6208bC3e3cA6)
+ - usdt: [0x63D27B3DA94A9E871222CB0A32232674B02D2f2D](https://etherscan.io/address/0x63D27B3DA94A9E871222CB0A32232674B02D2f2D)
+
+#### riskAdjusted
+
+
+ - dai: [0x1846bdfDB6A0f5c473dEc610144513bd071999fB](https://etherscan.io/address/0x1846bdfDB6A0f5c473dEc610144513bd071999fB)
+ - usdc: [0xcDdB1Bceb7a1979C6caa0229820707429dd3Ec6C](https://etherscan.io/address/0xcDdB1Bceb7a1979C6caa0229820707429dd3Ec6C)
+ - usdt: [0x42740698959761baf1b06baa51efbd88cb1d862b](https://etherscan.io/address/0x42740698959761baf1b06baa51efbd88cb1d862b)
+
 ## Kyber
 
 [Link to ABIs](https://github.com/studydefi/money-legos/tree/master/src/kyber/abi)
