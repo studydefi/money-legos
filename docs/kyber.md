@@ -44,6 +44,7 @@ contract KyberNetworkProxy is KyberNetworkProxyInterface, SimpleNetworkInterface
 
 ```js
 const { ethers } = require("ethers");
+const erc20 = require("@studydefi/money-legos/erc20");
 const kyber = require("@studydefi/money-legos/kyber");
 
 const provider = new ethers.providers.JsonRpcProvider(
