@@ -10,6 +10,7 @@
   - [Compound](compound.md)
   - [CurveFi](curvefi.md)
   - [DyDx](dydx.md)
+  - [Idle V3](idle.md)
   - [Kyber Network](kyber.md)
   - [Maker](maker.md)
   - [OneSplit](onesplit.md)
