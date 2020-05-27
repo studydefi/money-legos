@@ -23,10 +23,12 @@ Protocols supported:
 - DappSys
 - DyDx
 - ERC20
+- Idle V3
+- Kyber.Network
 - MakerDAO
 - OneSplit
+- UMA Protocol
 - Uniswap v1
-- Kyber.Network
 
 Importing specific protocols is also supported:
 
