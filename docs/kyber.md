@@ -44,9 +44,8 @@ contract KyberNetworkProxy is KyberNetworkProxyInterface, SimpleNetworkInterface
 
 ```js
 const { ethers } = require("ethers");
-const { getLegosFor, networks } = require("@studydefi/money-legos");
-
-const legos = getLegosFor(networks.mainnet);
+const erc20 = require("@studydefi/money-legos/erc20");
+const kyber = require("@studydefi/money-legos/kyber");
 
 const provider = new ethers.providers.JsonRpcProvider(
   process.env.PROVIDER_URL || "http://localhost:8545",
@@ -69,20 +68,16 @@ const swapOnKyber = async (fromAddress, toAddress, fromAmountWei) => {
   const minConversionRate = 1;
 
   const kyberNetwork = new ethers.Contract(
-    legos.kyber.contracts.network.address,
-    legos.kyber.contracts.factnetworkry.abi,
+    kyber.network.address,
+    kyber.network.abi,
     wallet,
   );
 
   // ERC20 contract
-  const fromTokenContract = new ethers.Contract(
-    fromAddress,
-    legos.erc20.contracts.abi,
-    wallet,
-  );
+  const fromTokenContract = new ethers.Contract(fromAddress, erc20.abi, wallet);
 
   // ETH -> Token
-  if (fromAddress === legos.erc20.contracts.eth.address) {
+  if (fromAddress === erc20.eth.address) {
     return kyberNetwork.swapEtherToToken(toAddress, minConversionRate, {
       gasLimit,
       value: fromAmountWei,
@@ -93,7 +88,7 @@ const swapOnKyber = async (fromAddress, toAddress, fromAmountWei) => {
   await fromTokenContract.approve(kyberNetwork.address, fromAmountWei);
 
   // Token -> ETH
-  if (toAddress === legos.erc20.contracts.eth.address) {
+  if (toAddress === erc20.eth.address) {
     return fromExchangeContract.swapTokenToEther(
       fromAddress,
       fromAmountWei,
@@ -125,7 +120,7 @@ const swapAndLog = async (fromToken, toToken, amount) => {
     ethers.utils.parseUnits(amount.toString(), fromToken.decimals),
   );
 
-  if (toToken === legos.erc20.contracts.eth) {
+  if (toToken === erc20.eth) {
     const ethBalWei = await wallet.getBalance();
     console.log(
       `${toToken.symbol} balance: ${ethers.utils.formatEther(ethBalWei)}`,
@@ -145,9 +140,9 @@ const swapAndLog = async (fromToken, toToken, amount) => {
 };
 
 const main = async () => {
-  await swapAndLog(legos.erc20.contracts.eth, legos.erc20.contracts.dai, 1);
-  await swapAndLog(legos.erc20.contracts.dai, legos.erc20.contracts.rep, 50);
-  await swapAndLog(legos.erc20.contracts.rep, legos.erc20.contracts.eth, 2);
+  await swapAndLog(erc20.eth, erc20.dai, 1);
+  await swapAndLog(erc20.dai, erc20.rep, 50);
+  await swapAndLog(erc20.rep, erc20.eth, 2);
 };
 
 main();

@@ -7,7 +7,7 @@ const formatToEtherscanLink = (l) =>
 
 // Funky protocols with different structures
 // Need to construct the markdown a bit differently
-const funkyProtocols = ["curvefi"];
+const funkyProtocols = ["curvefi", "idle"];
 const noRenderProtocols = ["dappsys"];
 
 // Generated markdown
@@ -28,8 +28,8 @@ Object.keys(legos)
 
     markdown.push({
       link: {
-        title: 'Link to ABIs',
-        source: `https://github.com/studydefi/money-legos/tree/master/src/${curDefiProtocol}/abi`
+        title: "Link to ABIs",
+        source: `https://github.com/studydefi/money-legos/tree/master/src/${curDefiProtocol}/abi`,
       },
     });
 
