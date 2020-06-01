@@ -59,7 +59,10 @@ describe("kyber", () => {
     const ethLost = parseFloat(fromWei(ethBefore.sub(ethAfter)));
 
     expect(fromWei(daiBefore)).toBe("0.0");
-    expect(fromWei(daiAfter)).toBe(fromWei(expectedDai));
-    expect(ethLost).toBeCloseTo(ethToSwap);
+    expect(parseFloat(fromWei(daiAfter))).toBeCloseTo(
+      parseFloat(fromWei(expectedDai)),
+      1,
+    );
+    expect(ethLost).toBeCloseTo(ethToSwap, 1);
   });
 });
