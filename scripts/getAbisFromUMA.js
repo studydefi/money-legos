@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 
-// Usage: node scripts/getDataFromUMA.js <path-to-uma-protocol>
+// Usage: node scripts/getAbisFromUMA.js <path-to-uma-protocol>
 
 // only include the following contracts
 const fileFilter = [
