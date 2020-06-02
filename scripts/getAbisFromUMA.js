@@ -40,7 +40,7 @@ filenames.forEach((filename) => {
 
   if (fileFilter.includes(name)) {
     const outputPath = path.join(outputDir, filename);
-    fs.writeFileSync(outputPath, contents.abi);
+    fs.writeFileSync(outputPath, JSON.stringify(contents.abi, null, 2));
     console.log("written:", outputPath);
   }
 });
