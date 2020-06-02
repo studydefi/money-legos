@@ -1,6 +1,5 @@
 import addressWhitelistAbi from "./abi/AddressWhitelist.json";
 import designatedVotingFactoryAbi from "./abi/DesignatedVotingFactory.json";
-import expiringMultiPartyLibAbi from "./abi/expiringMultiPartyLib.json";
 import expiringMultiPartyCreatorAbi from "./abi/ExpiringMultiPartyCreator.json";
 import financialContractsAdminAbi from "./abi/FinancialContractsAdmin.json";
 import finderAbi from "./abi/Finder.json";
@@ -23,7 +22,7 @@ const contracts = {
     address: "0xE81EeE5Da165fA6863bBc82dF66E62d18625d592",
   },
   expiringMultiPartyLib: {
-    abi: expiringMultiPartyLibAbi,
+    abi: [],
     address: "0x09AFD24Acc170c16f4fF64BDf2A4818C515440e8",
   },
   expiringMultiPartyCreator: {
