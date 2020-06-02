@@ -89,8 +89,7 @@
   },
   {
     "stateMutability": "payable",
-    "type": "fallback",
-    "payable": true
+    "type": "fallback"
   },
   {
     "inputs": [
@@ -114,8 +113,7 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -134,8 +132,7 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [],
@@ -148,8 +145,7 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [],
@@ -162,8 +158,7 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [],
@@ -176,21 +171,18 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "stateMutability": "payable",
-    "type": "receive",
-    "payable": true
+    "type": "receive"
   },
   {
     "inputs": [],
     "name": "deposit",
     "outputs": [],
     "stateMutability": "payable",
-    "type": "function",
-    "payable": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -216,8 +208,7 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
