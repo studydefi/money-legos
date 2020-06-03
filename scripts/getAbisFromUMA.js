@@ -16,6 +16,7 @@ const fileFilter = [
   "DesignatedVotingFactory",
   "WETH9",
   "ExpiringMultiPartyLib",
+  "ExpiringMultiParty",
   "TokenFactory",
   "AddressWhitelist",
   "ExpiringMultiPartyCreator",
