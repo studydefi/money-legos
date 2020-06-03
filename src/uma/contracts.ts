@@ -1,5 +1,6 @@
 import addressWhitelistAbi from "./abi/AddressWhitelist.json";
 import designatedVotingFactoryAbi from "./abi/DesignatedVotingFactory.json";
+import expiringMultiPartyAbi from "./abi/ExpiringMultiParty.json";
 import expiringMultiPartyCreatorAbi from "./abi/ExpiringMultiPartyCreator.json";
 import financialContractsAdminAbi from "./abi/FinancialContractsAdmin.json";
 import finderAbi from "./abi/Finder.json";
@@ -7,10 +8,10 @@ import governorAbi from "./abi/Governor.json";
 import identifierWhitelistAbi from "./abi/IdentifierWhitelist.json";
 import registryAbi from "./abi/Registry.json";
 import storeAbi from "./abi/Store.json";
+import tokenFactoryAbi from "./abi/TokenFactory.json";
 import votingAbi from "./abi/Voting.json";
 import votingTokenAbi from "./abi/VotingToken.json";
 import weth9Abi from "./abi/WETH9.json";
-import tokenFactoryAbi from "./abi/TokenFactory.json";
 
 const contracts = {
   addressWhitelist: {
@@ -20,6 +21,9 @@ const contracts = {
   designatedVotingFactory: {
     abi: designatedVotingFactoryAbi,
     address: "0xE81EeE5Da165fA6863bBc82dF66E62d18625d592",
+  },
+  expiringMultiParty: {
+    abi: expiringMultiPartyAbi,
   },
   expiringMultiPartyLib: {
     abi: [],
