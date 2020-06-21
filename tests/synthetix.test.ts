@@ -78,7 +78,7 @@ describe("synthetix", () => {
   });
 
   // TODO: Use DEPOT
-  test("get some SNX from Uniswap", async () => {
+  test.only("get some SNX from Uniswap", async () => {
     // given
     const snxBefore = await snxContract.balanceOf(wallet.address);
     expect(fromWei(snxBefore)).toBe("0.0");
@@ -105,7 +105,7 @@ describe("synthetix", () => {
 
   // https://blog.quiknode.io/an-ultimate-guide-to-synthetix/
   // https://developer.synthetix.io/contracts/synthetix/#transfer
-  test("issue 100 sUSD tokens", async () => {
+  test.only("issue 100 sUSD tokens", async () => {
     // given
     const sUSDBefore = await sUSDContract.balanceOf(wallet.address);
     expect(fromWei(sUSDBefore)).toBe("0.0");
@@ -135,7 +135,7 @@ describe("synthetix", () => {
     expect(fromWei(sUSDAfter)).toBe(fromWei(sUSDToMintInWei));
   });
 
-  test("shouldn't be able to transfer locked SNX tokens", async () => {
+  test.only("shouldn't be able to transfer locked SNX tokens", async () => {
     // given
     const snxBalance = await snxContract.balanceOf(wallet.address);
     const transferableSnx = await synthetixContract.transferableSynthetix(
@@ -154,7 +154,7 @@ describe("synthetix", () => {
     await expect(transferAllBalance).rejects.toThrow();
   });
 
-  test("exchange from sUSD to sXAU", async () => {
+  test.only("exchange from sUSD to sXAU", async () => {
     // given
     const sUSDBefore = await sUSDContract.balanceOf(wallet.address);
     const sXAUBefore = await sXAUContract.balanceOf(wallet.address);
