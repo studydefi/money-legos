@@ -20,6 +20,7 @@ describe("synthetix", () => {
   let exchangeRatesContract: Contract;
   let exchangerContract: Contract;
   let sXAUContract: Contract;
+  let depotContract: Contract;
   const sUSDKey = formatBytes32String("sUSD");
   const sXAUKey = formatBytes32String("sXAU");
 
@@ -75,10 +76,15 @@ describe("synthetix", () => {
       synthetix.sXAU.abi,
       wallet,
     );
+
+    depotContract = new ethers.Contract(
+      synthetix.Depot.address,
+      synthetix.Depot.abi,
+      wallet,
+    );
   });
 
-  // TODO: Use DEPOT
-  test.only("get some SNX from Uniswap", async () => {
+  test("get some SNX from Uniswap", async () => {
     // given
     const snxBefore = await snxContract.balanceOf(wallet.address);
     expect(fromWei(snxBefore)).toBe("0.0");
@@ -104,8 +110,7 @@ describe("synthetix", () => {
   });
 
   // https://blog.quiknode.io/an-ultimate-guide-to-synthetix/
-  // https://developer.synthetix.io/contracts/synthetix/#transfer
-  test.only("issue 100 sUSD tokens", async () => {
+  test("issue 100 sUSD tokens", async () => {
     // given
     const sUSDBefore = await sUSDContract.balanceOf(wallet.address);
     expect(fromWei(sUSDBefore)).toBe("0.0");
@@ -135,26 +140,25 @@ describe("synthetix", () => {
     expect(fromWei(sUSDAfter)).toBe(fromWei(sUSDToMintInWei));
   });
 
-  test.only("shouldn't be able to transfer locked SNX tokens", async () => {
+  test("shouldn't be able to transfer locked SNX tokens", async () => {
     // given
     const snxBalance = await snxContract.balanceOf(wallet.address);
+    const snxBalanceInFloat = parseFloat(fromWei(snxBalance));
+
     const transferableSnx = await synthetixContract.transferableSynthetix(
       wallet.address,
     );
-    const snxBalanceInFloat = parseFloat(fromWei(snxBalance));
     const transferableSnxInFloat = parseFloat(fromWei(transferableSnx));
 
     expect(transferableSnxInFloat).toBeLessThan(snxBalanceInFloat);
 
-    // when
-    const transferAllBalance = async () =>
-      snxContract.transfer(someAccount, snxBalance);
-
-    // then
-    await expect(transferAllBalance).rejects.toThrow();
+    // when-then
+    await expect(
+      snxContract.transfer(someAccount, snxBalance),
+    ).rejects.toThrow();
   });
 
-  test.only("exchange from sUSD to sXAU", async () => {
+  test("exchange from sUSD to sXAU", async () => {
     // given
     const sUSDBefore = await sUSDContract.balanceOf(wallet.address);
     const sXAUBefore = await sXAUContract.balanceOf(wallet.address);
@@ -195,14 +199,14 @@ describe("synthetix", () => {
 
     //TODO: Omit global.provider
     //@ts-ignore
-    await increaseTime(global.provider, waitingPeriod);
+    await increaseTime(global.provider, waitingPeriod.toString());
     expect(await synthetixContract.isWaitingPeriod(sXAUKey)).toBe(false);
 
     // when
     const src = sXAUKey;
-    const fromAmount = sXAUBefore;
+    const sourceAmount = sXAUBefore;
     const dest = sUSDKey;
-    await synthetixContract.exchange(src, fromAmount, dest, {
+    await synthetixContract.exchange(src, sourceAmount, dest, {
       gasLimit: 4000000,
     });
 
@@ -213,10 +217,15 @@ describe("synthetix", () => {
 
   // TODO: Fix
   // https://blog.synthetix.io/what-you-need-to-know-before-staking-snx-for-the-first-time/
-  test.skip("pay all debts", async () => {
+  test("pay all debts", async () => {
     // given
     const sUSDBefore = await sUSDContract.balanceOf(wallet.address);
+    const minimumStakeTime = 24 * 60 * 60; // 24h
 
+    //TODO: Omit global.provider
+    //@ts-ignore
+    // await increaseTime(global.provider, minimumStakeTime.toString());
+    console.log(`sUSDBefore = ${sUSDBefore}`);
     // when
     await synthetixContract.burnSynths(sUSDBefore);
 
