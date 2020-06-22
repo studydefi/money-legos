@@ -10,10 +10,10 @@ const contracts = {
       address: "0x63D27B3DA94A9E871222CB0A32232674B02D2f2D",
     },
     susd: {
-      address: "0xb39ca0261a1b2986a6a9Fe38d344B56374963dE5",
+      address: "0xE79E177d2a5c7085027d7C64c8F271c81430fc9b",
     },
     tusd: {
-      address: "0x7DB7A4a50b26602E56536189Aa94678C80F8E5b6",
+      address: "0x51C77689A9c2e8cCBEcD4eC9770a1fA5fA83EeF1",
     },
     wbtc: {
       address: "0xD6f279B7ccBCD70F8be439d25B9Df93AEb60eC55",
