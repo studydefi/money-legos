@@ -1281,7 +1281,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "requestPassTimestamp",
+        "name": "withdrawalRequestPassTimestamp",
         "type": "uint256"
       },
       {

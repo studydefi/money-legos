@@ -8,8 +8,7 @@ import governorAbi from "./abi/Governor.json";
 import identifierWhitelistAbi from "./abi/IdentifierWhitelist.json";
 import registryAbi from "./abi/Registry.json";
 import storeAbi from "./abi/Store.json";
-import syntheticTokenAbi from "./abi/SyntheticToken.json";
-import testnetERC20Abi from "./abi/TestnetERC20.json";
+import tokenFactoryAbi from "./abi/TokenFactory.json";
 import votingAbi from "./abi/Voting.json";
 import votingTokenAbi from "./abi/VotingToken.json";
 import weth9Abi from "./abi/WETH9.json";
@@ -17,6 +16,7 @@ import weth9Abi from "./abi/WETH9.json";
 const contracts = {
   addressWhitelist: {
     abi: addressWhitelistAbi,
+    address: "0x48e687205D3962c43891b8Cde5A4Fe75FA6C8D7a",
   },
   designatedVotingFactory: {
     abi: designatedVotingFactoryAbi,
@@ -25,8 +25,13 @@ const contracts = {
   expiringMultiParty: {
     abi: expiringMultiPartyAbi,
   },
+  expiringMultiPartyLib: {
+    abi: [],
+    address: "0x09AFD24Acc170c16f4fF64BDf2A4818C515440e8",
+  },
   expiringMultiPartyCreator: {
     abi: expiringMultiPartyCreatorAbi,
+    address: "0xdebB91Ab3e473025bb8ce278c02361A3C4f13124",
   },
   financialContractsAdmin: {
     abi: financialContractsAdminAbi,
@@ -52,11 +57,9 @@ const contracts = {
     abi: storeAbi,
     address: "0x54f44eA3D2e7aA0ac089c4d8F7C93C27844057BF",
   },
-  syntheticToken: {
-    abi: syntheticTokenAbi,
-  },
-  testnetERC20: {
-    abi: testnetERC20Abi,
+  tokenFactory: {
+    abi: tokenFactoryAbi,
+    address: "0x7c96d6235CfaaCcAc5d80fCe74E6032B25dd1F03",
   },
   voting: {
     abi: votingAbi,
