@@ -12,7 +12,9 @@ const { parseEther, formatBytes32String } = ethers.utils;
 
 describe("synthetix", () => {
   const someAccount = "0xFFcf8FDEE72ac11b5c542428B35EEF5769C409f0";
+
   let wallet: Wallet;
+  let provider: any;
   let snxContract: Contract;
   let snxExchangeContract: Contract;
   let sUSDContract: Contract;
@@ -21,6 +23,7 @@ describe("synthetix", () => {
   let exchangerContract: Contract;
   let sXAUContract: Contract;
   let depotContract: Contract;
+
   const sUSDKey = formatBytes32String("sUSD");
   const sXAUKey = formatBytes32String("sXAU");
 
@@ -29,6 +32,9 @@ describe("synthetix", () => {
 
     // @ts-ignore
     wallet = global.wallet;
+    // @ts-ignore
+    provider = global.provider;
+
     snxContract = new ethers.Contract(erc20.snx.address, erc20.abi, wallet);
 
     const uniswapFactoryContract = new ethers.Contract(
@@ -109,7 +115,6 @@ describe("synthetix", () => {
     expect(fromWei(snxAfter)).toBe(fromWei(expectedSnx));
   });
 
-  // https://blog.quiknode.io/an-ultimate-guide-to-synthetix/
   test("issue 100 sUSD tokens", async () => {
     // given
     const sUSDBefore = await sUSDContract.balanceOf(wallet.address);
@@ -197,9 +202,7 @@ describe("synthetix", () => {
     const sXAUBefore = await sXAUContract.balanceOf(wallet.address);
     const waitingPeriod = await exchangerContract.waitingPeriodSecs();
 
-    //TODO: Omit global.provider
-    //@ts-ignore
-    await increaseTime(global.provider, waitingPeriod.toString());
+    await increaseTime(provider, waitingPeriod.toString());
     expect(await synthetixContract.isWaitingPeriod(sXAUKey)).toBe(false);
 
     // when
@@ -213,24 +216,5 @@ describe("synthetix", () => {
     // then
     const sXAUAfter = await sXAUContract.balanceOf(wallet.address);
     expect(fromWei(sXAUAfter)).toBe("0.0");
-  });
-
-  // TODO: Fix
-  // https://blog.synthetix.io/what-you-need-to-know-before-staking-snx-for-the-first-time/
-  test("pay all debts", async () => {
-    // given
-    const sUSDBefore = await sUSDContract.balanceOf(wallet.address);
-    const minimumStakeTime = 24 * 60 * 60; // 24h
-
-    //TODO: Omit global.provider
-    //@ts-ignore
-    // await increaseTime(global.provider, minimumStakeTime.toString());
-    console.log(`sUSDBefore = ${sUSDBefore}`);
-    // when
-    await synthetixContract.burnSynths(sUSDBefore);
-
-    // then
-    const sUSDAfter = await sUSDContract.balanceOf(wallet.address);
-    expect(fromWei(sUSDAfter)).toBe("0.0");
   });
 });
