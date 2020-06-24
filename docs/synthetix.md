@@ -237,30 +237,6 @@ test("issue 100 sUSD tokens", async () => {
 });
 ```
 
-### Shouldn't be able to transfer locked SNX tokens
-
-```js
-// ../tests/synthetix.test.ts#L148-L164
-
-test("shouldn't be able to transfer locked SNX tokens", async () => {
-  // given
-  const snxBalance = await snxContract.balanceOf(wallet.address);
-  const snxBalanceInFloat = parseFloat(fromWei(snxBalance));
-
-  const transferableSnx = await synthetixContract.transferableSynthetix(
-    wallet.address,
-  );
-  const transferableSnxInFloat = parseFloat(fromWei(transferableSnx));
-
-  expect(transferableSnxInFloat).toBeLessThan(snxBalanceInFloat);
-
-  // when-then
-  await expect(
-    snxContract.transfer(someAccount, snxBalance),
-  ).rejects.toThrow();
-});
-```
-
 ### Exchange from sUSD to sXAU
 
 ```js
