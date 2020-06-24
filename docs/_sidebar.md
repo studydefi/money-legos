@@ -15,3 +15,4 @@
   - [Maker](maker.md)
   - [OneSplit](onesplit.md)
   - [Uniswap V1](uniswap.md)
+  - [Synthetix](synthetix.md)

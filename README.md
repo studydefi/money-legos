@@ -29,6 +29,7 @@ Protocols supported:
 - OneSplit
 - UMA Protocol
 - Uniswap v1
+- Synthetix
 
 Importing specific protocols is also supported:
 
