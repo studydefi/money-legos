@@ -86,7 +86,7 @@ describe("maker", () => {
     const ethSpent = parseFloat(fromWei(ethBefore.sub(ethAfter)));
     const daiGained = parseFloat(fromWei(daiAfter.sub(daiBefore)));
 
-    expect(ethSpent).toBeCloseTo(1);
+    expect(ethSpent).toBeCloseTo(1, 1);
     expect(daiGained).toBeCloseTo(20);
   });
 });
