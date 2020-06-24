@@ -9,7 +9,7 @@ import DepotAbi from "./abi/Depot.json";
 const contracts = {
   Synthetix: {
     abi: SynthetixAbi,
-    address: "0xC011A72400E58ecD99Ee497CF89E3775d4bd732F",
+    address: "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
   },
   ExchangeRates: {
     abi: ExchangeRatesAbi,

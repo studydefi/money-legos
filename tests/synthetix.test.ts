@@ -145,24 +145,6 @@ describe("synthetix", () => {
     expect(fromWei(sUSDAfter)).toBe(fromWei(sUSDToMintInWei));
   });
 
-  test("shouldn't be able to transfer locked SNX tokens", async () => {
-    // given
-    const snxBalance = await snxContract.balanceOf(wallet.address);
-    const snxBalanceInFloat = parseFloat(fromWei(snxBalance));
-
-    const transferableSnx = await synthetixContract.transferableSynthetix(
-      wallet.address,
-    );
-    const transferableSnxInFloat = parseFloat(fromWei(transferableSnx));
-
-    expect(transferableSnxInFloat).toBeLessThan(snxBalanceInFloat);
-
-    // when-then
-    await expect(
-      snxContract.transfer(someAccount, snxBalance),
-    ).rejects.toThrow();
-  });
-
   test("exchange from sUSD to sXAU", async () => {
     // given
     const sUSDBefore = await sUSDContract.balanceOf(wallet.address);
