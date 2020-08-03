@@ -286,6 +286,12 @@
         "internalType": "uint256",
         "name": "liquidatedCollateral",
         "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "liquidationTime",
+        "type": "uint256"
       }
     ],
     "name": "LiquidationCreated",
@@ -348,6 +354,12 @@
         "internalType": "enum Liquidatable.Status",
         "name": "liquidationStatus",
         "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "settlementPrice",
+        "type": "uint256"
       }
     ],
     "name": "LiquidationWithdrawn",
