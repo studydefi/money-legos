@@ -16,7 +16,7 @@ import weth9Abi from "./abi/WETH9.json";
 const contracts = {
   addressWhitelist: {
     abi: addressWhitelistAbi,
-    address: "0x48e687205D3962c43891b8Cde5A4Fe75FA6C8D7a",
+    address: "0xdBF90434dF0B98219f87d112F37d74B1D90758c7",
   },
   designatedVotingFactory: {
     abi: designatedVotingFactoryAbi,
@@ -27,11 +27,11 @@ const contracts = {
   },
   expiringMultiPartyLib: {
     abi: [],
-    address: "0x09AFD24Acc170c16f4fF64BDf2A4818C515440e8",
+    address: "0xCb08678e4381Be3E264E6A0037E3297Ca56a583e",
   },
   expiringMultiPartyCreator: {
     abi: expiringMultiPartyCreatorAbi,
-    address: "0xdebB91Ab3e473025bb8ce278c02361A3C4f13124",
+    address: "0xad8fD1f418FB860A383c9D4647880af7f043Ef39",
   },
   financialContractsAdmin: {
     abi: financialContractsAdminAbi,
