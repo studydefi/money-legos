@@ -13,7 +13,7 @@
 
 `money-legos` is an NPM package that provides you with the **mainnet addresses**, **ABIs**, and **Solidity interfaces** for popular DeFi protocols.
 
-### Click [here](https://money-legos.studydefi.com/) for docs!
+### Click [here](https://money-legos.studydefi.com/) for docs and visit our Discord [here](https://discord.gg/rBr3U32)!
 
 Protocols supported:
 
