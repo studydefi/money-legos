@@ -20,7 +20,7 @@ Note that doing a flashloan in DyDx is similar to that of doing it in Aave, you'
 ### Flashloan Logic (Solidity)
 
 Your smart contract will need to inherit from `DydxFlashloanBase` and have two functions:
-1. An entrypoint function where __you__ call to initiate the flashloan (`initateFlashLoan` in the example below).
+1. An entrypoint function where __you__ call to initiate the flashloan (`initiateFlashLoan` in the example below).
 2. A callback function called `callFunction` that contains the action logic to perform once the loan is given to us.
 
 
@@ -64,7 +64,7 @@ contract DydxFlashloaner is ICallee, DydxFlashloanBase {
         revert("Hello, you haven't encoded your logic");
     }
 
-    function initateFlashLoan(address _solo, address _token, uint256 _amount)
+    function initiateFlashLoan(address _solo, address _token, uint256 _amount)
         external
     {
         ISoloMargin solo = ISoloMargin(_solo);
@@ -109,7 +109,7 @@ const dydxFlashloanerContract = new ethers.Contract(
 );
 
 const main = async () => {
-  const tx = await dydxFlashloanerContract.initateFlashLoan(
+  const tx = await dydxFlashloanerContract.initiateFlashLoan(
     legos.dydx.soloMargin.address,
     legos.erc20.weth.address, // Wanna take out a WETH loan
     ethers.utils.parseEther("10"),      // Wanna loan 10 WETH
