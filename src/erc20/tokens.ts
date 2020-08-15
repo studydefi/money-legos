@@ -61,6 +61,12 @@ const tokens = {
     address: "0xE41d2489571d322189246DaFA5ebDe1F4699F498",
     abi: ERC20Abi,
   },
+  bal: {
+    symbol: "BAL",
+    decimals: 18,
+    address: "0xba100000625a3754423978a60c9317c58a424e3D",
+    abi: ERC20Abi,
+  },
 };
 
 export default tokens;
