@@ -8,11 +8,6 @@
       },
       {
         "internalType": "address",
-        "name": "_collateralTokenWhitelist",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
         "name": "_tokenFactoryAddress",
         "type": "address"
       },
@@ -43,45 +38,6 @@
     ],
     "name": "CreatedExpiringMultiParty",
     "type": "event"
-  },
-  {
-    "inputs": [],
-    "name": "STRICT_LIQUIDATION_LIVENESS",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "STRICT_WITHDRAWAL_LIVENESS",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "collateralTokenWhitelist",
-    "outputs": [
-      {
-        "internalType": "contract AddressWhitelist",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
   },
   {
     "inputs": [],
@@ -130,25 +86,6 @@
         "internalType": "address",
         "name": "",
         "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "validExpirationTimestamps",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -242,6 +179,16 @@
             "internalType": "struct FixedPoint.Unsigned",
             "name": "minSponsorTokens",
             "type": "tuple"
+          },
+          {
+            "internalType": "uint256",
+            "name": "withdrawalLiveness",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidationLiveness",
+            "type": "uint256"
           }
         ],
         "internalType": "struct ExpiringMultiPartyCreator.Params",

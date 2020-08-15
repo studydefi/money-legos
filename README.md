@@ -1,7 +1,7 @@
 # money-legos
 
-![circleci](https://badgen.net/circleci/github/studydefi/money-legos)
-![npm](https://badgen.net/npm/v/@studydefi/money-legos)
+[![circleci](https://badgen.net/circleci/github/studydefi/money-legos)](https://app.circleci.com/pipelines/github/studydefi/money-legos)
+[![npm](https://badgen.net/npm/v/@studydefi/money-legos)](https://www.npmjs.com/package/@studydefi/money-legos)
 ![types](https://badgen.net/npm/types/@studydefi/money-legos)
 ![minzip](https://badgen.net/bundlephobia/minzip/@studydefi/money-legos)
 
@@ -13,7 +13,7 @@
 
 `money-legos` is an NPM package that provides you with the **mainnet addresses**, **ABIs**, and **Solidity interfaces** for popular DeFi protocols.
 
-### Click [here](https://money-legos.studydefi.com/) for docs!
+### Click [here](https://money-legos.studydefi.com/) for docs and visit our Discord [here](https://discord.gg/rBr3U32)!
 
 Protocols supported:
 
