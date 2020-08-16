@@ -126,7 +126,7 @@ interface IComptroller {
 ```js
 // ../src/compound/contracts/ICToken.sol
 
-pragma solidity 0.5.16;
+pragma solidity ^0.5.0;
 
 interface ICToken {
     function mint(uint mintAmount) external returns (uint);
@@ -149,6 +149,7 @@ interface ICToken {
     function transfer(address, uint) external returns (bool);
     function transferFrom(address, address, uint) external returns (bool);
 }
+
 ```
 
 ## Examples (JavaScript)

@@ -95,6 +95,7 @@
 [Link to ABIs](https://github.com/studydefi/money-legos/tree/master/src/erc20/abi)
 
 
+ - bal: [0xba100000625a3754423978a60c9317c58a424e3D](https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3D)
  - bat: [0x0d8775f648430679a709e98d2b0cb6250d2887ef](https://etherscan.io/address/0x0d8775f648430679a709e98d2b0cb6250d2887ef)
  - dai: [0x6b175474e89094c44da98b954eedeac495271d0f](https://etherscan.io/address/0x6b175474e89094c44da98b954eedeac495271d0f)
  - eth: [0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE](https://etherscan.io/address/0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE)
@@ -113,16 +114,19 @@
 #### maxYield
 
 
- - dai: [0x78751b12da02728f467a44eac40f5cbc16bd7934](https://etherscan.io/address/0x78751b12da02728f467a44eac40f5cbc16bd7934)
+ - dai: [0x78751B12Da02728F467A44eAc40F5cbc16Bd7934](https://etherscan.io/address/0x78751B12Da02728F467A44eAc40F5cbc16Bd7934)
+ - susd: [0xE79E177d2a5c7085027d7C64c8F271c81430fc9b](https://etherscan.io/address/0xE79E177d2a5c7085027d7C64c8F271c81430fc9b)
+ - tusd: [0x51C77689A9c2e8cCBEcD4eC9770a1fA5fA83EeF1](https://etherscan.io/address/0x51C77689A9c2e8cCBEcD4eC9770a1fA5fA83EeF1)
  - usdc: [0x12B98C621E8754Ae70d0fDbBC73D6208bC3e3cA6](https://etherscan.io/address/0x12B98C621E8754Ae70d0fDbBC73D6208bC3e3cA6)
  - usdt: [0x63D27B3DA94A9E871222CB0A32232674B02D2f2D](https://etherscan.io/address/0x63D27B3DA94A9E871222CB0A32232674B02D2f2D)
+ - wbtc: [0xD6f279B7ccBCD70F8be439d25B9Df93AEb60eC55](https://etherscan.io/address/0xD6f279B7ccBCD70F8be439d25B9Df93AEb60eC55)
 
 #### riskAdjusted
 
 
  - dai: [0x1846bdfDB6A0f5c473dEc610144513bd071999fB](https://etherscan.io/address/0x1846bdfDB6A0f5c473dEc610144513bd071999fB)
  - usdc: [0xcDdB1Bceb7a1979C6caa0229820707429dd3Ec6C](https://etherscan.io/address/0xcDdB1Bceb7a1979C6caa0229820707429dd3Ec6C)
- - usdt: [0x42740698959761baf1b06baa51efbd88cb1d862b](https://etherscan.io/address/0x42740698959761baf1b06baa51efbd88cb1d862b)
+ - usdt: [0x42740698959761BAF1B06baa51EfBD88CB1D862B](https://etherscan.io/address/0x42740698959761BAF1B06baa51EfBD88CB1D862B)
 
 ## Kyber
 
@@ -161,7 +165,7 @@
  - Depot: [0xE1f64079aDa6Ef07b03982Ca34f1dD7152AA3b86](https://etherscan.io/address/0xE1f64079aDa6Ef07b03982Ca34f1dD7152AA3b86)
  - ExchangeRates: [0x9D7F70AF5DF5D5CC79780032d47a34615D1F1d77](https://etherscan.io/address/0x9D7F70AF5DF5D5CC79780032d47a34615D1F1d77)
  - Exchanger: [0x7Dfe5aa8fc36c0Ae788a3a71062728bFc3036216](https://etherscan.io/address/0x7Dfe5aa8fc36c0Ae788a3a71062728bFc3036216)
- - Synthetix: [0xC011A72400E58ecD99Ee497CF89E3775d4bd732F](https://etherscan.io/address/0xC011A72400E58ecD99Ee497CF89E3775d4bd732F)
+ - Synthetix: [0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f](https://etherscan.io/address/0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f)
  - iADA: [0x8A8079c7149B8A1611e5C5d978DCA3bE16545F83](https://etherscan.io/address/0x8A8079c7149B8A1611e5C5d978DCA3bE16545F83)
  - iBCH: [0xf6E9b246319ea30e8C2fA2d1540AAEBF6f9E1B89](https://etherscan.io/address/0xf6E9b246319ea30e8C2fA2d1540AAEBF6f9E1B89)
  - iBNB: [0xAFD870F32CE54EfdBF677466B612bf8ad164454B](https://etherscan.io/address/0xAFD870F32CE54EfdBF677466B612bf8ad164454B)
@@ -210,13 +214,17 @@
 [Link to ABIs](https://github.com/studydefi/money-legos/tree/master/src/uma/abi)
 
 
+ - addressWhitelist: [0xdBF90434dF0B98219f87d112F37d74B1D90758c7](https://etherscan.io/address/0xdBF90434dF0B98219f87d112F37d74B1D90758c7)
  - designatedVotingFactory: [0xE81EeE5Da165fA6863bBc82dF66E62d18625d592](https://etherscan.io/address/0xE81EeE5Da165fA6863bBc82dF66E62d18625d592)
+ - expiringMultiPartyCreator: [0xad8fD1f418FB860A383c9D4647880af7f043Ef39](https://etherscan.io/address/0xad8fD1f418FB860A383c9D4647880af7f043Ef39)
+ - expiringMultiPartyLib: [0xCb08678e4381Be3E264E6A0037E3297Ca56a583e](https://etherscan.io/address/0xCb08678e4381Be3E264E6A0037E3297Ca56a583e)
  - financialContractsAdmin: [0x4E6CCB1dA3C7844887F9A5aF4e8450d9fd90317A](https://etherscan.io/address/0x4E6CCB1dA3C7844887F9A5aF4e8450d9fd90317A)
  - finder: [0x40f941E48A552bF496B154Af6bf55725f18D77c3](https://etherscan.io/address/0x40f941E48A552bF496B154Af6bf55725f18D77c3)
  - governor: [0x592349F7DeDB2b75f9d4F194d4b7C16D82E507Dc](https://etherscan.io/address/0x592349F7DeDB2b75f9d4F194d4b7C16D82E507Dc)
  - identifierWhitelist: [0xcF649d9Da4D1362C4DAEa67573430Bd6f945e570](https://etherscan.io/address/0xcF649d9Da4D1362C4DAEa67573430Bd6f945e570)
  - registry: [0x3e532e6222afe9Bcf02DCB87216802c75D5113aE](https://etherscan.io/address/0x3e532e6222afe9Bcf02DCB87216802c75D5113aE)
  - store: [0x54f44eA3D2e7aA0ac089c4d8F7C93C27844057BF](https://etherscan.io/address/0x54f44eA3D2e7aA0ac089c4d8F7C93C27844057BF)
+ - tokenFactory: [0x7c96d6235CfaaCcAc5d80fCe74E6032B25dd1F03](https://etherscan.io/address/0x7c96d6235CfaaCcAc5d80fCe74E6032B25dd1F03)
  - voting: [0x9921810C710E7c3f7A7C6831e30929f19537a545](https://etherscan.io/address/0x9921810C710E7c3f7A7C6831e30929f19537a545)
  - votingToken: [0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828](https://etherscan.io/address/0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828)
  - weth9: [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)

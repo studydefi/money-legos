@@ -43,7 +43,7 @@ describe("balancer", () => {
     );
   });
 
-  test("swap ETH -> mUSD", async () => {
+  test("Swap ETH -> mUSD", async () => {
     // given
     const beforeWei = await mUSD.balanceOf(wallet.address);
     const before = parseFloat(fromWei(beforeWei));
@@ -79,7 +79,7 @@ describe("balancer", () => {
     expect(after).toBeGreaterThan(0);
   });
 
-  test("swap some mUSD -> USDC", async () => {
+  test("Swap some mUSD -> USDC", async () => {
     // given
     const beforeWei = await usdc.balanceOf(wallet.address);
     const before = parseFloat(fromWei(beforeWei));

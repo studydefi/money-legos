@@ -30,6 +30,8 @@ Protocols supported:
 - UMA Protocol
 - Uniswap v1
 - Synthetix
+- Balancer
+- mStable
 
 Importing specific protocols is also supported:
 

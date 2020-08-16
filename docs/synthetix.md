@@ -240,7 +240,7 @@ test("issue 100 sUSD tokens", async () => {
 ### Exchange from sUSD to sXAU
 
 ```js
-// ../tests/synthetix.test.ts#L166-L198
+// ../tests/synthetix.test.ts#L148-L180
 
 test("exchange from sUSD to sXAU", async () => {
   // given
@@ -280,7 +280,7 @@ test("exchange from sUSD to sXAU", async () => {
 ### Exchange back sXAU to sUSD
 
 ```js
-// ../tests/synthetix.test.ts#L200-L219
+// ../tests/synthetix.test.ts#L182-L201
 
 test("exchange back sXAU to sUSD", async () => {
   // given

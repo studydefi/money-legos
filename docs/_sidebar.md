@@ -16,3 +16,5 @@
   - [OneSplit](onesplit.md)
   - [Uniswap V1](uniswap.md)
   - [Synthetix](synthetix.md)
+  - [Balancer](balancer.md)
+  - [mStable](mstable.md)

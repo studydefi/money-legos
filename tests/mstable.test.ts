@@ -22,7 +22,7 @@ describe("mStable", () => {
     dai = new ethers.Contract(erc20.dai.address, erc20.dai.abi, wallet);
   });
 
-  test("get some DAI from Uniswap", async () => {
+  test("Get some DAI from Uniswap", async () => {
     const uniswapFactory = new ethers.Contract(
       uniswap.factory.address,
       uniswap.factory.abi,
@@ -57,7 +57,7 @@ describe("mStable", () => {
     expect(fromWei(after)).toBe(fromWei(expectedUsdc));
   });
 
-  test("mint mUSD using DAI", async () => {
+  test("Mint mUSD using DAI", async () => {
     // given
     const beforeWei = await mUSD.balanceOf(wallet.address);
     const before = parseFloat(fromWei(beforeWei));
