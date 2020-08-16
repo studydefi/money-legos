@@ -110,25 +110,103 @@ interface Masset {
 ### Mint mUSD using DAI
 
 ```js
-// ../tests/mstable.test.ts#L60-L78
+// ../tests/mstable.test.ts#L89-L106
 
-  test("Mint mUSD using DAI", async () => {
+test("Mint mUSD using DAI", async () => {
+  // given
+  const beforeWei = await mUSD.balanceOf(wallet.address);
+  const before = parseFloat(fromWei(beforeWei));
+  expect(before).toEqual(0);
+
+  const daiToDeposit = parseEther("5000");
+
+  await dai.approve(mUSD.address, daiToDeposit);
+
+  // when
+  await mUSD.mint(dai.address, daiToDeposit, { gasLimit: 700000 });
+
+  // then
+  const afterWei = await mUSD.balanceOf(wallet.address);
+  const after = parseFloat(fromWei(afterWei));
+  expect(after).toBe(parseFloat(fromWei(daiToDeposit)));
+});
+```
+
+### Redeem USDC using mUSD
+
+```js
+// ../tests/mstable.test.ts#L108-L127
+
+test("Redeem USDC using mUSD", async () => {
+  // given
+  const beforeWei = await usdc.balanceOf(wallet.address);
+  const before = parseFloat(fromWei(beforeWei));
+  expect(before).toEqual(0);
+
+  const toRedeemWei = parseUnits("1000", erc20.usdc.decimals);
+  const swapFee = await mUSD.swapFee();
+  const feeToPay = toRedeemWei.mul(swapFee).div(parseEther("1"));
+
+  // when
+  await mUSD.redeem(usdc.address, toRedeemWei, {
+    gasLimit: 700000,
+  });
+
+  // then
+  const afterWei = await usdc.balanceOf(wallet.address);
+  const after = parseFloat(fromWei(afterWei));
+  expect(after).toBe(parseFloat(fromWei(toRedeemWei.sub(feeToPay))));
+});
+```
+
+### Earn MTA
+
+```js
+// ../tests/mstable.test.ts#L129-L173
+
+describe("Earn MTA", () => {
+  test("Add liqudity to mUSD/USDC Balancer Pool", async () => {
     // given
-    const beforeWei = await mUSD.balanceOf(wallet.address);
-    const before = parseFloat(fromWei(beforeWei));
-    expect(before).toEqual(0);
+    const bptBeforeWei = await pool.balanceOf(wallet.address);
+    const bptBefore = parseFloat(fromWei(bptBeforeWei));
+    expect(bptBefore).toEqual(0);
 
-    const usdcToDeposit = parseEther("100");
-
-    await dai.approve(mUSD.address, usdcToDeposit);
+    await mUSD.approve(pool.address, MAX_UINT256);
+    await usdc.approve(pool.address, MAX_UINT256);
 
     // when
-    await mUSD.mint(dai.address, usdcToDeposit, { gasLimit: 700000 });
+    const poolAmountOut = parseEther("2.5");
+    const maxAmountsIn = [
+      parseUnits("500", mstable.mUSD.decimals),
+      parseUnits("500", erc20.usdc.decimals),
+    ];
+    await pool.joinPool(poolAmountOut, maxAmountsIn, { gasLimit: 500000 });
 
     // then
-    const afterWei = await mUSD.balanceOf(wallet.address);
-    const after = parseFloat(fromWei(afterWei));
-    expect(after).toBe(parseFloat(fromWei(usdcToDeposit)));
+    const bptAfterWei = await pool.balanceOf(wallet.address);
+    const bptAfter = parseFloat(fromWei(bptAfterWei));
+    expect(bptAfter).toEqual(parseFloat(fromWei(poolAmountOut)));
+  });
+
+  test("Stake BPT to earn MTA", async () => {
+    // given
+    const mtaBeforeWei = await mta.balanceOf(wallet.address);
+    const mtaBefore = parseFloat(fromWei(mtaBeforeWei));
+    expect(mtaBefore).toEqual(0);
+
+    const bptBalance = await pool.balanceOf(wallet.address);
+
+    await pool.approve(earn.address, MAX_UINT256);
+
+    // when
+    await earn.stake(wallet.address, bptBalance);
+    await increaseTime(provider, 60 * 60 * 24);
+    await earn.claimReward();
+
+    // then
+    const mtaAfterWei = await mta.balanceOf(wallet.address);
+    const mtaAfter = parseFloat(fromWei(mtaAfterWei));
+    expect(mtaAfter).toBeGreaterThan(0);
   });
 });
 ```

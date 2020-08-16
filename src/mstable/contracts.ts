@@ -10,6 +10,7 @@ import DelayedProxyAdmin from "./abi/DelayedProxyAdmin.json";
 import SavingsManager from "./abi/SavingsManager.json";
 import SavingsContract from "./abi/SavingsContract.json";
 import RewardsDistributor from "./abi/RewardsDistributor.json";
+import StakingRewardsWithPlatformToken from "./abi/StakingRewardsWithPlatformToken.json";
 
 const contracts = {
   mUSD: {
@@ -61,6 +62,9 @@ const contracts = {
   RewardsDistributor: {
     abi: RewardsDistributor,
     address: "0x04dfdfa471b79cc9e6e8c355e6c71f8ec4916c50",
+  },
+  StakingRewardsWithPlatformToken: {
+    abi: StakingRewardsWithPlatformToken,
   },
 };
 
