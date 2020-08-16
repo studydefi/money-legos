@@ -320,33 +320,32 @@ test("Swap some mUSD -> USDC", async () => {
 ### Add liquidity to a pool
 
 ```js
-// ../tests/balancer.test.ts#L124-L150
+// ../tests/balancer.test.ts#L124-L149
 
-  test("Add liquidity to a pool", async () => {
-    const pool = new ethers.Contract(
-      MUSD_USDC_50_50_POOL_ADDRESS,
-      balancer.BPool.abi,
-      wallet,
-    );
+test("Add liquidity to a pool", async () => {
+  const pool = new ethers.Contract(
+    MUSD_USDC_50_50_POOL_ADDRESS,
+    balancer.BPool.abi,
+    wallet,
+  );
 
-    // given
-    const beforeWei = await pool.balanceOf(wallet.address);
-    const before = parseFloat(fromWei(beforeWei));
-    expect(before).toEqual(0);
+  // given
+  const beforeWei = await pool.balanceOf(wallet.address);
+  const before = parseFloat(fromWei(beforeWei));
+  expect(before).toEqual(0);
 
-    await mUSD.approve(pool.address, MAX_UINT256);
-    await usdc.approve(pool.address, MAX_UINT256);
+  await mUSD.approve(pool.address, MAX_UINT256);
+  await usdc.approve(pool.address, MAX_UINT256);
 
-    const poolAmountOut = parseEther("5");
-    const maxAmountsIn = [
-      parseUnits("1000", mstable.mUSD.decimals),
-      parseUnits("1000", erc20.usdc.decimals),
-    ];
-    await pool.joinPool(poolAmountOut, maxAmountsIn, { gasLimit: 500000 });
+  const poolAmountOut = parseEther("5");
+  const maxAmountsIn = [
+    parseUnits("1000", mstable.mUSD.decimals),
+    parseUnits("1000", erc20.usdc.decimals),
+  ];
+  await pool.joinPool(poolAmountOut, maxAmountsIn, { gasLimit: 500000 });
 
-    const afterWei = await pool.balanceOf(wallet.address);
-    const after = parseFloat(fromWei(afterWei));
-    expect(after).toEqual(parseFloat(fromWei(poolAmountOut)));
-  });
+  const afterWei = await pool.balanceOf(wallet.address);
+  const after = parseFloat(fromWei(afterWei));
+  expect(after).toEqual(parseFloat(fromWei(poolAmountOut)));
 });
 ```
