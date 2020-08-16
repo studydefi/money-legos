@@ -1,6 +1,7 @@
 import BActions from "./abi/BActions.json";
 import ExchangeProxy from "./abi/ExchangeProxy.json";
 import BFactory from "./abi/BFactory.json";
+import BPool from "./abi/BPool.json";
 
 const contracts = {
   PoolFactory: {
@@ -14,6 +15,9 @@ const contracts = {
   ExchangeProxy: {
     abi: ExchangeProxy,
     address: "0x6317C5e82A06E1d8bf200d21F4510Ac2c038AC81",
+  },
+  BPool: {
+    abi: BPool,
   },
 };
 
