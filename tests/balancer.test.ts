@@ -3,6 +3,7 @@ jest.setTimeout(100000);
 import { Wallet, Contract, ethers } from "ethers";
 import erc20 from "../src/erc20";
 import balancer from "../src/balancer";
+import mstable from "../src/mstable";
 import { fromWei } from "./utils";
 import { parseUnits } from "ethers/utils";
 
@@ -33,7 +34,7 @@ describe("balancer", () => {
     // @ts-ignore
     wallet = global.wallet;
     weth = new ethers.Contract(erc20.weth.address, erc20.weth.abi, wallet);
-    mUSD = new ethers.Contract(erc20.musd.address, erc20.musd.abi, wallet);
+    mUSD = new ethers.Contract(mstable.mUSD.address, mstable.mUSD.abi, wallet);
     usdc = new ethers.Contract(erc20.usdc.address, erc20.usdc.abi, wallet);
     exchangeProxy = new ethers.Contract(
       balancer.ExchangeProxy.address,
@@ -137,7 +138,7 @@ describe("balancer", () => {
 
     const poolAmountOut = parseEther("5");
     const maxAmountsIn = [
-      parseUnits("1000", erc20.musd.decimals),
+      parseUnits("1000", mstable.mUSD.decimals),
       parseUnits("1000", erc20.usdc.decimals),
     ];
     await pool.joinPool(poolAmountOut, maxAmountsIn, { gasLimit: 500000 });
