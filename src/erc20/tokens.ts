@@ -67,12 +67,6 @@ const tokens = {
     address: "0xba100000625a3754423978a60c9317c58a424e3D",
     abi: ERC20Abi,
   },
-  musd: {
-    symbol: "mUSD",
-    decimals: 18,
-    address: "0xe2f2a5c287993345a840db3b0845fbc70f5935a5",
-    abi: ERC20Abi,
-  },
 };
 
 export default tokens;
