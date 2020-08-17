@@ -2,12 +2,12 @@ pragma solidity ^0.5.0;
 
 interface BPool {
 
-    function isPublicSwap() external view returns (bool);
+    function isexternalSwap() external view returns (bool);
     function isFinalized() external view returns (bool);
     function isBound(address t) external view returns (bool);
     function getNumTokens() external view returns (uint);
     function getCurrentTokens() external view returns (address[] memory tokens);
-    function getFinalTokens() external view returns (address[] memory tokens)
+    function getFinalTokens() external view returns (address[] memory tokens);
     function getDenormalizedWeight(address token) external view returns (uint);
     function getTotalDenormalizedWeight() external view returns (uint);
     function getNormalizedWeight(address token) external view returns (uint);
@@ -17,10 +17,10 @@ interface BPool {
     
     function setSwapFee(uint swapFee) external;
     function setController(address manager) external;
-    function setPublicSwap(bool public_) external;
+    function setexternalSwap(bool external_) external;
     function finalize() external;
     function bind(address token, uint balance, uint denorm) external;
-    function rebind(address token, uint balance, uint denorm) public;
+    function rebind(address token, uint balance, uint denorm) external;
     function unbind(address token) external;
     function gulp(address token) external;
 
@@ -86,7 +86,7 @@ interface BPool {
         uint tokenBalanceOut,
         uint tokenWeightOut,
         uint swapFee
-    ) public pure returns (uint spotPrice);
+    ) external pure returns (uint spotPrice);
     
     function calcOutGivenIn(
         uint tokenBalanceIn,
@@ -95,7 +95,7 @@ interface BPool {
         uint tokenWeightOut,
         uint tokenAmountIn,
         uint swapFee
-    ) public pure returns (uint tokenAmountOut);
+    ) external pure returns (uint tokenAmountOut);
     
     function calcInGivenOut(
         uint tokenBalanceIn,
@@ -104,7 +104,7 @@ interface BPool {
         uint tokenWeightOut,
         uint tokenAmountOut,
         uint swapFee
-    ) public pure returns (uint tokenAmountIn);
+    ) external pure returns (uint tokenAmountIn);
     
     function calcPoolOutGivenSingleIn(
         uint tokenBalanceIn,
@@ -113,7 +113,7 @@ interface BPool {
         uint totalWeight,
         uint tokenAmountIn,
         uint swapFee
-    ) public pure returns (uint poolAmountOut);
+    ) external pure returns (uint poolAmountOut);
     
     function calcSingleInGivenPoolOut(
         uint tokenBalanceIn,
@@ -122,7 +122,7 @@ interface BPool {
         uint totalWeight,
         uint poolAmountOut,
         uint swapFee
-    ) public pure returns (uint tokenAmountIn)
+    ) external pure returns (uint tokenAmountIn);
     
     function calcSingleOutGivenPoolIn(
         uint tokenBalanceOut,
@@ -131,7 +131,7 @@ interface BPool {
         uint totalWeight,
         uint poolAmountIn,
         uint swapFee
-    ) public pure returns (uint tokenAmountOut)
+    ) external pure returns (uint tokenAmountOut);
     
     function calcPoolInGivenSingleOut(
         uint tokenBalanceOut,
@@ -140,6 +140,6 @@ interface BPool {
         uint totalWeight,
         uint tokenAmountOut,
         uint swapFee
-    ) public pure returns (uint poolAmountIn)
+    ) external pure returns (uint poolAmountIn);
 
 }
