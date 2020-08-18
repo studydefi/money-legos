@@ -1,6 +1,6 @@
 pragma solidity ^0.5.0;
 
-import IERC20 from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 interface StakingRewardsWithPlatformToken {
 
@@ -29,21 +29,21 @@ interface StakingRewardsWithPlatformToken {
      * @dev Withdraws given stake amount from the pool
      * @param _amount Units of the staked token to withdraw
      */
-    function withdraw(uint256 _amount) public;
+    function withdraw(uint256 _amount) external;
 
 
     /**
      * @dev Claims outstanding rewards (both platform and native) for the sender.
      * First updates outstanding reward allocation and then transfers.
      */
-    function claimReward() public;
+    function claimReward() external;
 
 
     /**
      * @dev Claims outstanding rewards for the sender. Only the native
      * rewards token, and not the platform rewards
      */
-    function claimRewardOnly() public;
+    function claimRewardOnly() external;
 
 
     /**
@@ -55,14 +55,14 @@ interface StakingRewardsWithPlatformToken {
     /**
      * @dev Gets the last applicable timestamp for this reward period
      */
-    function lastTimeRewardApplicable() public view returns (uint256);
+    function lastTimeRewardApplicable() external view returns (uint256);
 
 
     /**
      * @dev Calculates the amount of unclaimed rewards a user has earned
      * @return 'Reward' per staked token
      */
-    function rewardPerToken() public view returns (uint256, uint256);
+    function rewardPerToken() external view returns (uint256, uint256);
 
 
     /**
@@ -70,5 +70,5 @@ interface StakingRewardsWithPlatformToken {
      * @param _account User address
      * @return Total reward amount earned
      */
-    function earned(address _account) public view returns (uint256, uint256);
+    function earned(address _account) external view returns (uint256, uint256);
 }
