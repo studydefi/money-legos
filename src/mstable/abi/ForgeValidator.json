@@ -1,0 +1,248 @@
+[
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_mAssetQuantity",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          { "internalType": "address", "name": "addr", "type": "address" },
+          {
+            "internalType": "enum MassetStructs.BassetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "isTransferFeeCharged",
+            "type": "bool"
+          },
+          { "internalType": "uint256", "name": "ratio", "type": "uint256" },
+          { "internalType": "uint256", "name": "maxWeight", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "vaultBalance",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MassetStructs.Basset[]",
+        "name": "_allBassets",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "calculateRedemptionMulti",
+    "outputs": [
+      { "internalType": "bool", "name": "", "type": "bool" },
+      { "internalType": "string", "name": "", "type": "string" },
+      { "internalType": "uint256[]", "name": "", "type": "uint256[]" }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      { "internalType": "uint256", "name": "_totalVault", "type": "uint256" },
+      {
+        "components": [
+          { "internalType": "address", "name": "addr", "type": "address" },
+          {
+            "internalType": "enum MassetStructs.BassetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "isTransferFeeCharged",
+            "type": "bool"
+          },
+          { "internalType": "uint256", "name": "ratio", "type": "uint256" },
+          { "internalType": "uint256", "name": "maxWeight", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "vaultBalance",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MassetStructs.Basset",
+        "name": "_bAsset",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_bAssetQuantity",
+        "type": "uint256"
+      }
+    ],
+    "name": "validateMint",
+    "outputs": [
+      { "internalType": "bool", "name": "isValid", "type": "bool" },
+      { "internalType": "string", "name": "reason", "type": "string" }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      { "internalType": "uint256", "name": "_totalVault", "type": "uint256" },
+      {
+        "components": [
+          { "internalType": "address", "name": "addr", "type": "address" },
+          {
+            "internalType": "enum MassetStructs.BassetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "isTransferFeeCharged",
+            "type": "bool"
+          },
+          { "internalType": "uint256", "name": "ratio", "type": "uint256" },
+          { "internalType": "uint256", "name": "maxWeight", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "vaultBalance",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MassetStructs.Basset[]",
+        "name": "_bAssets",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "_bAssetQuantities",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "validateMintMulti",
+    "outputs": [
+      { "internalType": "bool", "name": "isValid", "type": "bool" },
+      { "internalType": "string", "name": "reason", "type": "string" }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      { "internalType": "bool", "name": "_basketIsFailed", "type": "bool" },
+      { "internalType": "uint256", "name": "_totalVault", "type": "uint256" },
+      {
+        "components": [
+          { "internalType": "address", "name": "addr", "type": "address" },
+          {
+            "internalType": "enum MassetStructs.BassetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "isTransferFeeCharged",
+            "type": "bool"
+          },
+          { "internalType": "uint256", "name": "ratio", "type": "uint256" },
+          { "internalType": "uint256", "name": "maxWeight", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "vaultBalance",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MassetStructs.Basset[]",
+        "name": "_allBassets",
+        "type": "tuple[]"
+      },
+      { "internalType": "uint8[]", "name": "_indices", "type": "uint8[]" },
+      {
+        "internalType": "uint256[]",
+        "name": "_bAssetQuantities",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "validateRedemption",
+    "outputs": [
+      { "internalType": "bool", "name": "", "type": "bool" },
+      { "internalType": "string", "name": "", "type": "string" },
+      { "internalType": "bool", "name": "", "type": "bool" }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      { "internalType": "uint256", "name": "_totalVault", "type": "uint256" },
+      {
+        "components": [
+          { "internalType": "address", "name": "addr", "type": "address" },
+          {
+            "internalType": "enum MassetStructs.BassetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "isTransferFeeCharged",
+            "type": "bool"
+          },
+          { "internalType": "uint256", "name": "ratio", "type": "uint256" },
+          { "internalType": "uint256", "name": "maxWeight", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "vaultBalance",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MassetStructs.Basset",
+        "name": "_inputBasset",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "internalType": "address", "name": "addr", "type": "address" },
+          {
+            "internalType": "enum MassetStructs.BassetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "isTransferFeeCharged",
+            "type": "bool"
+          },
+          { "internalType": "uint256", "name": "ratio", "type": "uint256" },
+          { "internalType": "uint256", "name": "maxWeight", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "vaultBalance",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MassetStructs.Basset",
+        "name": "_outputBasset",
+        "type": "tuple"
+      },
+      { "internalType": "uint256", "name": "_quantity", "type": "uint256" }
+    ],
+    "name": "validateSwap",
+    "outputs": [
+      { "internalType": "bool", "name": "isValid", "type": "bool" },
+      { "internalType": "string", "name": "reason", "type": "string" },
+      { "internalType": "uint256", "name": "output", "type": "uint256" },
+      { "internalType": "bool", "name": "applySwapFee", "type": "bool" }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  }
+]

@@ -1,0 +1,76 @@
+[
+  {
+    "constant": true,
+    "inputs": [
+      { "internalType": "address", "name": "_mAsset", "type": "address" },
+      { "internalType": "address", "name": "_input", "type": "address" },
+      { "internalType": "address", "name": "_output", "type": "address" }
+    ],
+    "name": "getMaxSwap",
+    "outputs": [
+      { "internalType": "bool", "name": "", "type": "bool" },
+      { "internalType": "string", "name": "", "type": "string" },
+      { "internalType": "uint256", "name": "", "type": "uint256" },
+      { "internalType": "uint256", "name": "", "type": "uint256" }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      { "internalType": "address", "name": "_mAsset", "type": "address" },
+      {
+        "internalType": "uint256",
+        "name": "_mAssetQuantity",
+        "type": "uint256"
+      },
+      { "internalType": "address", "name": "_outputBasset", "type": "address" }
+    ],
+    "name": "getRedeemValidity",
+    "outputs": [
+      { "internalType": "bool", "name": "", "type": "bool" },
+      { "internalType": "string", "name": "", "type": "string" },
+      { "internalType": "uint256", "name": "output", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "bassetQuantityArg",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      { "internalType": "address", "name": "_mAsset", "type": "address" }
+    ],
+    "name": "suggestMintAsset",
+    "outputs": [
+      { "internalType": "bool", "name": "", "type": "bool" },
+      { "internalType": "string", "name": "", "type": "string" },
+      { "internalType": "address", "name": "", "type": "address" }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      { "internalType": "address", "name": "_mAsset", "type": "address" }
+    ],
+    "name": "suggestRedeemAsset",
+    "outputs": [
+      { "internalType": "bool", "name": "", "type": "bool" },
+      { "internalType": "string", "name": "", "type": "string" },
+      { "internalType": "address", "name": "", "type": "address" }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

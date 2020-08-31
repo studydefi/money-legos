@@ -34,3 +34,6 @@
 - OneSplit
 - UMA
 - Uniswap v1
+- Synthetix
+- Balancer
+- mStable
