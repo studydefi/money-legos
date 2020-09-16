@@ -97,7 +97,7 @@
 
  - bal: [0xba100000625a3754423978a60c9317c58a424e3D](https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3D)
  - bat: [0x0d8775f648430679a709e98d2b0cb6250d2887ef](https://etherscan.io/address/0x0d8775f648430679a709e98d2b0cb6250d2887ef)
- - dai: [0x6b175474e89094c44da98b954eedeac495271d0f](https://etherscan.io/address/0x6b175474e89094c44da98b954eedeac495271d0f)
+ - dai: [0x6B175474E89094C44Da98b954EedeAC495271d0F](https://etherscan.io/address/0x6B175474E89094C44Da98b954EedeAC495271d0F)
  - eth: [0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE](https://etherscan.io/address/0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE)
  - rep: [0x1985365e9f78359a9B6AD760e32412f4a445E862](https://etherscan.io/address/0x1985365e9f78359a9B6AD760e32412f4a445E862)
  - sai: [0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359](https://etherscan.io/address/0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359)
