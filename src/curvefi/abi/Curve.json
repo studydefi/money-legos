@@ -110,11 +110,6 @@
    },
    {
     "type": "uint256",
-    "name": "invariant",
-    "indexed": false
-   },
-   {
-    "type": "uint256",
     "name": "token_supply",
     "indexed": false
    }
