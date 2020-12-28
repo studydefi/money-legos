@@ -89,7 +89,7 @@ const swapOnKyber = async (fromAddress, toAddress, fromAmountWei) => {
 
   // Token -> ETH
   if (toAddress === erc20.eth.address) {
-    return fromExchangeContract.swapTokenToEther(
+    return kyberNetwork.swapTokenToEther(
       fromAddress,
       fromAmountWei,
       minConversionRate,
@@ -100,7 +100,7 @@ const swapOnKyber = async (fromAddress, toAddress, fromAmountWei) => {
   }
 
   // Token -> Token
-  return fromExchangeContract.swapTokenToToken(
+  return kyberNetwork.swapTokenToToken(
     fromAddress,
     fromAmountWei,
     toAddress,
