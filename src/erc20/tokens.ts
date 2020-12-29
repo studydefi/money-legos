@@ -67,6 +67,60 @@ const tokens = {
     address: "0xba100000625a3754423978a60c9317c58a424e3D",
     abi: ERC20Abi,
   },
+  usdt: {
+    symbol: "USDt",
+    decimals: 6,
+    address: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    abi: ERC20Abi,
+  },
+  link: {
+    symbol: "LINK",
+    decimals: 18,
+    address: "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+    abi: ERC20Abi,
+  },
+  uni: {
+    symbol: "UNI",
+    decimals: 18,
+    address: "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+    abi: ERC20Abi,
+  },
+  comp: {
+    symbol: "COMP",
+    decimals: 18,
+    address: "0xc00e94Cb662C3520282E6f5717214004A7f26888",
+    abi: ERC20Abi,
+  },
+  mkr: {
+    symbol: "MKR",
+    decimals: 18,
+    address: "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2",
+    abi: ERC20Abi,
+  },
+  omg: {
+    symbol: "OMG",
+    decimals: 18,
+    address: "0xd26114cd6EE289AccF82350c8d8487fedB8A0C07",
+    abi: ERC20Abi,
+  },
+  pax: {
+    symbol: "PAX",
+    decimals: 18,
+    address: "0x8E870D67F660D95d5be530380D0eC0bd388289E1",
+    abi: ERC20Abi,
+  },
+  ocean: {
+    symbol: "OCEAN",
+    decimals: 18,
+    address: "0x967da4048cD07aB37855c090aAF366e4ce1b9F48",
+    abi: ERC20Abi,
+  },
+  bnt: {
+    symbol: "BNT",
+    decimals: 18,
+    address: "0x1F573D6Fb3F13d689FF844B4cE37794d79a7FF1C",
+    abi: ERC20Abi,
+  },
 };
 
 export default tokens;
