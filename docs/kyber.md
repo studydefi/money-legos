@@ -1,6 +1,6 @@
 # Kyber.Network
 
-Check out the [docs](https://uniswap.org/docs/v1) for more info.
+Check out the [docs](https://developer.kyber.network/) for more info.
 
 ## Interface
 
@@ -159,7 +159,7 @@ import "@studydefi/money-legos/kyber/contracts/KyberNetworkProxy.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract KyberLiteBase {
-    // Uniswap Mainnet factory address
+    // KyberNetwork Mainnet factory address
     address constant KyberNetworkProxyAddress = 0x818E6FECD516Ecc3849DAf6845e3EC868087B755;
 
     function _ethToToken(address tokenAddress, uint ethAmount) internal returns (uint) {
