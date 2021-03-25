@@ -32,6 +32,7 @@ Protocols supported:
 - Synthetix
 - Balancer
 - mStable
+- Uniswap v2
 
 Importing specific protocols is also supported:
 

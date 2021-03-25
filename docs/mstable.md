@@ -101,7 +101,7 @@ interface Masset {
     * @param _mAssetQuantity   Quantity of mAsset to redeem
     * @param _recipient        Address to credit the withdrawn bAssets
     */
-    function redeemMasset(uint256 _mAssetQuantity, address _recipient) external nonReentrant;
+    function redeemMasset(uint256 _mAssetQuantity, address _recipient) external;
 }
 ```
 
