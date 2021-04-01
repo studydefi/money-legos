@@ -26,6 +26,15 @@
  - aWBTC: [0xfc4b8ed459e00e5400be803a9bb3954234fd50e3](https://etherscan.io/address/0xfc4b8ed459e00e5400be803a9bb3954234fd50e3)
  - aZRX: [0x6fb0855c404e09c47c3fbca25f08d4e41f9f062f](https://etherscan.io/address/0x6fb0855c404e09c47c3fbca25f08d4e41f9f062f)
 
+## Balancer
+
+[Link to ABIs](https://github.com/studydefi/money-legos/tree/master/src/balancer/abi)
+
+
+ - BActions: [0xde4A25A0b9589689945d842c5ba0CF4f0D4eB3ac](https://etherscan.io/address/0xde4A25A0b9589689945d842c5ba0CF4f0D4eB3ac)
+ - ExchangeProxy: [0x6317C5e82A06E1d8bf200d21F4510Ac2c038AC81](https://etherscan.io/address/0x6317C5e82A06E1d8bf200d21F4510Ac2c038AC81)
+ - PoolFactory: [0x9424B1412450D0f8Fc2255FAf6046b98213B76Bd](https://etherscan.io/address/0x9424B1412450D0f8Fc2255FAf6046b98213B76Bd)
+
 ## Compound
 
 [Link to ABIs](https://github.com/studydefi/money-legos/tree/master/src/compound/abi)
@@ -150,6 +159,24 @@
  - proxyRegistry: [0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4](https://etherscan.io/address/0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4)
  - usdcJoin: [0xA191e578a6736167326d05c119CE0c90849E84B7](https://etherscan.io/address/0xA191e578a6736167326d05c119CE0c90849E84B7)
 
+## Mstable
+
+[Link to ABIs](https://github.com/studydefi/money-legos/tree/master/src/mstable/abi)
+
+
+ - AaveIntegration: [0xf617346a0fb6320e9e578e0c9b2a4588283d9d39](https://etherscan.io/address/0xf617346a0fb6320e9e578e0c9b2a4588283d9d39)
+ - BasketManager: [0x66126B4aA2a1C07536Ef8E5e8bD4EfDA1FdEA96D](https://etherscan.io/address/0x66126B4aA2a1C07536Ef8E5e8bD4EfDA1FdEA96D)
+ - CompoundIntegration: [0xd55684f4369040c12262949ff78299f2bc9db735](https://etherscan.io/address/0xd55684f4369040c12262949ff78299f2bc9db735)
+ - DelayedProxyAdmin: [0x5C8eb57b44C1c6391fC7a8A0cf44d26896f92386](https://etherscan.io/address/0x5C8eb57b44C1c6391fC7a8A0cf44d26896f92386)
+ - ForgeValidator: [0xbB90D06371030fFa150E463621c22950b212eaa1](https://etherscan.io/address/0xbB90D06371030fFa150E463621c22950b212eaa1)
+ - MTA: [0xa3bed4e1c75d00fa6f4e5e6922db7261b5e9acd2](https://etherscan.io/address/0xa3bed4e1c75d00fa6f4e5e6922db7261b5e9acd2)
+ - MassetValidationHelper: [0xabcc93c3be238884cc3309c19afd128fafc16911](https://etherscan.io/address/0xabcc93c3be238884cc3309c19afd128fafc16911)
+ - Nexus: [0xAFcE80b19A8cE13DEc0739a1aaB7A028d6845Eb3](https://etherscan.io/address/0xAFcE80b19A8cE13DEc0739a1aaB7A028d6845Eb3)
+ - RewardsDistributor: [0x04dfdfa471b79cc9e6e8c355e6c71f8ec4916c50](https://etherscan.io/address/0x04dfdfa471b79cc9e6e8c355e6c71f8ec4916c50)
+ - SavingsContract: [0xcf3f73290803fc04425bee135a4caeb2bab2c2a1](https://etherscan.io/address/0xcf3f73290803fc04425bee135a4caeb2bab2c2a1)
+ - SavingsManager: [0x7046b0bfc4c5eeb90559c0805dd9c1a6f4815370](https://etherscan.io/address/0x7046b0bfc4c5eeb90559c0805dd9c1a6f4815370)
+ - mUSD: [0xe2f2a5C287993345a840Db3B0845fbC70f5935a5](https://etherscan.io/address/0xe2f2a5C287993345a840Db3B0845fbC70f5935a5)
+
 ## Onesplit
 
 [Link to ABIs](https://github.com/studydefi/money-legos/tree/master/src/onesplit/abi)
@@ -235,4 +262,13 @@
 
 
  - factory: [0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95](https://etherscan.io/address/0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95)
+
+## UniswapV2
+
+[Link to ABIs](https://github.com/studydefi/money-legos/tree/master/src/uniswapV2/abi)
+
+
+ - factory: [0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f](https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f)
+ - router01: [0xf164fC0Ec4E93095b804a4795bBe1e041497b92a](https://etherscan.io/address/0xf164fC0Ec4E93095b804a4795bBe1e041497b92a)
+ - router02: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D](https://etherscan.io/address/0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D)
 

@@ -37,3 +37,4 @@
 - Synthetix
 - Balancer
 - mStable
+- Uniswap v2

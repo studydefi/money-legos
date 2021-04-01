@@ -159,7 +159,7 @@ import "@studydefi/money-legos/kyber/contracts/KyberNetworkProxy.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract KyberLiteBase {
-    // KyberNetwork Mainnet factory address
+    // Uniswap Mainnet factory address
     address constant KyberNetworkProxyAddress = 0x818E6FECD516Ecc3849DAf6845e3EC868087B755;
 
     function _ethToToken(address tokenAddress, uint ethAmount) internal returns (uint) {
