@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/studydefi/money-legos)
+
 # money-legos
 
 [![circleci](https://badgen.net/circleci/github/studydefi/money-legos)](https://app.circleci.com/pipelines/github/studydefi/money-legos)
