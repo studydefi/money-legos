@@ -265,7 +265,8 @@ test("create a proxy on Maker", async () => {
 
 ### Opening A Vault
 
-The example below will open a new vault, collateralize 1 ETH and take out 20 DAI debt
+Note that the attempt to mint smaller DAI amounts can be reverted due to high gas fees.
+The example below will open a new vault, collateralize 10 ETH and take out 10000 DAI debt.
 
 ```js
 // ../tests/maker.test.ts#L39-L91
@@ -302,19 +303,19 @@ test("open Vault on Maker", async () => {
     maker.ethAJoin.address,
     maker.daiJoin.address,
     ethers.utils.formatBytes32String(maker.ethA.symbol),
-    ethers.utils.parseUnits("20", erc20.dai.decimals),
+    ethers.utils.parseUnits("10000", erc20.dai.decimals),
   ]);
 
-  const ethBefore = await await wallet.getBalance();
+  const ethBefore = await wallet.getBalance();
   const daiBefore = await daiContract.balanceOf(wallet.address);
 
   // Open vault through proxy
   await proxyContract.execute(maker.dssProxyActions.address, _data, {
     gasLimit: 2500000,
-    value: ethers.utils.parseEther("1"),
+    value: ethers.utils.parseEther("10"),
   });
 
-  const ethAfter = await await wallet.getBalance();
+  const ethAfter = await wallet.getBalance();
   const daiAfter = await daiContract.balanceOf(wallet.address);
 
   const ethSpent = parseFloat(fromWei(ethBefore.sub(ethAfter)));
@@ -327,7 +328,7 @@ test("open Vault on Maker", async () => {
 
 ## Example (Solidity)
 
-Due to the way Maker has constructed its logic, if you would like to create a contract that does an action, e.g. open a vault, lock up 1 ETH and draw 20 DAI, you can't just call `DSSProxyAction`. You'll have to re-implement the logic into your contract itself.
+Due to the way Maker has constructed its logic, if you would like to create a contract that does an action, e.g. open a vault, lock up 10 ETH and draw 10000 DAI, you can't just call `DSSProxyAction`. You'll have to re-implement the logic into your contract itself.
 
 Fortunately, the primitives are well written in [DssProxyActions.sol](https://github.com/makerdao/dss-proxy-actions/blob/master/src/DssProxyActions.sol).
 
@@ -373,6 +374,17 @@ contract MyCustomVaultManager is DssProxyActionsBase {
 
 ```
 
-To execute the contract, you'll need to perform the delegate-call via proxy, just like the JavaScript example of opening a vault. But this time, instead of using `legos.maker.dssProxyActions.abi` as the abi for interface encoding, you'll need to supply your contract's abi (in this example it's `MyCustomVaultManager`), and change the encoding function from `openLockETHAndDraw` to your newly defined function (in this example it's `myCustomOpenVaultFunction`).
+After `MyCustomVaultManager` migration, DAI can be minted by calling filled with arguments `myCustomOpenVaultFunction`
 
-Note that you don't need to redeploy a proxy registry / proxy contract to make it work with your new `MyCustomVaultManager` contract and can simply use your existing Maker proxy.
+```js
+    // source: https://github.com/xternet/mint_dai/blob/master/scripts/mint_dai_via_contract.js
+
+    await MyCustomVaultManager.myCustomOpenVaultFunction(
+      legos.maker.dssCdpManager.address,
+      legos.maker.jug.address,
+      legos.maker.ethAJoin.address,
+      legos.maker.daiJoin.address,
+      ethers.utils.parseUnits("10000", legos.erc20.dai.decimals),
+      { gasLimit: 2500000, value: ethers.utils.parseEther("10") },
+    )
+```

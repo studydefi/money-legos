@@ -68,7 +68,7 @@ describe("maker", () => {
       maker.ethAJoin.address,
       maker.daiJoin.address,
       ethers.utils.formatBytes32String(maker.ethA.symbol),
-      ethers.utils.parseUnits("20", erc20.dai.decimals),
+      ethers.utils.parseUnits("10000", erc20.dai.decimals),
     ]);
 
     const ethBefore = await await wallet.getBalance();
@@ -77,7 +77,7 @@ describe("maker", () => {
     // Open vault through proxy
     await proxyContract.execute(maker.dssProxyActions.address, _data, {
       gasLimit: 2500000,
-      value: ethers.utils.parseEther("1"),
+      value: ethers.utils.parseEther("10"),
     });
 
     const ethAfter = await await wallet.getBalance();
