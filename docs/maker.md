@@ -306,7 +306,7 @@ test("open Vault on Maker", async () => {
     ethers.utils.parseUnits("10000", erc20.dai.decimals),
   ]);
 
-  const ethBefore = await await wallet.getBalance();
+  const ethBefore = await wallet.getBalance();
   const daiBefore = await daiContract.balanceOf(wallet.address);
 
   // Open vault through proxy
@@ -315,7 +315,7 @@ test("open Vault on Maker", async () => {
     value: ethers.utils.parseEther("10"),
   });
 
-  const ethAfter = await await wallet.getBalance();
+  const ethAfter = await wallet.getBalance();
   const daiAfter = await daiContract.balanceOf(wallet.address);
 
   const ethSpent = parseFloat(fromWei(ethBefore.sub(ethAfter)));
