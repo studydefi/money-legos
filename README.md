@@ -33,6 +33,7 @@ Protocols supported:
 - Balancer
 - mStable
 - Uniswap v2
+- BadgerDAO
 
 Importing specific protocols is also supported:
 
