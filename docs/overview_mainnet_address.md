@@ -26,6 +26,38 @@
  - aWBTC: [0xfc4b8ed459e00e5400be803a9bb3954234fd50e3](https://etherscan.io/address/0xfc4b8ed459e00e5400be803a9bb3954234fd50e3)
  - aZRX: [0x6fb0855c404e09c47c3fbca25f08d4e41f9f062f](https://etherscan.io/address/0x6fb0855c404e09c47c3fbca25f08d4e41f9f062f)
 
+## Badger
+
+[Link to ABIs](https://github.com/studydefi/money-legos/tree/master/src/badger/abi)
+
+
+
+- BadgerToken: [0x3472A5A71965499acd81997a54BBA8D852C6E53d](https://etherscan.io/address/0x3472A5A71965499acd81997a54BBA8D852C6E53d)
+- DiggToken: [0x798D1bE841a82a273720CE31c822C61a67a601C3](https://etherscan.io/address/0x798D1bE841a82a273720CE31c822C61a67a601C3)
+- bBadgerToken: [0x19D97D8fA813EE2f51aD4B4e04EA08bAf4DFfC28](https://etherscan.io/address/0x19D97D8fA813EE2f51aD4B4e04EA08bAf4DFfC28)
+- bDiggToken: [0x7e7E112A68d8D2E221E11047a72fFC1065c38e1a](https://etherscan.io/address/0x7e7E112A68d8D2E221E11047a72fFC1065c38e1a)
+- native_uniBadgerWbtc: [0x235c9e24D3FB2FAFd58a2E49D454Fdcd2DBf7FF1](https://etherscan.io/address/0x235c9e24D3FB2FAFd58a2E49D454Fdcd2DBf7FF1)
+- native_uniDiggWbtc: [0xC17078FDd324CC473F8175Dc5290fae5f2E84714](https://etherscan.io/address/0xC17078FDd324CC473F8175Dc5290fae5f2E84714)
+- native_sushiWbtcEth: [0x758A43EE2BFf8230eeb784879CdcFF4828F2544D](https://etherscan.io/address/0x758A43EE2BFf8230eeb784879CdcFF4828F2544D)
+- native_sushiBadgerWbtc: [0x1862A18181346EBd9EdAf800804f89190DeF24a5](https://etherscan.io/address/0x1862A18181346EBd9EdAf800804f89190DeF24a5)
+- native_sushiDiggWbtc: [0x88128580ACdD9c04Ce47AFcE196875747bF2A9f6](https://etherscan.io/address/0x88128580ACdD9c04Ce47AFcE196875747bF2A9f6)
+- yearn_wbtc: [0x4b92d19c11435614cd49af1b589001b7c08cd4d5](https://etherscan.io/address/0x4b92d19c11435614cd49af1b589001b7c08cd4d5)
+- harvest_renCrv: [0xAf5A1DECfa95BAF63E0084a35c62592B774A2A87](https://etherscan.io/address/0xAf5A1DECfa95BAF63E0084a35c62592B774A2A87)
+- native_cvxCrv: [0x2B5455aac8d64C14786c3a29858E43b5945819C0](https://etherscan.io/address/0x2B5455aac8d64C14786c3a29858E43b5945819C0)
+- native_cvx: [0x53c8e199eb2cb7c01543c137078a038937a68e40](https://etherscan.io/address/0x53c8e199eb2cb7c01543c137078a038937a68e40)
+- native_renCrv: [0x6dEf55d2e18486B9dDfaA075bc4e4EE0B28c1545](https://etherscan.io/address/0x6dEf55d2e18486B9dDfaA075bc4e4EE0B28c1545)
+- native_sbtcCrv: [0xd04c48A53c111300aD41190D63681ed3dAd998eC](https://etherscan.io/address/0xd04c48A53c111300aD41190D63681ed3dAd998eC)
+- native_tbtcCrv: [0xb9D076fDe463dbc9f915E5392F807315Bf940334](https://etherscan.io/address/0xb9D076fDe463dbc9f915E5392F807315Bf940334)
+- native_tricrypto: [0xBE08Ef12e4a553666291E9fFC24fCCFd354F2Dd2](https://etherscan.io/address/0xBE08Ef12e4a553666291E9fFC24fCCFd354F2Dd2)
+- native_hbtcCrv: [0x8c76970747afd5398e958bdfada4cf0b9fca16c4](https://etherscan.io/address/0x8c76970747afd5398e958bdfada4cf0b9fca16c4)
+- native_pbtcCrv: [0x55912d0cf83b75c492e761932abc4db4a5cb1b17](https://etherscan.io/address/0x55912d0cf83b75c492e761932abc4db4a5cb1b17)
+- native_obtcCrv: [0xf349c0faa80fc1870306ac093f75934078e28991](https://etherscan.io/address/0xf349c0faa80fc1870306ac093f75934078e28991)
+- native_bbtcCrv: [0x5dce29e92b1b939f8e8c60dcf15bde82a85be4a9](https://etherscan.io/address/0x5dce29e92b1b939f8e8c60dcf15bde82a85be4a9)
+- experimental_sushiIBbtcWbtc: [0x8a8ffec8f4a0c8c9585da95d9d97e8cd6de273de](https://etherscan.io/address/0x8a8ffec8f4a0c8c9585da95d9d97e8cd6de273de)
+- experimental_digg: [0x608b6D82eb121F3e5C0baeeD32d81007B916E83C](https://etherscan.io/address/0x608b6D82eb121F3e5C0baeeD32d81007B916E83C)
+- ibBTC: [0xc4E15973E6fF2A35cC804c2CF9D2a1b817a8b40F](https://etherscan.io/address/0xc4E15973E6fF2A35cC804c2CF9D2a1b817a8b40F)
+
+
 ## Balancer
 
 [Link to ABIs](https://github.com/studydefi/money-legos/tree/master/src/balancer/abi)
