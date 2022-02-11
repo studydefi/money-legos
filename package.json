@@ -45,6 +45,6 @@
     "money-legos"
   ],
   "dependencies": {
-    "@openzeppelin/contracts": "^2.5.0"
+    "@openzeppelin/contracts": "^4.4.2"
   }
 }

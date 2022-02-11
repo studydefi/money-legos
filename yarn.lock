@@ -436,10 +436,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@openzeppelin/contracts@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-2.5.0.tgz#e327a98ba1d26b7756ff62885a0aa0967a375449"
-  integrity sha512-t3jm8FrhL9tkkJTofkznTqo/XXdHi21w5yXwalEnaMOp22ZwZ0f/mmKdlgMMLPFa6bSVHbY88mKESwJT/7m5Lg==
+"@openzeppelin/contracts@^4.4.2":
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.4.2.tgz#4e889c9c66e736f7de189a53f8ba5b8d789425c2"
+  integrity sha512-NyJV7sJgoGYqbtNUWgzzOGW4T6rR19FmX1IJgXGdapGPWsuMelGJn9h03nos0iqfforCbCB0iYIR0MtIuIFLLw==
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
