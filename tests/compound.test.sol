@@ -1,11 +1,10 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.8.0;
 
 import "@studydefi/money-legos/compound/contracts/IComptroller.sol";
 import "@studydefi/money-legos/compound/contracts/ICEther.sol";
 import "@studydefi/money-legos/compound/contracts/ICToken.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "@openzeppelin/contracts/math/SafeMath.sol";
 
 contract CompoundManager {
     using SafeMath for uint256;
@@ -76,7 +75,7 @@ contract CompoundManager {
         ) = ICToken(cToken).getAccountSnapshot(owner);
 
         // Source: balanceOfUnderlying from any ctoken
-        return cTokenBalance.mul(exchangeRateMantissa).div(1e18);
+        return cTokenBalance * (exchangeRateMantissa) / (1e18);
     }
 
     function enterMarkets(
