@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.8.0;
 
 interface IUniswapExchange {
     // Address of ERC20 token sold on this exchange
