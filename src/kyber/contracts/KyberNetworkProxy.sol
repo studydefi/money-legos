@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.8.0;
 
 // Note: Kyber uses it owns ERC20 interface
 // See: https://github.com/KyberNetwork/smart-contracts/blob/master/contracts/ERC20Interface.sol
