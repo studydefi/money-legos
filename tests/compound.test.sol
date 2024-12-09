@@ -75,7 +75,7 @@ contract CompoundManager {
         ) = ICToken(cToken).getAccountSnapshot(owner);
 
         // Source: balanceOfUnderlying from any ctoken
-        return cTokenBalance * (exchangeRateMantissa) / (1e18);
+        return cTokenBalance * exchangeRateMantissa / 1e18;
     }
 
     function enterMarkets(
