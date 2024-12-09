@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.8.0;
 
 contract ICurveFiCurve {
     function get_virtual_price() external returns (uint256 out);
