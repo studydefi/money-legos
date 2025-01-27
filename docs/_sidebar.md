@@ -7,6 +7,7 @@
 
 - Reference Guides
   - [Aave](aave.md)
+  - [Badger](badger.md)
   - [Compound](compound.md)
   - [CurveFi](curvefi.md)
   - [DyDx](dydx.md)

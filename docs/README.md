@@ -38,3 +38,4 @@
 - Balancer
 - mStable
 - Uniswap v2
+- BadgerDAO
