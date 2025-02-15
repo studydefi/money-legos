@@ -47,7 +47,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 
 contract OneSplitSwapper {
-    // Uniswap Mainnet factory address
+    // OneSplit Mainnet factory address
     address constant OneSplitAddress = 0xC586BeF4a0992C495Cf22e1aeEE4E446CECDee0E;
 
     function _swap(address from, address to, uint256 amountWei) internal {
