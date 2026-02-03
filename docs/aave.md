@@ -4,12 +4,12 @@
 
 _Special thanks to [mrdavey](https://github.com/mrdavey/) for his [ez-flashloan example](https://github.com/mrdavey/ez-flashloan)._
 
-Flashloans are a bit tricky as they require you deploy a smart contract before you can start ultilizing it. The current standard way to interact with flashloans is by:
+Flashloans are a bit tricky as they require you deploy a smart contract before you can start utilizing it. The current standard way to interact with flashloans is by:
 
-1. Deploying a smart contract with specific logic that will return you a profit (e.g. arbitrage, liquidating acounts).
+1. Deploying a smart contract with specific logic that will return you a profit (e.g. arbitrage, liquidating accounts).
 2. Interacting with the application specific smart contract from step 1.
 
-One thing to note about flashloan supported smart contracts is that they can get big very fast, especially when you're interacting with multiple protocols (e.g. Uniswap, 1split, curvefi, compound, maker, etc). Additionally, if you're not structuring your smart contract in a modular format, you might hit the contract gas size limit (~8 million as of 2020 April). Fortunately, you can ultilize [proxy contracts (EIP 1822)](https://eips.ethereum.org/EIPS/eip-1822) in conjunction with some clever data encoding to "generalize" flashloans and separate out the defi protocol libraries from the flashloan logic. Generalizing flashloans is a bit out of scope for this integration example, however you can [check out the example repo here](https://github.com/kendricktan/generalized-aave-flashloans).
+One thing to note about flashloan supported smart contracts is that they can get big very fast, especially when you're interacting with multiple protocols (e.g. Uniswap, 1split, curvefi, compound, maker, etc). Additionally, if you're not structuring your smart contract in a modular format, you might hit the contract gas size limit (~8 million as of 2020 April). Fortunately, you can utilize [proxy contracts (EIP 1822)](https://eips.ethereum.org/EIPS/eip-1822) in conjunction with some clever data encoding to "generalize" flashloans and separate out the defi protocol libraries from the flashloan logic. Generalizing flashloans is a bit out of scope for this integration example, however you can [check out the example repo here](https://github.com/kendricktan/generalized-aave-flashloans).
 
 ### Flashloan Logic (Solidity)
 
