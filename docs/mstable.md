@@ -165,7 +165,7 @@ test("Redeem USDC using mUSD", async () => {
 // ../tests/mstable.test.ts#L129-L173
 
 describe("Earn MTA", () => {
-  test("Add liqudity to mUSD/USDC Balancer Pool", async () => {
+  test("Add liquidity to mUSD/USDC Balancer Pool", async () => {
     // given
     const bptBeforeWei = await pool.balanceOf(wallet.address);
     const bptBefore = parseFloat(fromWei(bptBeforeWei));
