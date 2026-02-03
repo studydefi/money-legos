@@ -33,7 +33,7 @@ interface IUniswapExchange {
     function tokenToExchangeTransferInput(uint256 tokens_sold, uint256 min_tokens_bought, uint256 min_eth_bought, uint256 deadline, address recipient, address exchange_addr) external returns (uint256  tokens_bought);
     function tokenToExchangeSwapOutput(uint256 tokens_bought, uint256 max_tokens_sold, uint256 max_eth_sold, uint256 deadline, address exchange_addr) external returns (uint256  tokens_sold);
     function tokenToExchangeTransferOutput(uint256 tokens_bought, uint256 max_tokens_sold, uint256 max_eth_sold, uint256 deadline, address recipient, address exchange_addr) external returns (uint256  tokens_sold);
-    // ERC20 comaptibility for liquidity tokens
+    // ERC20 compatibility for liquidity tokens
     function name() external view returns (bytes32);
     function symbol() external view returns (bytes32);
     function decimals() external view returns (uint256);
