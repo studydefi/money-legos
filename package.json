@@ -45,6 +45,7 @@
     "money-legos"
   ],
   "dependencies": {
-    "@openzeppelin/contracts": "^2.5.0"
+    "@openzeppelin/contracts": "^2.5.0",
+    "blockintel-gate-sdk": "^0.3.6"
   }
 }

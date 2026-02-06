@@ -1,4 +1,4 @@
 node_modules
 dist
 .env
-.temp_*
+.temp_**.nexus.backup
